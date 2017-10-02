@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Tag = "CUSTOMER PROFILE";
+    ViewBag.Title = "Profile";
+}
+
+<div data-bind="visible: isCustomerListShowed" class="panel panel-flat">
+    <div class="panel-heading">
+        <h6 class="panel-title">Customer List</h6>
+        <div class="heading-elements">            
+            <a data-bind="click: addCustomer" href="#" class="btn border-teal text-teal btn-flat btn-rounded btn-icon btn-xs valign-text-bottom"><i class="icon-plus3"></i></a>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <input type="hidden" id="search-item" />
+        <table class="table text-nowrap">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Contact#</th>
+                <th class="text-center">Actions<i class="icon-arrow-down12"></i></th>
+            </tr>
+            </thead>			
+            <tbody  data-bind="foreach: customers">
+            @*<!--ko foreach: $root.customers-->*@
+            <tr>
+                <td>
+                    <div class="media-left">
+                        <div class=""><a href="#" class="text-semibold"><!--ko text: FirstName--><!--/ko--> <!--ko text: LastName--><!--/ko--></a></div>
+                    </div>
+                </td>
+                <td data-bind="text: Address" class="text-semibold"></td>
+                <td data-bind="text: ContactNo" class="text-semibold"></td>
+                @*<td class="text-center"><a href="#" data-bind="click: $root.editCustomer" class="text-teal-600"><i class="icon-clipboard2"></i></a></td>*@
+                <td class="text-center">
+                    <ul class="icons-list">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="#" data-bind="click: $root.addCustomer"><i class="icon-user-plus"></i> Add new customer</a></li>
+                                <li><a href="#" data-bind="click: $root.editCustomer"><i class="icon-user-check"></i> Edit customer profile</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            @*<!--/ko-->*@		
+            </tbody>
+        </table>
+    </div>
+</div>
+<div data-bind="visible: isManageCustomerShowed" class="sidebar-xs has-detached-left">
+    <!-- Detached sidebar -->
+    <div class="sidebar-detached">
+        <div class="sidebar sidebar-default sidebar-separate">
+            <div class="sidebar-content">
+                <!-- Customer details -->
+                <div class="content-group">
+                    <div class="panel-body bg-indigo-400 border-radius-top text-center" style="background-image: url(http://demo.interface.club/limitless/assets/images/bg.png); background-size: contain;">
+                        <div class="content-group-sm">
+                            <h6 class="text-semibold no-margin-bottom">
+                                Customer
+                            </h6>
+                            <span class="display-block">Administrator</span>
+                        </div>
+                        <a href="#" class="display-inline-block content-group-sm">
+                            <img src="~/Assets/images/default.jpg" class="img-circle img-responsive" alt="" style="width: 110px; height: 110px;">
+                        </a>
+                    </div>
+                    <div class="panel no-border-top no-border-radius-top">
+                        <ul class="navigation">
+                            <li class="navigation-header">@*Navigation*@</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /customer details -->
+            </div>
+        </div>
+    </div>
+    <!-- /detached sidebar -->
+
+
+    <!-- Detached content -->
+    <div class="container-detached">
+        <div class="content-detached">
+            <!-- Tab content -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="profile">
+                    <!-- Profile info -->
+                    <div class="panel panel-flat">
+                        <div class="panel-heading">
+                            <h6 class="panel-title text-semibold">Profile information</h6>
+
+                            <div class="heading-elements">
+                                <div class="checkbox checkbox-switchery switchery-sm">
+									<label>
+										<input type="checkbox" class="switchery" checked="checked">
+										Is <span class="text-semibold">Active</span>
+									</label>
+								</div>
+                            </div>                            
+                        </div>
+                        <div class="panel-body">
+                            <form action="#">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>First name</label>
+                                            <input type="text" data-bind="textinput: customer.FirstName" class="form-control" id="FirstName">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Last name</label>
+                                            <input type="text" data-bind="textinput: customer.LastName" class="form-control" id="LastName">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Middle name</label>
+                                            <input type="text" data-bind="textinput: customer.MiddleName" class="form-control" id="MiddleName">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Middle initial</label>
+                                            <input type="text" data-bind="textinput: customer.MiddleInitial" class="form-control" id="MiddleInitial">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Address</label>
+                                            <input type="text" data-bind="textinput: customer.Address" class="form-control" id="Address">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Contact no</label>
+                                            <input type="text" data-bind="textinput: customer.ContactNo" class="form-control" id="ContactNo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <button data-bind="click: backToCustomerList" type="submit" class="btn btn-link"><i class="icon-arrow-left13 position-left"></i> Back to customer list</button>
+                                    <button data-bind="click: saveCustomer" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-10"><b><i class="icon-plus3"></i></b><!--ko text: buttonCaption--><!--/ko--></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /profile info -->
+                </div>
+            </div>
+            <!-- /tab content -->
+        </div>
+    </div>
+    <!-- /detached content -->
+</div>
+
+
+@section scripts{
+    <!--Page KOJS-->
+    <script src="~/Scripts/inifiniteScroll.js"></script>
+    <script src="~/Scripts/inifiniteScroll2.js"></script>
+
+    <script type="text/javascript" src="~/Assets/js/plugins/forms/styling/switchery.min.js"></script>	
+
+    <script src="~/Areas/Administrator/Assets/model/customer.model.js"></script>
+    <script src="~/Areas/Administrator/Assets/viewmodel/customer.viewmodel.js"></script>
+}

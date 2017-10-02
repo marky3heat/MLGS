@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Tag = "ItemCategory";
+    ViewBag.Title = "iPOS: ItemCategory";
+}
+
+<div data-bind="visible: isItemCategoryShowedList" class="col-md-6">
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h6 class="panel-title">Item category List</h6>
+            <div class="heading-elements">
+                <button data-bind="click: addItemCategory" type="submit" class="btn bg-orange-400 btn-labeled btn-labeled-right ml-10"><b><i class="icon-plus3"></i></b>Create new item category</button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-nowrap" id="itemCategoryTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Item Type</th>
+                        <th>Item Category</th>
+                        <th class="text-center"><i class="icon-arrow-down12"></i></th>
+                        <th>Id</th>
+                        <th>Id</th>
+                        <th>Id</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div data-bind="visible: isItemCategoryShowed" class="panel panel-flat col-md-6">
+    <div class="panel-heading">
+        <h6 class="panel-title">New item category</h6>
+        <div class="heading-elements">
+            <button data-bind="click: backToList" type="submit" class="btn btn-link"><i class="text-orange-600 icon-arrow-left13 position-left"></i> Back to list</button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <form action="#">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Item type</label>
+                        <select required data-bind="options: itemTypeArray, optionsValue: 'ItemTypeId', optionsText: 'ItemTypeName', optionsCaption: '--Select item type--', value: itemCategoryModel.ItemTypeId" class="form-control" id="ItemTypeId"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Item category name</label>
+                        <input type="text" data-bind="textinput: itemCategoryModel.ItemCategoryName" class="form-control" id="ItemCategoryName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-right">
+                <button data-bind="click: saveItemCategory" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-10"><b><i class="icon-plus3"></i></b><!--ko text: buttonSaveItemCategoryCaption--><!--/ko--></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Areas/Administrator/Assets/Model/reference.model.js"></script>
+    <script src="~/Areas/Administrator/Assets/ViewModel/reference.viewmodel.js"></script>
+}

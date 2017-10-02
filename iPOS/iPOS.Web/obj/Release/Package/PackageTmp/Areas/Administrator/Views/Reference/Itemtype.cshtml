@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Tag = "ItemType";
+    ViewBag.Title = "iPOS: ItemType";
+}
+
+<div data-bind="visible: isItemTypeShowedList" class="col-md-6">
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h6 class="panel-title">Item type List</h6>
+            <div class="heading-elements">
+                <button data-bind="click: addItemType" type="submit" class="btn bg-orange-400 btn-labeled btn-labeled-right ml-10"><b><i class="icon-plus3"></i></b>Create new item type</button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-nowrap" id="itemTypeTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Item Type</th>
+                        <th class="text-center"><i class="icon-arrow-down12"></i></th>
+                        <th>Id</th>
+                        <th>Id</th>
+                        <th>Id</th>
+                        <th>Id</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div data-bind="visible: isItemTypeShowed" class="panel panel-flat col-md-6">
+    <div class="panel-heading">
+        <h6 class="panel-title">New item type</h6>
+        <div class="heading-elements">
+            <button data-bind="click: backToList" type="submit" class="btn btn-link"><i class="text-orange-600 icon-arrow-left13 position-left"></i> Back to list</button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <form action="#">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Item type name</label>
+                        <input type="text" data-bind="textinput: itemTypeModel.ItemTypeName" class="form-control" id="ItemTypeName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-right">
+                <button data-bind="click: saveItemType" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-10"><b><i class="icon-plus3"></i></b><!--ko text: buttonSaveItemTypeCaption--><!--/ko--></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Areas/Administrator/Assets/Model/reference.model.js"></script>
+    <script src="~/Areas/Administrator/Assets/ViewModel/reference.viewmodel.js"></script>
+}

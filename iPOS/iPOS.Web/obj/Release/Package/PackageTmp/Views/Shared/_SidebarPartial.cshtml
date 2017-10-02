@@ -1,0 +1,103 @@
+﻿@using AccountingSystem.Utilities
+
+<div class="layout-sidebar-backdrop"></div>
+<div class="layout-sidebar-body">
+    <div class="custom-scrollbar">
+        <nav id="sidenav" class="sidenav-collapse collapse">
+            <ul class="sidenav">
+                <li class="sidenav-search hidden-md hidden-lg">
+                    <form class="sidenav-form" action="/">
+                        <div class="form-group form-group-sm">
+                            <div class="input-with-icon">
+                                <input class="form-control" type="text" placeholder="Search…">
+                                <span class="icon icon-search input-icon"></span>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+                <li class="sidenav-heading">Navigation</li>
+                <li class="sidenav-item has-subnav active">
+                    <a href="dashboard-1.html" aria-haspopup="true">
+                        <span class="sidenav-icon icon icon-home"></span>
+                        <span class="sidenav-label">Dashboards</span>
+                    </a>
+                    <ul class="sidenav-subnav collapse">
+                        <li class="sidenav-subheading">Dashboards</li>
+                        <li class="active"><a href="#">Dashboard 1</a></li>
+                        <li><a href="#">Dashboard 2</a></li>
+                        <li><a href="#">Dashboard 3</a></li>
+                    </ul>
+                </li>
+                <!-- Components -->
+                <li class="sidenav-heading">Components</li>
+                <li class="sidenav-item">
+                    <a href="~/Administrator/Transactions/TransactionList">
+                        <span class="sidenav-icon icon icon-cart-plus"></span>
+                        <span class="sidenav-label">Transactions</span>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="">
+                        <span class="sidenav-icon icon icon-search"></span>
+                        <span class="sidenav-label">Appraisal</span>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="">
+                        <span class="sidenav-icon icon icon-diamond"></span>
+                        <span class="sidenav-label">Pawning</span>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="">
+                        <span class="sidenav-icon icon icon-check-square-o"></span>
+                        <span class="sidenav-label">Approval</span>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="">
+                        <span class="sidenav-icon icon icon-cart-arrow-down"></span>
+                        <span class="sidenav-label">Release</span>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="">
+                        <span class="sidenav-icon icon icon-exchange"></span>
+                        <span class="sidenav-label">Change in Terms</span>
+                    </a>
+                </li>
+                <!-- /Components -->
+
+                <!-- Admin & File Maintenance -->
+                <li class="sidenav-heading">Admin & File Maintenance</li>
+                <li class="sidenav-item">
+                    <a href="#">
+                        <span class="sidenav-icon icon icon-user"></span>
+                        <span class="sidenav-label">User Profile</span>
+                    </a>
+                </li>
+                <li class="sidenav-item has-subnav ">
+                    <a href="#" aria-haspopup="true">
+                        <span class="sidenav-icon icon icon-print"></span>
+                        <span class="sidenav-label">Reports</span>
+                    </a>
+                    <ul class="sidenav-subnav collapse">
+                        <li class="sidenav-subheading">Reports</li>
+                        <li class=""><a href="">Report 1</a></li>
+                        <li class=""><a href="">Report 2</a></li>
+                        <li class=""><a href="">Report 3</a></li>
+                    </ul>
+                </li>
+                <!-- /Admin & File Maintenance -->
+
+            </ul>
+        </nav>
+    </div>
+</div>
+
+@*<!--ko if: hasNewTransaction() === true-->
+<a href="~/administrator/pawnshoptransactions">
+    Transactions
+    <span class="badge badge-success"><!--ko text: newTransactionCounter--><!--/ko--></span>
+</a>
+<!--/ko-->*@

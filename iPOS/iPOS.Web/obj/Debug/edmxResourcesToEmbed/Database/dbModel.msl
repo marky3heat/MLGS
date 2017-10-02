@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbpawnshopModelStoreContainer" CdmEntityContainer="dbpawnshopEntities">
+    <EntitySetMapping Name="tbl_customer">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_customer">
+        <MappingFragment StoreEntitySet="tbl_customer">
+          <ScalarProperty Name="ul_code" ColumnName="ul_code" />
+          <ScalarProperty Name="date_entered" ColumnName="date_entered" />
+          <ScalarProperty Name="customer_image" ColumnName="customer_image" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="group_name" ColumnName="group_name" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="date_as_of" ColumnName="date_as_of" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="credit_limit" ColumnName="credit_limit" />
+          <ScalarProperty Name="credit_terms" ColumnName="credit_terms" />
+          <ScalarProperty Name="tax_id_no" ColumnName="tax_id_no" />
+          <ScalarProperty Name="bir_reg_no" ColumnName="bir_reg_no" />
+          <ScalarProperty Name="vat" ColumnName="vat" />
+          <ScalarProperty Name="zip_code" ColumnName="zip_code" />
+          <ScalarProperty Name="city_address" ColumnName="city_address" />
+          <ScalarProperty Name="st_address" ColumnName="st_address" />
+          <ScalarProperty Name="fax_no" ColumnName="fax_no" />
+          <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+          <ScalarProperty Name="business_phone_no" ColumnName="business_phone_no" />
+          <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="customer_class" ColumnName="customer_class" />
+          <ScalarProperty Name="trade_name" ColumnName="trade_name" />
+          <ScalarProperty Name="id_code" ColumnName="id_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ipos_customer">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_customer">
+        <MappingFragment StoreEntitySet="tbl_ipos_customer">
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="MiddleInitial" ColumnName="MiddleInitial" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ipos_itemcategory">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_itemcategory">
+        <MappingFragment StoreEntitySet="tbl_ipos_itemcategory">
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+          <ScalarProperty Name="ItemCategoryName" ColumnName="ItemCategoryName" />
+          <ScalarProperty Name="ItemCategoryId" ColumnName="ItemCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ipos_itemtype">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_itemtype">
+        <MappingFragment StoreEntitySet="tbl_ipos_itemtype">
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ItemTypeName" ColumnName="ItemTypeName" />
+          <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ipos_no_generator">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_no_generator">
+        <MappingFragment StoreEntitySet="tbl_ipos_no_generator">
+          <ScalarProperty Name="Terminal" ColumnName="Terminal" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="NoDescription" ColumnName="NoDescription" />
+          <ScalarProperty Name="NoId" ColumnName="NoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ipos_pawnshop_transactions">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_pawnshop_transactions">
+        <MappingFragment StoreEntitySet="tbl_ipos_pawnshop_transactions">
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="ReviewedBy" ColumnName="ReviewedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Terminal" ColumnName="Terminal" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_product">
+        <MappingFragment StoreEntitySet="tbl_product">
+          <ScalarProperty Name="batch_code" ColumnName="batch_code" />
+          <ScalarProperty Name="with_serial" ColumnName="with_serial" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="prod_img" ColumnName="prod_img" />
+          <ScalarProperty Name="tax_code" ColumnName="tax_code" />
+          <ScalarProperty Name="fifo_cost" ColumnName="fifo_cost" />
+          <ScalarProperty Name="ave_cost" ColumnName="ave_cost" />
+          <ScalarProperty Name="oh_cost" ColumnName="oh_cost" />
+          <ScalarProperty Name="dl_cost" ColumnName="dl_cost" />
+          <ScalarProperty Name="rm_cost" ColumnName="rm_cost" />
+          <ScalarProperty Name="standard_price" ColumnName="standard_price" />
+          <ScalarProperty Name="last_purch" ColumnName="last_purch" />
+          <ScalarProperty Name="ec_price" ColumnName="ec_price" />
+          <ScalarProperty Name="ws_price" ColumnName="ws_price" />
+          <ScalarProperty Name="key_price" ColumnName="key_price" />
+          <ScalarProperty Name="reg_price" ColumnName="reg_price" />
+          <ScalarProperty Name="short_desc" ColumnName="short_desc" />
+          <ScalarProperty Name="long_desc" ColumnName="long_desc" />
+          <ScalarProperty Name="alternate_code" ColumnName="alternate_code" />
+          <ScalarProperty Name="bar_code" ColumnName="bar_code" />
+          <ScalarProperty Name="item_code" ColumnName="item_code" />
+          <ScalarProperty Name="uom" ColumnName="uom" />
+          <ScalarProperty Name="qty_avl" ColumnName="qty_avl" />
+          <ScalarProperty Name="qty_onhand" ColumnName="qty_onhand" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="p_size" ColumnName="p_size" />
+          <ScalarProperty Name="style" ColumnName="style" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="principal" ColumnName="principal" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="item_type" ColumnName="item_type" />
+          <ScalarProperty Name="ul_code" ColumnName="ul_code" />
+          <ScalarProperty Name="company_code" ColumnName="company_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product_add_info">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_product_add_info">
+        <MappingFragment StoreEntitySet="tbl_product_add_info">
+          <ScalarProperty Name="cashierdiscount_to" ColumnName="cashierdiscount_to" />
+          <ScalarProperty Name="cashierdiscount_from" ColumnName="cashierdiscount_from" />
+          <ScalarProperty Name="supervisordiscount_to" ColumnName="supervisordiscount_to" />
+          <ScalarProperty Name="supervisordiscount_from" ColumnName="supervisordiscount_from" />
+          <ScalarProperty Name="serial_no" ColumnName="serial_no" />
+          <ScalarProperty Name="exp_date" ColumnName="exp_date" />
+          <ScalarProperty Name="trade_or_nontrade" ColumnName="trade_or_nontrade" />
+          <ScalarProperty Name="active_or_inactive" ColumnName="active_or_inactive" />
+          <ScalarProperty Name="regular_or_phaseout" ColumnName="regular_or_phaseout" />
+          <ScalarProperty Name="last_sales_date" ColumnName="last_sales_date" />
+          <ScalarProperty Name="daily_ave" ColumnName="daily_ave" />
+          <ScalarProperty Name="day_to_ST" ColumnName="day_to_ST" />
+          <ScalarProperty Name="inv_buildup" ColumnName="inv_buildup" />
+          <ScalarProperty Name="reorder_qty" ColumnName="reorder_qty" />
+          <ScalarProperty Name="max_qty" ColumnName="max_qty" />
+          <ScalarProperty Name="min_qty" ColumnName="min_qty" />
+          <ScalarProperty Name="bar_code" ColumnName="bar_code" />
+          <ScalarProperty Name="ul_code" ColumnName="ul_code" />
+          <ScalarProperty Name="company_code" ColumnName="company_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product_brand_setup">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_product_brand_setup">
+        <MappingFragment StoreEntitySet="tbl_product_brand_setup">
+          <ScalarProperty Name="brand_desc" ColumnName="brand_desc" />
+          <ScalarProperty Name="brand_code" ColumnName="brand_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product_category_info">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_product_category_info">
+        <MappingFragment StoreEntitySet="tbl_product_category_info">
+          <ScalarProperty Name="category_desc4" ColumnName="category_desc4" />
+          <ScalarProperty Name="category_desc3" ColumnName="category_desc3" />
+          <ScalarProperty Name="category_desc2" ColumnName="category_desc2" />
+          <ScalarProperty Name="category_desc1" ColumnName="category_desc1" />
+          <ScalarProperty Name="bar_code" ColumnName="bar_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product_category_setup">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_product_category_setup">
+        <MappingFragment StoreEntitySet="tbl_product_category_setup">
+          <ScalarProperty Name="acct_title2" ColumnName="acct_title2" />
+          <ScalarProperty Name="acct_code2" ColumnName="acct_code2" />
+          <ScalarProperty Name="acct_title" ColumnName="acct_title" />
+          <ScalarProperty Name="acct_code" ColumnName="acct_code" />
+          <ScalarProperty Name="category_desc" ColumnName="category_desc" />
+          <ScalarProperty Name="category_code" ColumnName="category_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product_category_sub1">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_product_category_sub1">
+        <MappingFragment StoreEntitySet="tbl_product_category_sub1">
+          <ScalarProperty Name="category_desc" ColumnName="category_desc" />
+          <ScalarProperty Name="category_code" ColumnName="category_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product_category_sub2">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_product_category_sub2">
+        <MappingFragment StoreEntitySet="tbl_product_category_sub2">
+          <ScalarProperty Name="category_desc" ColumnName="category_desc" />
+          <ScalarProperty Name="category_code" ColumnName="category_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product_category_sub3">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_product_category_sub3">
+        <MappingFragment StoreEntitySet="tbl_product_category_sub3">
+          <ScalarProperty Name="category_desc" ColumnName="category_desc" />
+          <ScalarProperty Name="category_code" ColumnName="category_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product_type">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_product_type">
+        <MappingFragment StoreEntitySet="tbl_product_type">
+          <ScalarProperty Name="item_desc" ColumnName="item_desc" />
+          <ScalarProperty Name="item_code" ColumnName="item_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ipos_karat">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_karat">
+        <MappingFragment StoreEntitySet="tbl_ipos_karat">
+          <ScalarProperty Name="karat_desc" ColumnName="karat_desc" />
+          <ScalarProperty Name="karat_code" ColumnName="karat_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ipos_pawneditem">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_pawneditem">
+        <MappingFragment StoreEntitySet="tbl_ipos_pawneditem">
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsReleased" ColumnName="IsReleased" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DueDateEnd" ColumnName="DueDateEnd" />
+          <ScalarProperty Name="DueDateStart" ColumnName="DueDateStart" />
+          <ScalarProperty Name="NoOfPayments" ColumnName="NoOfPayments" />
+          <ScalarProperty Name="ScheduleOfPayment" ColumnName="ScheduleOfPayment" />
+          <ScalarProperty Name="TermsId" ColumnName="TermsId" />
+          <ScalarProperty Name="NetCashOut" ColumnName="NetCashOut" />
+          <ScalarProperty Name="IsInterestDeducted" ColumnName="IsInterestDeducted" />
+          <ScalarProperty Name="Others" ColumnName="Others" />
+          <ScalarProperty Name="ServiceCharge" ColumnName="ServiceCharge" />
+          <ScalarProperty Name="InitialPayment" ColumnName="InitialPayment" />
+          <ScalarProperty Name="InterestAmount" ColumnName="InterestAmount" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="LoanableAmount" ColumnName="LoanableAmount" />
+          <ScalarProperty Name="PawnedItemContractNo" ColumnName="PawnedItemContractNo" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="PawnedDate" ColumnName="PawnedDate" />
+          <ScalarProperty Name="PawnedItemNo" ColumnName="PawnedItemNo" />
+          <ScalarProperty Name="PawnedItemId" ColumnName="PawnedItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ipos_appraiseditem">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_appraiseditem">
+        <MappingFragment StoreEntitySet="tbl_ipos_appraiseditem">
+          <ScalarProperty Name="PawnshopTransactionId" ColumnName="PawnshopTransactionId" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsPawned" ColumnName="IsPawned" />
+          <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+          <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="AppraisedValue" ColumnName="AppraisedValue" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Karat" ColumnName="Karat" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemCategoryId" ColumnName="ItemCategoryId" />
+          <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+          <ScalarProperty Name="AppraiseNo" ColumnName="AppraiseNo" />
+          <ScalarProperty Name="AppraiseDate" ColumnName="AppraiseDate" />
+          <ScalarProperty Name="AppraiseId" ColumnName="AppraiseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

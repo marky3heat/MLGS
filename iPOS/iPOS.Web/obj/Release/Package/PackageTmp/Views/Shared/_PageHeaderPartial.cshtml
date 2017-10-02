@@ -1,0 +1,16 @@
+﻿@*<div class="page-header-content">
+    <div class="page-title">     
+        <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - @ViewBag.Form</h4>
+    </div>
+</div>*@
+<div class="breadcrumb-line">
+    <ul class="breadcrumb">
+        <li><a href="~/administrator/PawnshopTransactions"><i class="icon-home2 position-left"></i> Home</a></li>
+        <li class="active">@ViewBag.Controller</li>
+        @if (ViewBag.Action != "")
+        {
+            <li class="active">@ViewBag.Action</li>
+        }
+ 
+    </ul>
+</div>

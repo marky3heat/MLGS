@@ -1,0 +1,417 @@
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.dll.config
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.pdb
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Newtonsoft.Json.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.Helpers.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.Mvc.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.Razor.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.Optimization.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Owin.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\EntityFramework.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.pdb
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Newtonsoft.Json.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.Helpers.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.Mvc.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.Razor.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\System.Web.Optimization.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\EntityFramework.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+D:\MLGS\Work\System\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.csprojResolveAssemblyReference.cache
+D:\MLGS\Work\System\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.dll
+D:\MLGS\Work\System\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.pdb
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\ApplicationInsights.config
+D:\MLGS\Work\System\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.dll.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.csprojResolveAssemblyReference.cache
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.pdb
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\ApplicationInsights.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.exe
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.exe.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.rsp
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.exe
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.exe.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.rsp
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.Win32.Primitives.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.AppContext.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Console.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.Process.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.StackTrace.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.Compression.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.DriveInfo.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.Primitives.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.Pipes.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.AccessControl.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Claims.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Encoding.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Primitives.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Principal.Windows.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Text.Encoding.CodePages.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Threading.Thread.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.ValueTuple.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.ReaderWriter.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XmlDocument.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XPath.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XPath.XDocument.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.exe
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.exe.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.rsp
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.dll.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.pdb
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Newtonsoft.Json.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Helpers.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Mvc.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Razor.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Optimization.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Owin.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\EntityFramework.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.pdb
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.dll.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Newtonsoft.Json.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Helpers.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Mvc.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Razor.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Optimization.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\EntityFramework.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.csprojResolveAssemblyReference.cache
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.pdb
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\ApplicationInsights.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.exe
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.exe.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.rsp
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.exe
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.exe.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.rsp
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.Win32.Primitives.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.AppContext.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Console.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.Process.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.StackTrace.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.Compression.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.DriveInfo.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.Pipes.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.AccessControl.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Claims.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Principal.Windows.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Text.Encoding.CodePages.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Threading.Thread.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.ValueTuple.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.ReaderWriter.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XmlDocument.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XPath.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XPath.XDocument.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.exe
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.exe.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.rsp
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.dll.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.pdb
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Newtonsoft.Json.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Helpers.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Mvc.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Razor.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Optimization.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Owin.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\EntityFramework.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.pdb
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Newtonsoft.Json.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Helpers.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Mvc.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Razor.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Optimization.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\EntityFramework.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\ApplicationInsights.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.exe
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.exe.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.rsp
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.exe
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.exe.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.rsp
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.AppContext.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Console.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.Process.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.Compression.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.Pipes.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.AccessControl.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Claims.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Principal.Windows.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Threading.Thread.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.ValueTuple.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XmlDocument.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XPath.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.exe
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.exe.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.rsp
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.dll.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.pdb
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Helpers.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Mvc.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Razor.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Owin.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\EntityFramework.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.pdb
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Helpers.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Mvc.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Razor.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\EntityFramework.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.csprojResolveAssemblyReference.cache
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.pdb
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.csprojResolveAssemblyReference.cache
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.pdb
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\ApplicationInsights.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.exe
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.exe.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csc.rsp
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.exe
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.exe.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\csi.rsp
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\Microsoft.Win32.Primitives.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.AppContext.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Console.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.Process.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Diagnostics.StackTrace.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.Compression.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.IO.Pipes.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.AccessControl.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Claims.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Security.Principal.Windows.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Text.Encoding.CodePages.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Threading.Thread.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.ValueTuple.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.ReaderWriter.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XmlDocument.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XPath.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\System.Xml.XPath.XDocument.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.exe
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.exe.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\vbc.rsp
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.dll.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Tests.pdb
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Helpers.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Mvc.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Razor.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Owin.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\EntityFramework.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\iPOS.Web.pdb
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Helpers.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Mvc.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Razor.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\EntityFramework.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml

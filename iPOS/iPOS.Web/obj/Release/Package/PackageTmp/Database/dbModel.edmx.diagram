@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e055333e879940bb93b171c9ac0fb58f" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_customer" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_customer" Width="1.5" PointX="13.25" PointY="0.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_itemcategory" Width="1.5" PointX="13.25" PointY="3.75" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_itemtype" Width="1.5" PointX="11.75" PointY="0.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_no_generator" Width="1.5" PointX="13.5" PointY="6.875" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_pawnshop_transactions" Width="1.5" PointX="9.5" PointY="4.75" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_product" Width="1.5" PointX="2" PointY="0.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_add_info" Width="1.5" PointX="5" PointY="0.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_brand_setup" Width="1.5" PointX="3.5" PointY="4.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_info" Width="1.5" PointX="3.5" PointY="6.125" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_setup" Width="1.5" PointX="3.5" PointY="0.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_sub1" Width="1.5" PointX="5" PointY="5.375" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_sub2" Width="1.5" PointX="11.25" PointY="13.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_sub3" Width="1.5" PointX="5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_type" Width="1.5" PointX="3.5" PointY="2.875" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_karat" Width="1.5" PointX="7.5" PointY="10.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_pawneditem" Width="1.5" PointX="8" PointY="0.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_appraiseditem" Width="1.5" PointX="9.5" PointY="0.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

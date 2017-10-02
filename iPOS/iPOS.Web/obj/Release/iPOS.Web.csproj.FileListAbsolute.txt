@@ -1,0 +1,600 @@
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\csc.exe
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\csc.exe.config
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\csc.rsp
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\csi.exe
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\csi.exe.config
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\csi.rsp
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.AppContext.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Console.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.Process.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.IO.Compression.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.IO.Pipes.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Security.AccessControl.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Security.Claims.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Security.Principal.Windows.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Threading.Thread.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.ValueTuple.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Xml.XmlDocument.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Xml.XPath.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\vbc.exe
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\vbc.exe.config
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\vbc.rsp
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\VBCSCompiler.exe
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\roslyn\VBCSCompiler.exe.config
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\iPOS.Web.dll.config
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\iPOS.Web.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\iPOS.Web.pdb
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Antlr3.Runtime.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\EntityFramework.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\EntityFramework.SqlServer.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\MySql.Data.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\MySql.Data.Entity.EF6.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Newtonsoft.Json.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Owin.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.Helpers.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.Mvc.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.Optimization.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.Razor.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.WebPages.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.WebPages.Razor.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\WebGrease.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Antlr3.Runtime.pdb
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Newtonsoft.Json.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.Helpers.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.Mvc.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.Optimization.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.Razor.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.WebPages.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\System.Web.WebPages.Razor.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\EntityFramework.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\EntityFramework.SqlServer.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\obj\Release\iPOS.Web.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\obj\Release\iPOS.Web.pdb
+D:\MLGS\Work\System\iPOS\iPOS.Web\obj\Release\iPOS.Web.csprojResolveAssemblyReference.cache
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\ApplicationInsights.config
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AI.DependencyCollector.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AI.Web.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AI.WindowsServer.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.ApplicationInsights.dll
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AI.Web.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.AI.WindowsServer.xml
+D:\MLGS\Work\System\iPOS\iPOS.Web\bin\Microsoft.ApplicationInsights.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\ApplicationInsights.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.exe
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.exe.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.rsp
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.exe
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.exe.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.rsp
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.AppContext.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Console.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.Process.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.Compression.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.Pipes.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.AccessControl.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Claims.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Principal.Windows.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Threading.Thread.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.ValueTuple.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XmlDocument.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XPath.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.exe
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.exe.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.rsp
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\VBCSCompiler.exe
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\roslyn\VBCSCompiler.exe.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.dll.config
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.pdb
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Antlr3.Runtime.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\EntityFramework.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\EntityFramework.SqlServer.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.DependencyCollector.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Web.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.WindowsServer.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.ApplicationInsights.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\MySql.Data.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\MySql.Data.Entity.EF6.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Newtonsoft.Json.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Owin.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.Helpers.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.Mvc.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.Optimization.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.Razor.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Razor.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\WebGrease.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Antlr3.Runtime.pdb
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Web.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.WindowsServer.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.ApplicationInsights.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Newtonsoft.Json.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.Helpers.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.Mvc.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.Optimization.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.Razor.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Razor.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\EntityFramework.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\EntityFramework.SqlServer.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.csprojResolveAssemblyReference.cache
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.dll
+D:\MLGS\Work\Active Work\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.pdb
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\ApplicationInsights.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.exe
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.exe.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.rsp
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.exe
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.exe.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.rsp
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.AppContext.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Console.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.Process.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.Compression.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.Pipes.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.AccessControl.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Claims.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Threading.Thread.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.ValueTuple.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XPath.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.exe
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.exe.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.rsp
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\VBCSCompiler.exe
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\roslyn\VBCSCompiler.exe.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.dll.config
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.pdb
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Antlr3.Runtime.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\EntityFramework.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\EntityFramework.SqlServer.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.DependencyCollector.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Web.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.WindowsServer.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.ApplicationInsights.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Google.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\MySql.Data.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\MySql.Data.Entity.EF6.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Newtonsoft.Json.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Owin.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.Helpers.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.Mvc.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.Optimization.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.Razor.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Deployment.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Razor.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\WebGrease.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Antlr3.Runtime.pdb
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Web.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.WindowsServer.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.ApplicationInsights.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Google.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Newtonsoft.Json.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.Helpers.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.Mvc.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.Optimization.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.Razor.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Deployment.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Razor.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\EntityFramework.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\EntityFramework.SqlServer.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.csprojResolveAssemblyReference.cache
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.dll
+D:\Work\Repository\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.pdb
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\ApplicationInsights.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.exe
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.exe.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.rsp
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.exe
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.exe.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.rsp
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.AppContext.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Console.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.Compression.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.Pipes.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Claims.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Threading.Thread.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.ValueTuple.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XPath.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.exe
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.exe.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.rsp
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.dll.config
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.pdb
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Antlr3.Runtime.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\EntityFramework.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Web.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.ApplicationInsights.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\MySql.Data.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\MySql.Data.Entity.EF6.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Newtonsoft.Json.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Owin.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.Helpers.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.Mvc.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.Optimization.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.Razor.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\WebGrease.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Antlr3.Runtime.pdb
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Web.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.ApplicationInsights.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Newtonsoft.Json.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.Helpers.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.Mvc.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.Optimization.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.Razor.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\EntityFramework.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.csprojResolveAssemblyReference.cache
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.dll
+C:\Users\SERVER\Documents\GitHub\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.pdb
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\ApplicationInsights.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.exe
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.exe.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\csc.rsp
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.exe
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.exe.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\csi.rsp
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.AppContext.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Console.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.Process.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.Compression.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.IO.Pipes.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.AccessControl.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Claims.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Threading.Thread.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.ValueTuple.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XPath.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.exe
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.exe.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\vbc.rsp
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\VBCSCompiler.exe
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.dll.config
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\iPOS.Web.pdb
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Antlr3.Runtime.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\EntityFramework.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\EntityFramework.SqlServer.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.DependencyCollector.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Web.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.WindowsServer.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.ApplicationInsights.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\MySql.Data.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\MySql.Data.Entity.EF6.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Newtonsoft.Json.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Owin.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.Helpers.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.Mvc.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.Optimization.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.Razor.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Razor.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\WebGrease.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Antlr3.Runtime.pdb
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.Web.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AI.WindowsServer.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.ApplicationInsights.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Newtonsoft.Json.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.Helpers.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.Mvc.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.Optimization.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.Razor.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\System.Web.WebPages.Razor.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\EntityFramework.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\EntityFramework.SqlServer.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.csprojResolveAssemblyReference.cache
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.dll
+C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Web\obj\Release\iPOS.Web.pdb

@@ -1,0 +1,416 @@
+﻿@{
+    ViewBag.Tag = "PAWNING";
+    ViewBag.Title = "Pawning";
+}
+
+<div data-bind="visible: isPawnedItemListShowed">
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h6 class="panel-title">Pawned Item List</h6>
+            <div class="heading-elements">
+                <button data-bind="click: addItem" type="submit" class="btn bg-orange-400 btn-labeled btn-labeled-right ml-10"><b><i class="icon-plus3"></i></b>Pawn item</button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-nowrap" id="pawnedItemTable">
+                <thead>
+                    <tr>
+                        <th>Pawned Item Id</th>
+                        <th>Pawn No</th>
+                        <th>Contract No</th>
+                        <th>Item</th>
+                        <th>Net Cash Out</th>
+                        <th>Status</th>
+                        <th>Released</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Wizard with validation -->
+<div data-bind="visible: isManagePawnedItemShowed">
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h6 class="panel-title">Pawn item</h6>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    @*<li><a data-action="close"></a></li>*@
+                </ul>
+            </div>
+        </div>
+
+        <form class="form-horizontal steps-validation" action="#">
+            <h6>Select item</h6>
+            <fieldset>
+                <div class="col-lg-9">
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Appraised item<span class="text-danger"> *</span></label>
+                        <div class="col-lg-9">
+                            <select name="location" data-bind="options: appraisedItem, optionsValue: 'AppraiseId', optionsText: 'ItemName', optionsCaption: '', event:{ change: getAppraisedItemById}" data-placeholder="Select item" class="select required" id="AppraiseId"></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Item type</label>
+                        <div class="col-lg-9">
+                            <input type="text" data-bind="textinput: appraisedItemModel.ItemTypeName" class="form-control" id="ItemTypeName" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Item category</label>
+                        <div class="col-lg-9">
+                            <input type="text" data-bind="textinput: appraisedItemModel.ItemCategoryName" class="form-control" id="ItemCategoryName" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Weight</label>
+                        <div class="col-lg-9">
+                            <input type="text" data-bind="textinput: appraisedItemModel.Weight" class="form-control" id="Weight" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Appraise value</label>
+                        <div class="col-lg-9">
+                            <input type="text" data-bind="textinput: appraisedItemModel.AppraisedValue" class="form-control" id="AppraisedValue" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Remarks</label>
+                        <div class="col-lg-9">
+                            <textarea data-bind="textinput: appraisedItemModel.Remarks" class="form-control" row="5" col="5" id="Remarks" readonly></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                @*<div class="col-md-1"></div>*@
+                <div class="col-lg-3">
+
+
+                    <div class="thumbnail">
+                        <div class="thumb thumb-rounded thumb-slide">
+                            <img src="~/Assets/images/blank_144x144.png" alt="">
+                            <div class="caption">
+                                @*<span>
+                                    <a href="#" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
+                                    <a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
+                                </span>*@
+                            </div>
+                        </div>
+
+                        <div class="caption text-center">
+                            <h6 class="text-semibold no-margin">Item name <small class="display-block">Item remarks</small></h6>
+                            @*<ul class="icons-list mt-15">
+                                <li><a href="#" data-popup="tooltip" title="Google Drive"><i class="icon-google-drive"></i></a></li>
+                                <li><a href="#" data-popup="tooltip" title="Twitter"><i class="icon-twitter"></i></a></li>
+                                <li><a href="#" data-popup="tooltip" title="Github"><i class="icon-github"></i></a></li>
+                            </ul>*@
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <h6>Customer profiling</h6>
+            <fieldset>
+                <div class="col-lg-9">
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Customer name<span class="text-danger"> *</span></label>
+                        <div class="col-lg-6">
+                            <select name="location" data-bind="options: customer, optionsValue: 'Id', optionsText: 'FirstName', optionsCaption: '', event:{ change: getCustomerById}" data-placeholder="Select customer" class="select required" id="CustomerId"></select>
+                        </div>
+                        <div class="col-lg-3">
+                            <button type="button" class="btn bg-warning-400 access-open" id="mlgs_test_form">Create new customer</button>
+                        </div>        
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Address</label>
+                        <div class="col-lg-9">
+                            <input type="text" data-bind="textinput: customerModel.Address" class="form-control" id="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Barangay</label>
+                        <div class="col-lg-9">
+                            <input type="text" data-bind="textinput: customerModel.Address" class="form-control" id="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Town/City</label>
+                        <div class="col-lg-9">
+                            <input type="text" data-bind="textinput: customerModel.Address" class="form-control" id="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Landline no</label>
+                        <div class="col-lg-9">
+                            <input type="text" data-bind="textinput: customerModel.ContactNo" class="form-control" id="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Mobile no</label>
+                        <div class="col-lg-9">
+                            <input type="text" data-bind="textinput: customerModel.ContactNo" class="form-control" id="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Spouse</label>
+                        <div class="col-lg-9">
+                            <input type="text" data-bind="textinput: customerModel.ContactNo" class="form-control" id="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-3">Spouse mobile no</label>
+                        <div class="col-lg-9">
+                            <input type="text" data-bind="textinput: customerModel.ContactNo" class="form-control" id="" readonly>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-md-1"></div>*@
+                <div class="col-lg-3">
+
+
+                    <div class="thumbnail">
+                        <div class="thumb thumb-rounded thumb-slide">
+                            <img src="~/Assets/images/blank_144x144.png" alt="">
+                            <div class="caption">
+                                @*<span>
+                            <a href="#" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
+                            <a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
+                        </span>*@
+                            </div>
+                        </div>
+
+                        <div class="caption text-center">
+                            <h6 class="text-semibold no-margin">Customer name</h6>
+                            @*<ul class="icons-list mt-15">
+                        <li><a href="#" data-popup="tooltip" title="Google Drive"><i class="icon-google-drive"></i></a></li>
+                        <li><a href="#" data-popup="tooltip" title="Twitter"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#" data-popup="tooltip" title="Github"><i class="icon-github"></i></a></li>
+                    </ul>*@
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <h6>Payment terms & Schedule</h6>
+
+            <fieldset>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label>Date</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                            <input type="text" id="PawnedDate" data-bind="value: pawnedItemModel.PawnedDate" class="form-control daterange-single">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Item code</label>
+                        <input type="text" id="PawnedItemNo" data-bind="textinput: pawnedItemModel.PawnedItemNo" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Item description</label>
+                        <input type="text" id="" data-bind="value: appraisedItemModel.ItemName" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label>Appraisal no</label>
+                        <input type="text" id="" data-bind="value: appraisedItemModel.AppraiseId" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Contract no</label>
+                        <input type="text" id="PawnedItemContractNo" data-bind="textinput: pawnedItemModel.PawnedItemContractNo" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label>Appraised value</label>
+                        <input type="text" id="" data-bind="value: appraisedItemModel.AppraisedValue" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Interest rate</label>
+                        <input type="text" data-bind="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label>Loanable amount</label>
+                        <input type="text" data-bind="" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Interest amount</label>
+                        <input type="text" data-bind="" class="form-control">
+                    </div>
+                </div>
+                
+                <br><h6 class="panel-title text-semibold">Other deductions</h6><br>
+
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label>Initial payment</label>
+                        <input type="text" data-bind="" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Others</label>
+                        <input type="text" data-bind="" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label>Service charge</label>
+                        <input type="text" data-bind="" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Deduct interst?</label>
+                        <select name="deductInterest" class="form-control">
+                            <option value="opt1">No</option>
+                            <option value="opt2">Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Net cash out</label>
+                        <input type="text" data-bind="" class="form-control">
+                    </div>
+                </div>               
+             
+                <br><h6 class="panel-title text-semibold">Payment terms & schedule</h6><br>
+                
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <label>Terms</label>
+                        <select name="select" class="form-control">
+                            <option value="opt1">1 month</option>
+                            <option value="opt2">2 months</option>
+                            <option value="opt3">3 months</option>
+                            <option value="opt3">4 months</option>
+                            <option value="opt3">5 months</option>
+                            <option value="opt3">6 months</option>
+                            <option value="opt3">7 months</option>
+                            <option value="opt3">8 months</option>
+                            <option value="opt3">9 months</option>
+                            <option value="opt3">10 months</option>
+                            <option value="opt3">11 months</option>
+                            <option value="opt3">12 months</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Schedule of payment</label>
+                        <select name="select" class="form-control">
+                            <option value="opt1">Monthly</option>
+                            <option value="opt2">Semi-Monthly</option>
+                            <option value="opt3">Weekly</option>
+                            <option value="opt3">Daily</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>No of payment</label>
+                        <input type="text" data-bind="" class="form-control">
+                    </div>
+                </div>             
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label>Due date start</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                            <input type="text" class="form-control daterange-single">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Due date end</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                            <input type="text" class="form-control daterange-single">
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <h6>Schedule of fees</h6>
+        <fieldset>
+            <div class="form-group">
+                <div class="table-responsive">
+                    <table class="table text-nowrap" id="scheduleoffees">
+                        <thead>
+                        <tr>
+                            <th>Item No</th>
+                            <th>Term</th>
+                            <th>Due Date</th>
+                            <th>Principal</th>
+                            <th>Interest</th>
+                            <th>Balance</th>
+                            <th>Status[OR No.]</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div> 
+
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label>Prepared by:</label>
+                    <input type="text" data-bind="" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label>Reviewed by:</label>
+                    <input type="text" data-bind="" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label>Approved by:</label>
+                    <input type="text" data-bind="" class="form-control">
+                </div>
+            </div>
+        </fieldset>
+        </form>
+    </div>
+</div>
+<!-- /wizard with validation -->
+
+@section scripts{
+    <script type="text/javascript" src="~/Assets/js/core/libraries/jasny_bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/forms/validation/validate.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/extensions/cookie.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/forms/wizards/steps.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/pages/wizard_steps.js"></script>
+
+    <!-- For Modals -->
+    <script type="text/javascript" src="~/Assets/js/plugins/notifications/bootbox.min.js"></script>
+
+    <script type="text/javascript" src="~/Assets/js/pages/components_modals.js"></script>
+    <!-- /For Modals -->
+
+    <!-- For Datetime picker-->
+    <script type="text/javascript" src="~/Assets/js/plugins/notifications/jgrowl.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/pickers/anytime.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/pickers/pickadate/picker.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/pickers/pickadate/legacy.js"></script>
+
+    <script type="text/javascript" src="~/Assets/js/pages/picker_date.js"></script>
+    <!-- /For Datetime picker-->
+
+    <script src="~/Areas/Administrator/Assets/Model/pawning.model.js"></script>
+    <script src="~/Areas/Administrator/Assets/ViewModel/pawning.viewmodel.js"></script>
+}
+
+

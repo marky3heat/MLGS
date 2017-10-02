@@ -1,0 +1,262 @@
+﻿@{
+    ViewBag.Tag = "APPRAISAL";
+    ViewBag.Title = "Appraisal List";
+}
+
+<div data-bind="visible: isListShowed">
+    <div class="row gutter-xs">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-actions">
+
+                    </div>
+                    <strong>Appraisal</strong>
+                </div>
+                <div class="card-body">
+                    <table id="transactionTable" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="background: #d1202d; color: #ffffff;">Transaction no.</th>
+                                <th style="background: #d1202d; color: #ffffff;">Date</th>
+                                <th style="background: #d1202d; color: #ffffff;">Transaction Type</th>
+                                <th style="background: #d1202d; color: #ffffff;">Customer name</th>
+                                <th style="background: #d1202d; color: #ffffff;">Status</th>
+                                <th style="background: #d1202d; color: #ffffff;">Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-bind="visible: isManageAppraisedItemShowed">
+    <div class="card">
+        <div class="card-header">
+            <strong>Appraise item</strong>
+        </div>
+        <div class="card-body">
+            <div class="form">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Appraisal #</label>
+                            <input type="text" data-bind="textinput: appraisedItem.PawnshopTransactionId" class="form-control" id="AppraiseNo">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Date</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="icon icon-calendar"></i></span>
+                                <input type="text" data-bind="textinput:  moment(appraisedItem.AppraiseDate()).format('L')" class="form-control daterange-single" id="AppraiseDate">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Item type<span class="text-danger">*</span></label>
+                            <select required data-bind="options: itemType, optionsValue: 'ItemTypeId', optionsText: 'ItemTypeName', optionsCaption: '--Select item type--', value: appraisedItem.ItemTypeId, optionsSelected: appraisedItem.ItemTypeId, event:{ change: getItemCategory('')}" class="form-control" id=""></select>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Item category<span class="text-danger">*</span></label>
+                            <select required data-bind="options: itemCategory, optionsValue: 'ItemCategoryId', optionsText: 'ItemCategoryName', optionsCaption: '--Select item category--', value: appraisedItem.ItemCategoryId" class="form-control" id="ItemCategoryId"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Brand<span class="text-danger">*</span></label>
+                            <select disabled data-bind="options: brand, optionsValue: 'autonum', optionsText: 'brand_desc', optionsCaption: '--Select brand--', value: appraisedItem.Brand, optionsSelected: appraisedItem.Brand" class="form-control" id="Brand"></select>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Karat<span class="text-danger">*</span></label>
+                            <select disabled data-bind="options: karat, optionsValue: 'autonum', optionsText: 'karat_desc', optionsCaption: '--Select karat--', value: appraisedItem.Karat, optionsSelected: appraisedItem.Karat" class="form-control" id="Karat"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Item Name<span class="text-danger">*</span></label>
+                            <input type="text" required="required" data-bind="textinput: appraisedItem.ItemName" class="form-control" id="ItemName">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Weight<span class="text-danger">*</span></label>
+                            <input type="text" required="required" data-bind="textinput: appraisedItem.Weight" class="form-control" id="Weight">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Appraised value<span class="text-danger">*</span></label>
+                            <input type="text" required="required" data-bind="textinput: appraisedItem.AppraisedValue" class="form-control" id="AppraisedValue">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Remarks</label>
+                            <textarea data-bind="textinput: appraisedItem.Remarks" class="form-control" row="5" col="5" id="Remarks"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <br><h6 class="panel-title text-semibold">Customer Information</h6><br>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>First Name<span class="text-danger">*</span></label>
+                            <input required="required" type="text" data-bind="textinput: appraisedItem.CustomerFirstName" class="form-control" id="CustomerFirstName">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Last Name<span class="text-danger">*</span></label>
+                            <input required="required" type="text" data-bind="textinput: appraisedItem.CustomerLastName" class="form-control" id="CustomerLastName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    <button type="submit" data-bind="click: backToList" class="btn btn-link"><i class="icon icon-arrow-left position-left"></i> Back to list</button>
+                    <button type="submit" data-bind="click: saveItem" class="btn bg-success btn-labeled btn-labeled-right ml-10" id="reset"><b><i class="icon-plus3"></i></b><!--ko text: saveButtonCaption--><!--/ko--></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div data-bind="visible: isManageAppraisedItemShowed" class="sidebar-xs has-detached-left">
+        <!-- Detached sidebar -->
+        <div class="sidebar-detached">
+            <div class="sidebar sidebar-default sidebar-separate">
+                <div class="sidebar-content">
+                    <!-- Item details -->
+                    <div class="content-group">
+                        <div class="panel-body bg-indigo-400 border-radius-top text-center" style="background-image: url(); background-size: contain;">
+                            <div class="content-group-sm">
+                                <h6 class="text-semibold no-margin-bottom">
+
+                                </h6>
+                                <span class="display-block"></span>
+                            </div>
+                            <a href="#" class="display-inline-block content-group-sm">
+                                <img src="" class="img-circle img-responsive" alt="" style="width: 110px; height: 110px;">
+                            </a>
+                        </div>
+                        <div class="panel no-border-top no-border-radius-top">
+                            <ul class="navigation">
+                                <li class="navigation-header"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /Item details -->
+                </div>
+            </div>
+        </div>
+        <!-- /Detached sidebar -->
+
+
+        <!-- Detached content -->
+        <div class="container-detached">
+            <div class="content-detached">
+                <!-- Tab content -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="profile">
+                        <!-- Item info -->
+                        <div class="panel panel-flat">
+                            <div class="panel-heading">
+                                <h6 class="panel-title text-semibold">Item information</h6>
+                            </div>
+                            <div class="panel-body">
+                                <form class="form-horizontal form-validate-jquery" action="#">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Appraisal #</label>
+                                                <input type="text" data-bind="textinput: appraisedItem.AppraiseNo" class="form-control" id="AppraiseNo">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Date</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                    <input type="text" data-bind="textinput: appraisedItem.AppraiseDate" class="form-control daterange-single" id="AppraiseDate">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Item type<span class="text-danger">*</span></label>
+                                                <select required data-bind="options: itemType, optionsValue: 'ItemTypeId', optionsText: 'ItemTypeName', optionsCaption: '--Select item type--', value: appraisedItem.ItemTypeId, value: appraisedItem.ItemTypeId, optionsSelected: appraisedItem.ItemTypeId, event:{ change: getItemCategory('')}" class="form-control" id="role"></select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Item category<span class="text-danger">*</span></label>
+                                                <select required data-bind="options: itemCategory, optionsValue: 'ItemCategoryId', optionsText: 'ItemCategoryName', optionsCaption: '--Select item category--', value: appraisedItem.ItemCategoryId" class="form-control" id="ItemCategoryId"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>Item Name<span class="text-danger">*</span></label>
+                                                <input type="text" required="required" data-bind="textinput: appraisedItem.ItemName" class="form-control" id="ItemName">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Weight<span class="text-danger">*</span></label>
+                                                <input type="text" required="required" data-bind="textinput: appraisedItem.Weight" class="form-control" id="Weight">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Appraised value<span class="text-danger">*</span></label>
+                                                <input type="text" required="required" data-bind="textinput: appraisedItem.AppraisedValue" class="form-control" id="AppraisedValue">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Remarks</label>
+                                                <textarea data-bind="textinput: appraisedItem.Remarks" class="form-control" row="5" col="5" id="Remarks"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <br><h6 class="panel-title text-semibold">Customer Information</h6><br>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>First Name<span class="text-danger">*</span></label>
+                                                <input required="required" type="text" data-bind="textinput: appraisedItem.CustomerFirstName" class="form-control" id="CustomerFirstName">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Last Name<span class="text-danger">*</span></label>
+                                                <input required="required" type="text" data-bind="textinput: appraisedItem.CustomerLastName" class="form-control" id="CustomerLastName">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-right">
+                                        <button data-bind="click: backToAppraisedItemList" type="submit" class="btn btn-link"><i class="icon-arrow-left13 position-left"></i> Back to appraised item list</button>
+                                        <button type="submit" data-bind="click: saveItem, visible: isSaveButtonShowed" class="btn bg-success btn-labeled btn-labeled-right ml-10" id="reset"><b><i class="icon-plus3"></i></b><!--ko text: buttonCaption--><!--/ko--></button>
+                                    </div>
+
+                                    <span class="label label-outline-info" style="text-align: center"></span>
+                               </form>
+                            </div>
+                        </div>
+                        <!-- /Profile info -->
+                    </div>
+                </div>
+                <!-- /Tab content -->
+            </div>
+        </div>
+        <!-- /Detached content -->
+    </div>*@
+
+@section scripts{
+    <script src="~/Areas/Administrator/Assets/model/appraisal.model.js"></script>
+    <script src="~/Areas/Administrator/Assets/viewmodel/appraisal.viewmodel.js"></script>
+}
