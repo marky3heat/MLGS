@@ -53,7 +53,22 @@ namespace iPOS.Web.Areas.Administrator.Controllers
             return View();
         }
 
-        public ActionResult TransactionList()
+        public ActionResult NewTransaction()
+        {
+            return View();
+        }
+
+        public ActionResult Appraisal()
+        {
+            return View();
+        }
+
+        public ActionResult Approval()
+        {
+            return View();
+        }
+
+        public ActionResult ChangeInTerms()
         {
             return View();
         }

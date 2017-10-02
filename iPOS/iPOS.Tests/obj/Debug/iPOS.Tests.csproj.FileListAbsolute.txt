@@ -415,3 +415,6 @@ C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\EntityFra
 C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Apps\Pawnshop with elephant template\iPOS\iPOS\iPOS.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+D:\MLGS\Work\Active Work\MLGS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.csprojResolveAssemblyReference.cache
+D:\MLGS\Work\Active Work\MLGS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.dll
+D:\MLGS\Work\Active Work\MLGS\iPOS\iPOS.Tests\obj\Debug\iPOS.Tests.pdb

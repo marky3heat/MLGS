@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Tag = "NEW TRANSACTIONS";
+    ViewBag.Title = "New Transactions";
+}
+
+<div data-bind="visible: isListShowed">
+    <div class="row gutter-xs">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-actions">
+                        <button data-bind="" class="btn btn-danger btn-xs btn-labeled" type="submit" id="">
+                            <span class="btn-label">
+                                <span class="icon icon-plus-circle icon-lg icon-fw"></span>
+                            </span>
+                            Pawning
+                        </button>
+                        <button data-bind="" class="btn btn-danger btn-xs btn-labeled" type="submit" id="">
+                            <span class="btn-label">
+                                <span class="icon icon-plus-circle icon-lg icon-fw"></span>
+                            </span>
+                            Lay-away
+                        </button>
+                        <button data-bind="" class="btn btn-danger btn-xs btn-labeled" type="submit" id="">
+                            <span class="btn-label">
+                                <span class="icon icon-plus-circle icon-lg icon-fw"></span>
+                            </span>
+                            New Sales
+                        </button>
+                    </div>
+                    <strong>Pawnshop transactions</strong>
+                </div>
+                <div class="card-body">
+                    <table id="transactionTable" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th style="background: #d1202d; color: #ffffff;">Transaction no.</th>
+                            <th style="background: #d1202d; color: #ffffff;">Date</th>
+                            <th style="background: #d1202d; color: #ffffff;">Transaction Type</th>
+                            <th style="background: #d1202d; color: #ffffff;">Customer name</th>
+                            <th style="background: #d1202d; color: #ffffff;">Status</th>
+                            <th style="background: #d1202d; color: #ffffff;">Action</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Areas/Administrator/Assets/Model/model.js"></script>
+    <script src="~/Areas/Administrator/Assets/ViewModel/viewmodel.js"></script>
+}
