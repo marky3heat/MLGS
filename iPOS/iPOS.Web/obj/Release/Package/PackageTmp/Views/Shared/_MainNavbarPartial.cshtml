@@ -107,11 +107,12 @@
                             </span>
                             <span class="visible-xs-block">
                                 <span class="icon icon-bell icon-lg icon-fw"></span>
-                                <!--ko if: hasNewTransaction() === true-->
-                                <span class="badge badge-danger pull-right"><!--ko text: newTransactionCounter--><!--/ko--></span>
-                                <!--/ko-->  
-                                Notifications
-                            </span>
+                                <span class="badge badge-danger pull-right">
+                                    <!--ko text: newTransactionCounter--><!--/ko--></
+                                    <!--ko if: hasNewTransaction() === true-->span>
+                                    <!--/ko-->
+                                    Notifications
+                                </span>
                         </a>
                         @*<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
                             <div class="dropdown-header">

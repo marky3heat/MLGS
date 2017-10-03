@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-iPOS.Web-20170617022048.mdf;Initial Catalog=aspnet-iPOS.Web-20170617022048;Integrated Security=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Apps\\Pawnshop\ with\ elephant\ template\\iPOS\\iPOS\\iPOS\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\SERVER\\Documents\\GitHub\\MLGS\\iPOS\\iPOS\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
   <parameter name="dbpawnshopEntities-Web.config Connection String" description="dbpawnshopEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Database.dbModel.csdl|res://*/Database.dbModel.ssdl|res://*/Database.dbModel.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=localhost;user id=root;password=ibest2017;persistsecurityinfo=True;database=dbpawnshop&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Apps\\Pawnshop\ with\ elephant\ template\\iPOS\\iPOS\\iPOS\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbpawnshopEntities']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\SERVER\\Documents\\GitHub\\MLGS\\iPOS\\iPOS\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbpawnshopEntities']/@connectionString" />
   </parameter>
 </parameters>

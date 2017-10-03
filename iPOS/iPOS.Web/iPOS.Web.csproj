@@ -1131,7 +1131,6 @@
     <Content Include="Assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Areas\Administrator\Views\Transactions\Index.cshtml" />
-    <Content Include="Areas\Administrator\Views\Transactions\TransactionList.cshtml" />
     <Content Include="Areas\Administrator\Views\Transactions\NewTransaction.cshtml" />
     <Content Include="Areas\Administrator\Views\Transactions\Appraisal.cshtml" />
     <Content Include="Areas\Administrator\Views\Transactions\Approval.cshtml" />
