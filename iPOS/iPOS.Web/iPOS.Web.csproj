@@ -217,7 +217,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
-    <Compile Include="Areas\Administrator\Controllers\PawnshopTransactionsController.cs" />
     <Compile Include="Areas\Administrator\Controllers\AppraisalController.cs" />
     <Compile Include="Areas\Administrator\Controllers\BaseController.cs" />
     <Compile Include="Areas\Administrator\Controllers\CustomerController.cs" />
@@ -225,7 +224,7 @@
     <Compile Include="Areas\Administrator\Controllers\PawningController.cs" />
     <Compile Include="Areas\Administrator\Controllers\ReferenceController.cs" />
     <Compile Include="Areas\Administrator\Controllers\TransactionsController.cs" />
-    <Compile Include="Areas\Administrator\Models\PawnshopTransactionModel.cs" />
+    <Compile Include="Areas\Administrator\Models\TransactionsModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -1119,13 +1118,11 @@
     <Content Include="Areas\Administrator\Views\Appraisal\Index.cshtml" />
     <Content Include="Areas\Administrator\Views\Reference\Index.cshtml" />
     <Content Include="Areas\Administrator\Views\Pawning\Index.cshtml" />
-    <Content Include="Areas\Administrator\Views\PawnshopTransactions\Index.cshtml" />
     <Content Include="Areas\Administrator\Views\Reference\Itemtype.cshtml" />
     <Content Include="Areas\Administrator\Views\Reference\Itemcategory.cshtml" />
     <Content Include="Areas\Administrator\Views\Reference\Brand.cshtml" />
     <Content Include="Areas\Administrator\Views\Reference\Karat.cshtml" />
     <Content Include="Areas\Administrator\Views\Reference\NoGenerator.cshtml" />
-    <Content Include="Areas\Administrator\Views\PawnshopTransactions\Transactions.cshtml" />
     <Content Include="Assets\fonts\fontawesome-webfont.eot" />
     <Content Include="Assets\fonts\fontawesome-webfont.ttf" />
     <Content Include="Assets\fonts\fontawesome-webfont.woff" />
@@ -1135,6 +1132,7 @@
     <Content Include="Areas\Administrator\Views\Transactions\Appraisal.cshtml" />
     <Content Include="Areas\Administrator\Views\Transactions\Approval.cshtml" />
     <Content Include="Areas\Administrator\Views\Transactions\ChangeInTerms.cshtml" />
+    <Content Include="Areas\Administrator\Views\Transactions\Modals.cshtml" />
     <None Include="Properties\PublishProfiles\iPOS.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\Dashboard\Model\dashboard.model.js" />

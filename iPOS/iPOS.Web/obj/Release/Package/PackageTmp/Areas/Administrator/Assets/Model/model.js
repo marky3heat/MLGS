@@ -31,3 +31,55 @@
  
     return self;
 };
+
+app.createTransaction = function () {
+    "use strict";
+
+    var self = this;
+
+    // #region MODEL TO CREATE/UPDATE
+    self.TransactionId = ko.observable();
+    self.TransactionNo = ko.observable();
+    self.TransactionDate = ko.observable();
+    self.TransactionType = ko.observable();
+    self.CustomerId = ko.observable();
+    self.Terminal = ko.observable();
+    self.Status = ko.observable();
+    self.ReviewedBy = ko.observable();
+    self.ApprovedBy = ko.observable();
+    self.CreatedBy = ko.observable();
+    self.CreatedAt = ko.observable();
+
+    self.first_name = ko.observable();
+    self.last_name = ko.observable();
+    self.middle_name = ko.observable();
+    self.st_address = ko.observable();
+    self.city_address = ko.observable();
+    self.mobile_no = ko.observable();
+
+    self.ItemName = ko.observable();
+    self.ItemTypeId = ko.observable();
+    self.ItemCategoryId = ko.observable();
+    self.Remarks = ko.observable();
+
+    // #endregion     
+
+    return self;
+};
+
+app.createCustomer = function () {
+    "use strict";
+
+    var self = this;
+
+    // #region MODEL TO BE MAP
+    self.autonum = ko.observable();
+    self.first_name = ko.observable();
+    self.last_name = ko.observable();
+    self.middle_name = ko.observable();
+    self.st_address = ko.observable();
+    self.city_address = ko.observable();
+    self.mobile_no = ko.observable();
+    self.zip_code = ko.observable();
+    // #endregion
+};

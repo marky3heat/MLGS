@@ -18,5 +18,6 @@ namespace iPOS.Web.Database
         public string ItemTypeName { get; set; }
         public string CreatedBy { get; set; }
         public System.DateTime CreatedAt { get; set; }
+        public int ItemType { get; set; }
     }
 }

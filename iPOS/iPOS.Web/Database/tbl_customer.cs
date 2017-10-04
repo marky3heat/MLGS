@@ -41,5 +41,9 @@ namespace iPOS.Web.Database
         public byte[] customer_image { get; set; }
         public Nullable<System.DateTime> date_entered { get; set; }
         public Nullable<int> ul_code { get; set; }
+        public string created_by { get; set; }
+        public Nullable<System.DateTime> date_created { get; set; }
+        public string update_by { get; set; }
+        public Nullable<System.DateTime> date_update { get; set; }
     }
 }

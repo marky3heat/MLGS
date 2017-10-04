@@ -36,6 +36,10 @@
           <Property Name="customer_image" Type="longblob" />
           <Property Name="date_entered" Type="date" />
           <Property Name="ul_code" Type="int" />
+          <Property Name="created_by" Type="varchar" MaxLength="50" />
+          <Property Name="date_created" Type="datetime" Precision="0" />
+          <Property Name="update_by" Type="varchar" MaxLength="50" />
+          <Property Name="date_update" Type="datetime" Precision="0" />
         </EntityType>
         <EntityType Name="tbl_ipos_appraiseditem">
           <Key>
@@ -86,6 +90,7 @@
             <PropertyRef Name="ItemTypeId" />
           </Key>
           <Property Name="ItemTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemType" Type="int" Nullable="false" />
           <Property Name="ItemTypeName" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="CreatedBy" Type="varchar" MaxLength="32" Nullable="false" />
           <Property Name="CreatedAt" Type="datetime" Precision="0" Nullable="false" />
@@ -355,6 +360,10 @@
           <Property Name="customer_image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="date_entered" Type="DateTime" />
           <Property Name="ul_code" Type="Int32" />
+          <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date_created" Type="DateTime" />
+          <Property Name="update_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date_update" Type="DateTime" />
         </EntityType>
         <EntityType Name="tbl_ipos_customer">
           <Key>
@@ -386,6 +395,7 @@
           <Property Name="ItemTypeName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
           <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="ItemType" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="tbl_ipos_no_generator">
           <Key>
@@ -608,6 +618,10 @@
           <EntitySetMapping Name="tbl_customer">
             <EntityTypeMapping TypeName="dbpawnshopModel.tbl_customer">
               <MappingFragment StoreEntitySet="tbl_customer">
+                <ScalarProperty Name="date_update" ColumnName="date_update" />
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
                 <ScalarProperty Name="ul_code" ColumnName="ul_code" />
                 <ScalarProperty Name="date_entered" ColumnName="date_entered" />
                 <ScalarProperty Name="customer_image" ColumnName="customer_image" />
@@ -665,6 +679,7 @@
           <EntitySetMapping Name="tbl_ipos_itemtype">
             <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_itemtype">
               <MappingFragment StoreEntitySet="tbl_ipos_itemtype">
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
                 <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="ItemTypeName" ColumnName="ItemTypeName" />

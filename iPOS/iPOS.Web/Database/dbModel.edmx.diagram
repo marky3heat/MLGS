@@ -17,10 +17,10 @@
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_info" Width="1.5" PointX="3.5" PointY="6.125" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_setup" Width="1.5" PointX="3.5" PointY="0.5" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_sub1" Width="1.5" PointX="5" PointY="5.375" />
-        <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_sub2" Width="1.5" PointX="11.25" PointY="13.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_sub2" Width="1.5" PointX="12" PointY="6.875" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_sub3" Width="1.5" PointX="5" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_type" Width="1.5" PointX="3.5" PointY="2.875" />
-        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_karat" Width="1.5" PointX="7.5" PointY="10.5" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_karat" Width="1.5" PointX="11.25" PointY="5" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_pawneditem" Width="1.5" PointX="8" PointY="0.5" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_appraiseditem" Width="1.5" PointX="9.5" PointY="0.5" />
       </Diagram>

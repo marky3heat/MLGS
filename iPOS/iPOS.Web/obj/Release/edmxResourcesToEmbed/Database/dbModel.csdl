@@ -51,6 +51,10 @@
     <Property Name="customer_image" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="date_entered" Type="DateTime" />
     <Property Name="ul_code" Type="Int32" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_created" Type="DateTime" />
+    <Property Name="update_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_update" Type="DateTime" />
   </EntityType>
   <EntityType Name="tbl_ipos_customer">
     <Key>
@@ -82,6 +86,7 @@
     <Property Name="ItemTypeName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
     <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
     <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+    <Property Name="ItemType" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="tbl_ipos_no_generator">
     <Key>

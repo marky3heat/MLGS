@@ -4,6 +4,10 @@
     <EntitySetMapping Name="tbl_customer">
       <EntityTypeMapping TypeName="dbpawnshopModel.tbl_customer">
         <MappingFragment StoreEntitySet="tbl_customer">
+          <ScalarProperty Name="date_update" ColumnName="date_update" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
           <ScalarProperty Name="ul_code" ColumnName="ul_code" />
           <ScalarProperty Name="date_entered" ColumnName="date_entered" />
           <ScalarProperty Name="customer_image" ColumnName="customer_image" />
@@ -61,6 +65,7 @@
     <EntitySetMapping Name="tbl_ipos_itemtype">
       <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_itemtype">
         <MappingFragment StoreEntitySet="tbl_ipos_itemtype">
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
           <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="ItemTypeName" ColumnName="ItemTypeName" />

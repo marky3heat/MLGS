@@ -219,7 +219,6 @@ namespace iPOS.Web.Areas.Administrator.Controllers
 
             return Json(count, JsonRequestBehavior.AllowGet);
         }
-
         #endregion
     }
 

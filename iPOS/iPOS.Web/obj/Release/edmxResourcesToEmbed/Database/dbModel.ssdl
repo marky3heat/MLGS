@@ -31,6 +31,10 @@
     <Property Name="customer_image" Type="longblob" />
     <Property Name="date_entered" Type="date" />
     <Property Name="ul_code" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="date_created" Type="datetime" Precision="0" />
+    <Property Name="update_by" Type="varchar" MaxLength="50" />
+    <Property Name="date_update" Type="datetime" Precision="0" />
   </EntityType>
   <EntityType Name="tbl_ipos_appraiseditem">
     <Key>
@@ -81,6 +85,7 @@
       <PropertyRef Name="ItemTypeId" />
     </Key>
     <Property Name="ItemTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemType" Type="int" Nullable="false" />
     <Property Name="ItemTypeName" Type="varchar" MaxLength="64" Nullable="false" />
     <Property Name="CreatedBy" Type="varchar" MaxLength="32" Nullable="false" />
     <Property Name="CreatedAt" Type="datetime" Precision="0" Nullable="false" />
