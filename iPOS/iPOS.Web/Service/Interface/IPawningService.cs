@@ -11,6 +11,7 @@ namespace iPOS.Web.Service.Interface
 
         Task<tbl_ipos_pawneditem> FindById(int id);
         Task<tbl_ipos_pawneditem> FindByPawnNo(string pawnedItemNo);
+        Task<tbl_ipos_pawneditem> FindByTransactionNo(string transactionNo);
         Task<List<tbl_ipos_pawneditem>> GetList(int pageIndex = 0, int pageSize = 100);
         Task<List<tbl_ipos_pawneditem>> GetNormalList();
         Task<bool> Save(tbl_ipos_pawneditem model);

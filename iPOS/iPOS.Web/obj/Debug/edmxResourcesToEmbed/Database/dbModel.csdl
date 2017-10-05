@@ -19,6 +19,7 @@
     <EntitySet Name="tbl_ipos_karat" EntityType="dbpawnshopModel.tbl_ipos_karat" />
     <EntitySet Name="tbl_ipos_appraiseditem" EntityType="dbpawnshopModel.tbl_ipos_appraiseditem" />
     <EntitySet Name="tbl_ipos_pawneditem" EntityType="dbpawnshopModel.tbl_ipos_pawneditem" />
+    <EntitySet Name="tbl_ipos_pawneditem_amortization_schedule" EntityType="dbpawnshopModel.tbl_ipos_pawneditem_amortization_schedule" />
   </EntityContainer>
   <EntityType Name="tbl_customer">
     <Key>
@@ -301,6 +302,24 @@
     <Property Name="Status" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
     <Property Name="IsReleased" Type="Boolean" />
     <Property Name="CreatedBy" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedAt" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="tbl_ipos_pawneditem_amortization_schedule">
+    <Key>
+      <PropertyRef Name="autonum" />
+    </Key>
+    <Property Name="autonum" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="transaction_no" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="pawned_item_id" Type="Int32" />
+    <Property Name="term" Type="Int32" />
+    <Property Name="due_date" Type="DateTime" />
+    <Property Name="principal" Type="Decimal" />
+    <Property Name="interest" Type="Decimal" />
+    <Property Name="balance" Type="Decimal" />
+    <Property Name="or_reference" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+    <Property Name="payment_amount" Type="Decimal" />
+    <Property Name="remarks" Type="String" MaxLength="124" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
     <Property Name="CreatedAt" Type="DateTime" />
   </EntityType>
 </Schema>

@@ -267,6 +267,9 @@
     <Compile Include="Database\tbl_ipos_pawneditem.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\tbl_ipos_pawneditem_amortization_schedule.cs">
+      <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\tbl_ipos_pawnshop_transactions.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>

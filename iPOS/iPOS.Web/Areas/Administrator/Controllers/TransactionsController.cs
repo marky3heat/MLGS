@@ -115,6 +115,13 @@ namespace iPOS.Web.Areas.Administrator.Controllers
             return Json(listItem, JsonRequestBehavior.AllowGet);
         }
 
+        public async Task<JsonResult> GetPawnedItemByTransactionNo(string TransactionNo)
+        {
+            var listItem = await _pawningService.FindByTransactionNo(TransactionNo);
+
+            return Json(listItem, JsonRequestBehavior.AllowGet);
+        }
+
         public async Task<JsonResult> SaveTransactionPawning(TransactionsModel model)
         {
             try
@@ -252,6 +259,99 @@ namespace iPOS.Web.Areas.Administrator.Controllers
                     {
                         tbl_ipos_pawnshop_transactions model2 = await _pawnshopTransactionService.FindByTransactionNo(model.PawnshopTransactionId);
                         model2.Status = "For pawning";
+                        await _pawnshopTransactionService.UpdatePawnshopTransactions(model2);
+
+                        message = "Successfully updated.";
+                    }
+                    else
+                    {
+                        message = "Error saving data. Please contact administrator.";
+                    }
+                }
+
+                return Json(new { success = success, message = message });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<JsonResult> SavePawning(tbl_ipos_pawneditem model)
+        {
+            try
+            {
+                bool success = false;
+                string message = "";
+
+                if (string.IsNullOrEmpty(model.PawnedItemId.ToString()) || model.PawnedItemId.ToString() == "0")
+                {
+                    tbl_ipos_pawneditem model1 = new tbl_ipos_pawneditem();
+                    model1.PawnedItemNo = model.PawnedItemNo;
+                    model1.PawnedDate = model.PawnedDate;
+                    model1.TransactionNo = model.TransactionNo;
+                    model1.PawnedItemContractNo = model.PawnedItemContractNo;
+                    model1.LoanableAmount = model.LoanableAmount;
+                    model1.InterestRate = model.InterestRate;
+                    model1.InterestAmount = model.InterestAmount;
+                    model1.InitialPayment = model.InitialPayment;
+                    model1.ServiceCharge = model.ServiceCharge;
+                    model1.Others = model.Others;
+                    model1.IsInterestDeducted = model.IsInterestDeducted;
+                    model1.NetCashOut = model.NetCashOut;
+                    model1.TermsId = model.TermsId;
+                    model1.ScheduleOfPayment = model.ScheduleOfPayment;
+                    model1.NoOfPayments = model.NoOfPayments;
+                    model1.DueDateStart = model.DueDateStart;
+                    model1.DueDateEnd = model.DueDateEnd;
+                    model1.Status = "";
+                    model1.IsReleased = false;
+                    model1.CreatedBy = "";
+                    model1.CreatedAt = DateTime.Now;
+
+                    var result = await _pawningService.Save(model1);
+
+                    success = result;
+
+                    if (result)
+                    {
+                        tbl_ipos_pawnshop_transactions model2 = await _pawnshopTransactionService.FindByTransactionNo(model.TransactionNo);
+                        model2.Status = "For approval";
+                        await _pawnshopTransactionService.UpdatePawnshopTransactions(model2);
+
+                        message = "Successfully saved.";
+                    }
+                    else
+                    {
+                        message = "Error saving data. Duplicate entry.";
+                    }
+                }
+                else
+                {
+                    tbl_ipos_pawneditem model1 = new tbl_ipos_pawneditem();
+                    model1 = await _pawningService.FindById(model.PawnedItemId);
+                    model1.PawnedDate = model.PawnedDate;
+                    model1.TransactionNo = model.TransactionNo;
+                    model1.PawnedItemContractNo = model.PawnedItemContractNo;
+                    model1.LoanableAmount = model.LoanableAmount;
+                    model1.InterestRate = model.InterestRate;
+                    model1.InterestAmount = model.InterestAmount;
+                    model1.InitialPayment = model.InitialPayment;
+                    model1.ServiceCharge = model.ServiceCharge;
+                    model1.Others = model.Others;
+                    model1.IsInterestDeducted = model.IsInterestDeducted;
+                    model1.NetCashOut = model.NetCashOut;
+                    model1.TermsId = model.TermsId;
+                    model1.ScheduleOfPayment = model.ScheduleOfPayment;
+                    model1.NoOfPayments = model.NoOfPayments;
+                    model1.DueDateStart = model.DueDateStart;
+                    model1.DueDateEnd = model.DueDateEnd;
+
+                    var result = await _pawningService.Update(model1);
+                    success = result;
+                    if (result)
+                    {
+                        tbl_ipos_pawnshop_transactions model2 = await _pawnshopTransactionService.FindByTransactionNo(model.TransactionNo);
+                        model2.Status = "For approval";
                         await _pawnshopTransactionService.UpdatePawnshopTransactions(model2);
 
                         message = "Successfully updated.";

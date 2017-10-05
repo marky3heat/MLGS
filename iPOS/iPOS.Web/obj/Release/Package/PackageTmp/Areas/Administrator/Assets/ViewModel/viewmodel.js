@@ -8,6 +8,7 @@
     var Transaction = new app.Transaction();
     var Customer = new app.Customer();
     var AppraisedItem = new app.AppraisedItem();
+    var PawnedItem = new app.PawnedItem();
 
     // #region CONTROLS                
     var isListShowed = ko.observable(true);
@@ -102,15 +103,28 @@
                     else if (row.Status == "For appraisal" && PageTitle == "Appraisal") {
                         return '<button type="button" class="btn btn-xs btn-info" onclick="app.vm.AppraiseItem('+ row.TransactionId +')">Appraise</button>';
                     }
+                    else if (row.Status == "For appraisal" && PageTitle == "Approval") {
+                        return '<a href="' + RootUrl + '/Administrator/Transactions/Appraisal" class="btn btn-xs btn-info" role="button">Go to Appraisal</a>';
+                    }
                     else if (row.Status == "For pawning" && PageTitle == "Appraisal") {
                         return '<a href="' + RootUrl + '/Administrator/Transactions/NewTransaction" class="btn btn-xs btn-warning" role="button">Go to Transactions</a>' +
                             '<button type="button" class="btn btn-xs btn-info" onclick="app.vm.AppraiseItem(' + row.TransactionId + ')">Reappraise</button>';
                     }
-                    else if (row.Status == "For pawning") {
+                    else if (row.Status == "For pawning" && PageTitle == "New Transactions") {
                         return '<button type="button" class="btn btn-xs btn-warning" onclick="app.vm.PawnItem(' + row.TransactionId + ')">Process</button>';
                     }
-                    else if (row.Status == "For approval") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/Approval" class="btn btn-xs btn-info" role="button">Go to Approval</a>';
+                    else if (row.Status == "For pawning" && PageTitle == "Approval") {
+                        return '<a href="' + RootUrl + '/Administrator/Transactions/NewTransaction" class="btn btn-xs btn-warning" role="button">Go to Transactions</a>'
+                    }
+                    else if (row.Status == "For approval" && PageTitle == "New Transactions") {
+                        return '<a href="' + RootUrl + '/Administrator/Transactions/Approval" class="btn btn-xs btn-primary" role="button">Go to Approval</a>' +
+                            '<button type="button" class="btn btn-xs btn-warning" onclick="app.vm.PawnItem(' + row.TransactionId + ')">Reprocess</button>';
+                    }
+                    else if (row.Status == "For approval" && PageTitle == "Appraisal") {
+                        return '<a href="' + RootUrl + '/Administrator/Transactions/Approval" class="btn btn-xs btn-primary" role="button">Go to Approval</a>'
+                    }
+                    else if (row.Status == "For approval" && PageTitle == "Approval") {
+                        return '<button type="button" class="btn btn-xs btn-primary" onclick="">Process</button>';
                     }
                     else {
 
@@ -203,8 +217,6 @@
 
             title("Pawning");
 
-
-            getCustomer();
             getItemType();
             getTransactionDetails(TransactionId);
 
@@ -387,8 +399,29 @@
                     AppraisedItem.ItemCategoryId(result.ItemCategoryId);
                 }, 300);
             });
-        }, 300);
-       
+            $.getJSON(RootUrl + "/Administrator/Transactions/GetPawnedItemByTransactionNo?TransactionNo=" + TransactionNo, function (result) {
+                PawnedItem.PawnedItemId(result.PawnedItemId);
+                PawnedItem.PawnedItemNo(result.PawnedItemNo);
+                PawnedItem.PawnedDate(result.PawnedDate);
+                PawnedItem.TransactionNo(result.TransactionNo);
+                PawnedItem.PawnedItemContractNo(result.PawnedItemContractNo);
+                PawnedItem.LoanableAmount(result.LoanableAmount);
+                PawnedItem.InterestRate(result.InterestRate);
+                PawnedItem.InterestAmount(result.InterestAmount);
+                PawnedItem.InitialPayment(result.InitialPayment);
+                PawnedItem.ServiceCharge(result.ServiceCharge);
+                PawnedItem.Others(result.Others);
+                PawnedItem.IsInterestDeducted(result.IsInterestDeducted);
+                PawnedItem.NetCashOut(result.NetCashOut);
+                PawnedItem.TermsId(result.TermsId);
+                PawnedItem.ScheduleOfPayment(result.ScheduleOfPayment);
+                PawnedItem.NoOfPayments(result.NoOfPayments);
+                PawnedItem.DueDateStart(result.DueDateStart);
+                PawnedItem.DueDateEnd(result.DueDateEnd);
+                PawnedItem.Status(result.Status);
+                PawnedItem.IsReleased(result.IsReleased);
+            });
+        }, 300);   
     }
 
     function saveCustomer() {
@@ -485,6 +518,43 @@
 
                     loadTransactionList();
                     backToList();
+
+                    loaderApp.hidePleaseWait();
+                } else {
+                    loaderApp.hidePleaseWait();
+
+                    swal("Error", result.message, "error");
+
+                    clearControls();
+                }
+            }
+        });
+    }
+
+    function savePawnedItem() {
+        /*VALIDATIONS -START*/
+
+        /*VALIDATIONS -END*/
+
+        PawnedItem.PawnedDate($('#PawnedDate').val());
+        PawnedItem.DueDateStart($('#DueDateStart').val());
+        PawnedItem.DueDateEnd($('#DueDateEnd').val());
+        PawnedItem.TransactionNo(Transaction.TransactionNo);
+
+        loaderApp.showPleaseWait();
+        var param = ko.toJS(PawnedItem);
+        var url = RootUrl + "/Administrator/Transactions/SavePawning";
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: ko.utils.stringifyJson(param),
+            contentType: 'application/json; charset=utf-8',
+            success: function (result) {
+                if (result.success) {
+                    swal("Success", result.message, "success");
+
+                    loadTransactionList();
+                    backToListForPawning();
 
                     loaderApp.hidePleaseWait();
                 } else {
@@ -650,10 +720,12 @@
         saveTransactionPawn: saveTransactionPawn,
         saveCustomer: saveCustomer,
         saveAppraisedItem, saveAppraisedItem,
+        savePawnedItem: savePawnedItem,
 
         Transaction: Transaction,
         Customer: Customer,
-        AppraisedItem: AppraisedItem 
+        AppraisedItem: AppraisedItem,
+        PawnedItem: PawnedItem
     };
 
     return vm;

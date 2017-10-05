@@ -186,6 +186,6 @@ app.PawnedItem = function () {
     self.NoOfPayments = ko.observable();
     self.DueDateStart = ko.observable();
     self.DueDateEnd = ko.observable();
-    self.DueDateEnd = ko.observable();
-    self.DueDateEnd = ko.observable();
+    self.Status = ko.observable();
+    self.IsReleased = ko.observable();
 };

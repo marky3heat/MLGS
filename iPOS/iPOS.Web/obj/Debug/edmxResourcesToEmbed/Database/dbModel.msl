@@ -302,5 +302,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ipos_pawneditem_amortization_schedule">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_pawneditem_amortization_schedule">
+        <MappingFragment StoreEntitySet="tbl_ipos_pawneditem_amortization_schedule">
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="payment_amount" ColumnName="payment_amount" />
+          <ScalarProperty Name="or_reference" ColumnName="or_reference" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="interest" ColumnName="interest" />
+          <ScalarProperty Name="principal" ColumnName="principal" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="pawned_item_id" ColumnName="pawned_item_id" />
+          <ScalarProperty Name="transaction_no" ColumnName="transaction_no" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -54,6 +54,21 @@ namespace iPOS.Web.Service
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<tbl_ipos_pawneditem> FindByTransactionNo(string transactionNo)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var result = await uow.PawnedItemRepository.AllWithAsync(u => u.TransactionNo == transactionNo);
+                    return result.FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public async Task<List<tbl_ipos_pawneditem>> GetList(
             int pageIndex = 0,
             int pageSize = 100)

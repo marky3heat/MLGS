@@ -117,7 +117,7 @@
     <Property Name="PawnedItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PawnedItemNo" Type="varchar" MaxLength="32" />
     <Property Name="PawnedDate" Type="date" />
-    <Property Name="CustomerId" Type="int" />
+    <Property Name="TransactionNo" Type="varchar" MaxLength="24" />
     <Property Name="PawnedItemContractNo" Type="varchar" MaxLength="32" />
     <Property Name="LoanableAmount" Type="decimal" Precision="15" Scale="2" />
     <Property Name="InterestRate" Type="decimal" Precision="15" Scale="2" />
@@ -135,6 +135,24 @@
     <Property Name="Status" Type="varchar" MaxLength="32" />
     <Property Name="IsReleased" Type="bool" />
     <Property Name="CreatedBy" Type="varchar" MaxLength="32" />
+    <Property Name="CreatedAt" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tbl_ipos_pawneditem_amortization_schedule">
+    <Key>
+      <PropertyRef Name="autonum" />
+    </Key>
+    <Property Name="autonum" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transaction_no" Type="varchar" MaxLength="32" />
+    <Property Name="pawned_item_id" Type="int" />
+    <Property Name="term" Type="int" />
+    <Property Name="due_date" Type="date" />
+    <Property Name="principal" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="interest" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="balance" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="or_reference" Type="varchar" MaxLength="24" />
+    <Property Name="payment_amount" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="remarks" Type="varchar" MaxLength="124" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="64" />
     <Property Name="CreatedAt" Type="datetime" Precision="0" />
   </EntityType>
   <EntityType Name="tbl_ipos_pawnshop_transactions">
@@ -292,6 +310,7 @@
     <EntitySet Name="tbl_ipos_karat" EntityType="Self.tbl_ipos_karat" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_ipos_no_generator" EntityType="Self.tbl_ipos_no_generator" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_ipos_pawneditem" EntityType="Self.tbl_ipos_pawneditem" Schema="dbpawnshop" store:Type="Tables" />
+    <EntitySet Name="tbl_ipos_pawneditem_amortization_schedule" EntityType="Self.tbl_ipos_pawneditem_amortization_schedule" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_ipos_pawnshop_transactions" EntityType="Self.tbl_ipos_pawnshop_transactions" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_product" EntityType="Self.tbl_product" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_product_add_info" EntityType="Self.tbl_product_add_info" Schema="dbpawnshop" store:Type="Tables" />
