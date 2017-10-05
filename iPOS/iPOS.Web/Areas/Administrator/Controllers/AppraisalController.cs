@@ -198,7 +198,9 @@ namespace iPOS.Web.Areas.Administrator.Controllers
                         message = "Successfully updated.";
                     }
                     else
+                    {
                         message = "Error saving data. Please contact administrator.";
+                    }      
                 }
 
                 return Json(new { success = success, message = message });

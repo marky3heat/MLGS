@@ -51,6 +51,9 @@
           <Property Name="ItemTypeId" Type="int" />
           <Property Name="ItemCategoryId" Type="int" />
           <Property Name="ItemName" Type="varchar" MaxLength="64" />
+          <Property Name="ItemFeature" Type="varchar" MaxLength="64" />
+          <Property Name="SerialNo" Type="varchar" MaxLength="64" />
+          <Property Name="ItemCondition" Type="varchar" MaxLength="64" />
           <Property Name="Brand" Type="varchar" MaxLength="64" />
           <Property Name="Karat" Type="varchar" MaxLength="32" />
           <Property Name="Weight" Type="varchar" MaxLength="32" />
@@ -597,6 +600,9 @@
           <Property Name="ItemTypeId" Type="Int32" />
           <Property Name="ItemCategoryId" Type="Int32" />
           <Property Name="ItemName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="ItemFeature" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="SerialNo" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="ItemCondition" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Name="Karat" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
           <Property Name="Weight" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
@@ -904,6 +910,9 @@
                 <ScalarProperty Name="Weight" ColumnName="Weight" />
                 <ScalarProperty Name="Karat" ColumnName="Karat" />
                 <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ItemCondition" ColumnName="ItemCondition" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="ItemFeature" ColumnName="ItemFeature" />
                 <ScalarProperty Name="ItemName" ColumnName="ItemName" />
                 <ScalarProperty Name="ItemCategoryId" ColumnName="ItemCategoryId" />
                 <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />

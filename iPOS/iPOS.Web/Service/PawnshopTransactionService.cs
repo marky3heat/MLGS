@@ -111,6 +111,21 @@ namespace iPOS.Web.Service
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<tbl_ipos_pawnshop_transactions> FindByTransactionNo(string transactionNo)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var result = await uow.PawnshopTransactionsRepository.AllWithAsync(u => u.TransactionNo == transactionNo);
+                    return result.FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public async Task<List<tbl_ipos_pawnshop_transactions>> GetListPawnshopTransactions()
         {
             try

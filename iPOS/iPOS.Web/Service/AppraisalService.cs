@@ -70,6 +70,21 @@ namespace iPOS.Web.Service
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<tbl_ipos_appraiseditem> FindByTransactionNo(string transactionNo)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var result = await uow.AppraisedItemRepository.AllWithAsync(u => u.PawnshopTransactionId == transactionNo);
+                    return result.FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public int GetAppraiseNo()
         {
             try

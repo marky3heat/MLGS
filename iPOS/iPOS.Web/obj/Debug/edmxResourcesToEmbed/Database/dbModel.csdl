@@ -288,6 +288,9 @@
     <Property Name="ItemTypeId" Type="Int32" />
     <Property Name="ItemCategoryId" Type="Int32" />
     <Property Name="ItemName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ItemFeature" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="SerialNo" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ItemCondition" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
     <Property Name="Brand" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
     <Property Name="Karat" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
     <Property Name="Weight" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />

@@ -12,6 +12,7 @@ namespace iPOS.Web.Service.Interface
         Task<List<tbl_ipos_appraiseditem>> FindByIdList(int id);
 
         Task<tbl_ipos_appraiseditem> FindByAppraiseNo(string appraiseNo);
+        Task<tbl_ipos_appraiseditem> FindByTransactionNo(string transactionNo);
 
         int GetAppraiseNo();
 

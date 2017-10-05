@@ -5,9 +5,15 @@
     var modelAddTransaction = new app.createTransaction();
     var modelAddCustomer = new app.createCustomer();
 
+    var Transaction = new app.Transaction();
+    var Customer = new app.Customer();
+    var AppraisedItem = new app.AppraisedItem();
+
     // #region CONTROLS                
     var isListShowed = ko.observable(true);
     var isCreateModeShow = ko.observable(false);
+    var isCreateModeShowAppraisal = ko.observable(false);
+
     var title = ko.observable("");
 
     var customer = ko.observableArray();
@@ -23,7 +29,7 @@
         loadTransactionList();
     }
 
-    function loadTransactionList() {
+    function loadTransactionList() {   
         $("#transactionTable").dataTable().fnDestroy();
         var $datatables = $('#transactionTable');
         $datatables.DataTable({
@@ -88,19 +94,26 @@
             },
             {
                 className: "text-center",
-                render: function () {
-                    return '<div class="dropdown">' +
-                        '<button class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" type="button">' +
-                          'More '
-                        + '<span class="caret"></span>' +
-                        '</button>' +
-                        '<ul class="dropdown-menu dropdown-menu-right">' +
-                          '<li><a href="#">View</a></li>' +
-                          '<li><a href="' + RootUrl + '/administrator/appraisal">Go to appraisal</a></li>' +
-                          '<li role="separator" class="divider"></li>' +
-                          '<li><a href="#">Cancel transaction</a></li>' +
-                        '</ul>' +
-                      '</div>';
+                render: function (data, type, row) {
+                    if (row.Status == "For appraisal" && PageTitle == "New Transactions") {
+                        return '<a href="' + RootUrl + '/Administrator/Transactions/Appraisal" class="btn btn-xs btn-info" role="button">Go to Appraisal</a>';
+                    }
+                    else if (row.Status == "For appraisal" && PageTitle == "Appraisal") {
+                        return '<button type="button" class="btn btn-xs btn-info" onclick="app.vm.AppraiseItem('+ row.TransactionId +')">Appraise</button>';
+                    }
+                    else if (row.Status == "For pawning" && PageTitle == "Appraisal") {
+                        return '<a href="' + RootUrl + '/Administrator/Transactions/NewTransaction" class="btn btn-xs btn-warning" role="button">Go to Transactions</a>' +
+                            '<button type="button" class="btn btn-xs btn-info" onclick="app.vm.AppraiseItem(' + row.TransactionId + ')">Reappraise</button>';
+                    }
+                    else if (row.Status == "For pawning") {
+                        return '<a href="" class="btn btn-xs btn-info" role="button">Process</a>';
+                    }
+                    else if (row.Status == "For approval") {
+                        return '<a href="' + RootUrl + '/Administrator/Transactions/Approval" class="btn btn-xs btn-info" role="button">Go to Approval</a>';
+                    }
+                    else {
+
+                    }
                 }
             }
             ],
@@ -157,13 +170,41 @@
         getCustomer();
         getItemType();
     }
+
+    function AppraiseItem(TransactionId) {
+        cardToggles();
+        clearControlsCustomer();
+        clearControls();
+
+        setTimeout(function () {
+            isListShowed(false);
+            isCreateModeShowAppraisal(true);
+
+            title("Appraisal");
+
+  
+            getCustomer();
+            getItemType();
+            getTransactionDetails(TransactionId);
+
+        }, 300);
+
+    }
     
     function backToList() {
+        cardToggles();
         isListShowed(true);
         isCreateModeShow(false);
+        isCreateModeShowAppraisal(false);
 
         clearControlsCustomer();
         clearControls();
+    }
+
+    function cardToggles() {
+        $('#card1').trigger('click');
+        $('#card2').trigger('click');
+        $('#card3').trigger('click');
     }
 
     function saveTransactionPawn() {
@@ -189,6 +230,10 @@
             document.getElementById("CustomerId").focus();
             return false;
         }
+
+        modelAddTransaction.ItemTypeId($('#ItemTypeId').val());
+
+        modelAddTransaction.ItemCategoryId($('#ItemCategoryId').val());
 
         /*VALIDATIONS -END*/
         loaderApp.showPleaseWait();
@@ -243,6 +288,60 @@
             modelAddTransaction.mobile_no(result.mobile_no);
         });
     }
+
+    function getTransactionDetails(TransactionId) {
+        var CustomerId = "";
+        var TransactionNo = "";
+
+        $.getJSON(RootUrl + "/Administrator/Transactions/GetTransactionsById?TransactionId=" + TransactionId, function (result) {
+            Transaction.TransactionId(result.TransactionId);
+            Transaction.TransactionNo(result.TransactionNo);
+            Transaction.TransactionDate(result.TransactionDate);
+            Transaction.TransactionType(result.TransactionType);
+            Transaction.CustomerId(result.CustomerId);
+            Transaction.Terminal(result.Terminal);
+            Transaction.Status(result.Status);
+            CustomerId = result.CustomerId;
+            TransactionNo = result.TransactionNo;
+        });
+        setTimeout(function () {
+            $.getJSON(RootUrl + "/Administrator/Transactions/GetCustomerById?CustomerId=" + CustomerId, function (result) {
+                Customer.first_name(result.first_name);
+                Customer.last_name(result.last_name);
+                Customer.middle_name(result.middle_name);
+                Customer.st_address(result.st_address);
+                Customer.city_address(result.city_address);
+                Customer.mobile_no(result.mobile_no);
+            });
+            $.getJSON(RootUrl + "/Administrator/Transactions/GetItemByTransactionNo?TransactionNo=" + TransactionNo, function (result) {
+                AppraisedItem.AppraiseId(result.AppraiseId);
+                AppraisedItem.AppraiseDate(result.AppraiseDate);
+                AppraisedItem.AppraiseNo(result.AppraiseNo);
+                AppraisedItem.ItemTypeId(result.ItemTypeId);
+
+                AppraisedItem.ItemName(result.ItemName);
+                AppraisedItem.ItemFeature(result.ItemFeature);
+                AppraisedItem.SerialNo(result.SerialNo);
+                AppraisedItem.ItemCondition(result.ItemCondition);
+                AppraisedItem.Brand(result.Brand);
+                AppraisedItem.Karat(result.Karat);
+                AppraisedItem.Weight(result.Weight);
+                AppraisedItem.AppraisedValue(result.AppraisedValue);
+                AppraisedItem.Remarks(result.Remarks);
+                AppraisedItem.CustomerFirstName(result.CustomerFirstName);
+                AppraisedItem.CustomerLastName(result.CustomerLastName);
+                AppraisedItem.IsPawned(result.IsPawned);
+
+                getItemCategory(result.ItemTypeId);
+
+                setTimeout(function () {
+                    AppraisedItem.ItemCategoryId(result.ItemCategoryId);
+                }, 300);
+            });
+        }, 300);
+       
+    }
+
     function saveCustomer() {
         /*VALIDATIONS -START*/
         if (modelAddCustomer.first_name() === "" || modelAddCustomer.first_name() === undefined) {
@@ -302,6 +401,41 @@
                     swal("Success", result.message, "success");
                     closeModal();
                     getCustomer();
+
+                    loaderApp.hidePleaseWait();
+                } else {
+                    loaderApp.hidePleaseWait();
+
+                    swal("Error", result.message, "error");
+
+                    clearControls();
+                }
+            }
+        });
+    }
+
+    function saveAppraisedItem() {
+        /*VALIDATIONS -START*/
+
+        /*VALIDATIONS -END*/
+        debugger;
+        AppraisedItem.AppraiseDate($('#AppraiseDate').val())
+        AppraisedItem.PawnshopTransactionId(Transaction.TransactionNo);
+
+        loaderApp.showPleaseWait();
+        var param = ko.toJS(AppraisedItem);
+        var url = RootUrl + "/Administrator/Transactions/SaveAppraisal";
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: ko.utils.stringifyJson(param),
+            contentType: 'application/json; charset=utf-8',
+            success: function (result) {
+                if (result.success) {
+                    swal("Success", result.message, "success");
+
+                    loadTransactionList();
+                    backToList();
 
                     loaderApp.hidePleaseWait();
                 } else {
@@ -378,10 +512,12 @@
 
         isListShowed: isListShowed,
         isCreateModeShow: isCreateModeShow,
+        isCreateModeShowAppraisal: isCreateModeShowAppraisal,
 
         update: update,
 
         NewTransactionPawning: NewTransactionPawning,
+        AppraiseItem: AppraiseItem,
         backToList: backToList,
         title: title,
 
@@ -401,7 +537,12 @@
         itemCategory: itemCategory,
 
         saveTransactionPawn: saveTransactionPawn,
-        saveCustomer: saveCustomer
+        saveCustomer: saveCustomer,
+        saveAppraisedItem, saveAppraisedItem,
+
+        Transaction: Transaction,
+        Customer: Customer,
+        AppraisedItem: AppraisedItem 
     };
 
     return vm;

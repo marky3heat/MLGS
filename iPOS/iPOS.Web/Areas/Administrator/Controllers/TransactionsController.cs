@@ -96,6 +96,25 @@ namespace iPOS.Web.Areas.Administrator.Controllers
 
             return Json(new { data = result.OrderByDescending(d => d.Status).ThenBy(s => s.TransactionType) }, JsonRequestBehavior.AllowGet);
         }
+        public async Task<JsonResult> GetTransactionsById(int TransactionId)
+        {
+            var listTransaction = await _pawnshopTransactionService.FindByIdPawnshopTransactions(TransactionId);
+
+            return Json(listTransaction, JsonRequestBehavior.AllowGet);
+        }
+        public async Task<JsonResult> GetCustomerById(int CustomerId)
+        {
+            var listCustomer = await _customerService.FindByIdCustomer(CustomerId);
+
+            return Json(listCustomer, JsonRequestBehavior.AllowGet);
+        }
+        public async Task<JsonResult> GetItemByTransactionNo(string TransactionNo)
+        {
+            var listItem = await _appraisalService.FindByTransactionNo(TransactionNo);
+
+            return Json(listItem, JsonRequestBehavior.AllowGet);
+        }
+
         public async Task<JsonResult> SaveTransactionPawning(TransactionsModel model)
         {
             try
@@ -123,6 +142,9 @@ namespace iPOS.Web.Areas.Administrator.Controllers
                     model2.ItemTypeId = model.ItemTypeId;
                     model2.ItemCategoryId = model.ItemCategoryId;
                     model2.ItemName = model.ItemName;
+                    model2.ItemFeature = "";
+                    model2.SerialNo = "";
+                    model2.ItemCondition = "";
                     model2.Weight = "";
                     model2.AppraisedValue = 0;
                     model2.Remarks = model.Remarks;
@@ -151,6 +173,92 @@ namespace iPOS.Web.Areas.Administrator.Controllers
                     else
                     {
                         message = "Error saving data. Duplicate entry.";
+                    }
+                }
+
+                return Json(new { success = success, message = message });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<JsonResult> SaveAppraisal(tbl_ipos_appraiseditem model)
+        {
+            try
+            {
+                bool success = false;
+                string message = "";
+
+                if (string.IsNullOrEmpty(model.AppraiseId.ToString()) || model.AppraiseId.ToString() == "0")
+                {
+                    tbl_ipos_appraiseditem model1 = new tbl_ipos_appraiseditem();
+                    model1.AppraiseDate = model.AppraiseDate;
+                    //model1.AppraiseNo = "";
+                    //model1.ItemTypeId = model.ItemTypeId;
+                    //model1.ItemCategoryId = model.ItemCategoryId;
+                    //model1.ItemName = model.ItemName;
+                    model1.ItemFeature = model.ItemFeature;
+                    model1.SerialNo = model.SerialNo;
+                    model1.ItemCondition = model.ItemCondition;
+                    model1.Weight = model.Weight;
+                    model1.AppraisedValue = model.AppraisedValue;
+                    //model1.Remarks = model.Remarks;
+                    //model1.CustomerFirstName = model.first_name;
+                    //model1.CustomerLastName = model.last_name;
+                    //model1.IsPawned = false;
+                    //model1.CreatedAt = DateTime.Now;
+                    //model1.CreatedBy = "";
+                    //model1.PawnshopTransactionId = model.TransactionNo.ToString();
+
+                    var result = await _appraisalService.Save(model1);
+
+                    success = result;
+
+                    if (result)
+                    {
+                        message = "Successfully saved.";
+                    }
+                    else
+                    {
+                        message = "Error saving data. Duplicate entry.";
+                    }
+                }
+                else
+                {
+                    tbl_ipos_appraiseditem model1 = new tbl_ipos_appraiseditem();
+                    model1 = await _appraisalService.FindByTransactionNo(model.PawnshopTransactionId);
+                    model1.AppraiseDate = model.AppraiseDate;
+                    //model1.AppraiseNo = "";
+                    //model1.ItemTypeId = model.ItemTypeId;
+                    //model1.ItemCategoryId = model.ItemCategoryId;
+                    //model1.ItemName = model.ItemName;
+                    model1.ItemFeature = model.ItemFeature;
+                    model1.SerialNo = model.SerialNo;
+                    model1.ItemCondition = model.ItemCondition;
+                    model1.Karat = model.Karat;
+                    model1.Weight = model.Weight;
+                    model1.AppraisedValue = model.AppraisedValue;
+                    //model1.Remarks = model.Remarks;
+                    //model1.CustomerFirstName = model.first_name;
+                    //model1.CustomerLastName = model.last_name;
+                    //model1.IsPawned = false;
+                    //model1.CreatedAt = DateTime.Now;
+                    //model1.CreatedBy = "";
+                    //model1.PawnshopTransactionId = model.TransactionNo.ToString();
+                    var result = await _appraisalService.Update(model1);
+                    success = result;
+                    if (result)
+                    {
+                        tbl_ipos_pawnshop_transactions model2 = await _pawnshopTransactionService.FindByTransactionNo(model.PawnshopTransactionId);
+                        model2.Status = "For pawning";
+                        await _pawnshopTransactionService.UpdatePawnshopTransactions(model2);
+
+                        message = "Successfully updated.";
+                    }
+                    else
+                    {
+                        message = "Error saving data. Please contact administrator.";
                     }
                 }
 

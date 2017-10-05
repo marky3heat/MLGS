@@ -20,6 +20,9 @@ namespace iPOS.Web.Database
         public Nullable<int> ItemTypeId { get; set; }
         public Nullable<int> ItemCategoryId { get; set; }
         public string ItemName { get; set; }
+        public string ItemFeature { get; set; }
+        public string SerialNo { get; set; }
+        public string ItemCondition { get; set; }
         public string Brand { get; set; }
         public string Karat { get; set; }
         public string Weight { get; set; }

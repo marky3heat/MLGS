@@ -57,8 +57,8 @@ namespace iPOS.Web.Controllers
             ViewBag.UserId = "9999";
             ViewBag.Username = "Administrator";
 
-            return View();
-            //return RedirectToAction("transactions", "PawnshopTransactions", new { area = "Administrator" });
+            //return View();
+            return RedirectToAction("NewTransaction", "Transactions", new { area = "Administrator" });
         }
         public ActionResult Error404()
         {

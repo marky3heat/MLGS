@@ -13,6 +13,7 @@ namespace iPOS.Web.Service.Interface
         Task<bool> DeletePawnshopTransactions(string id);
 
         Task<tbl_ipos_pawnshop_transactions> FindByIdPawnshopTransactions(int id);
+        Task<tbl_ipos_pawnshop_transactions> FindByTransactionNo(string transactionNo);
         Task<List<tbl_ipos_pawnshop_transactions>> GetListPawnshopTransactions();
         #endregion
 

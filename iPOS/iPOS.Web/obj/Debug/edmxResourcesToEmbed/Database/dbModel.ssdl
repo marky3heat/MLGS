@@ -46,6 +46,9 @@
     <Property Name="ItemTypeId" Type="int" />
     <Property Name="ItemCategoryId" Type="int" />
     <Property Name="ItemName" Type="varchar" MaxLength="64" />
+    <Property Name="ItemFeature" Type="varchar" MaxLength="64" />
+    <Property Name="SerialNo" Type="varchar" MaxLength="64" />
+    <Property Name="ItemCondition" Type="varchar" MaxLength="64" />
     <Property Name="Brand" Type="varchar" MaxLength="64" />
     <Property Name="Karat" Type="varchar" MaxLength="32" />
     <Property Name="Weight" Type="varchar" MaxLength="32" />

@@ -290,6 +290,9 @@
           <ScalarProperty Name="Weight" ColumnName="Weight" />
           <ScalarProperty Name="Karat" ColumnName="Karat" />
           <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ItemCondition" ColumnName="ItemCondition" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="ItemFeature" ColumnName="ItemFeature" />
           <ScalarProperty Name="ItemName" ColumnName="ItemName" />
           <ScalarProperty Name="ItemCategoryId" ColumnName="ItemCategoryId" />
           <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />

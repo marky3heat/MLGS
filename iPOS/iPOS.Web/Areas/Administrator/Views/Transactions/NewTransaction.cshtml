@@ -43,15 +43,15 @@
                     <strong>Pawnshop transactions</strong>
                 </div>
                 <div class="card-body">
-                    <table id="transactionTable" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0">
+                    <table id="transactionTable" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
                         <thead>
                         <tr>
                             <th style="background: #d1202d; color: #ffffff;">Transaction no.</th>
                             <th style="background: #d1202d; color: #ffffff;">Date</th>
-                            <th style="background: #d1202d; color: #ffffff;">Transaction Type</th>
+                            <th style="background: #d1202d; color: #ffffff;">Transaction type</th>
                             <th style="background: #d1202d; color: #ffffff;">Customer name</th>
                             <th style="background: #d1202d; color: #ffffff;">Status</th>
-                            <th style="background: #d1202d; color: #ffffff;">Action</th>
+                            <th style="background: #d1202d; color: #ffffff;">Action to be taken</th>
                         </tr>
                         </thead>
                     </table>
@@ -88,13 +88,19 @@
                     <div class="col-sm-3">
                         <label class="col-sm-6 control-label" for="form-control-1">Transaction no.</label>
                         <div class="col-sm-6">
-                            <input id="transaction_no" data-bind="textinput: modelAddTransaction.TransactionNo" placeholder="Transaction no." class="form-control" type="text">
+                            <div class="input-with-icon">
+                                <input id="transaction_no" data-bind="textinput: modelAddTransaction.TransactionNo" class="form-control" type="text">
+                                <span class="icon icon-hashtag input-icon"></span>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <label class="col-sm-3 control-label" for="form-control-1">Date</label>
                         <div class="col-sm-9">
-                            <input id="transaction_date" data-bind="textinput: modelAddTransaction.TransactionDate" placeholder="Date" class="form-control" type="text">
+                            <div class="input-with-icon">
+                                <input id="transaction_date" data-bind="textinput: modelAddTransaction.TransactionDate" class="form-control" type="text" data-provide="datepicker" data-date-today-highlight="true">
+                                <span class="icon icon-calendar input-icon"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -190,7 +196,7 @@
                     <div class="col-sm-6">
                         <label class="col-sm-3 control-label" for="form-control-1">Item category</label>
                         <div class="col-sm-9">
-                            <select required id="ItemCategoryId" data-bind="options: itemCategory, optionsValue: 'ItemCategoryId', optionsText: 'ItemCategoryName', optionsCaption: '--Select item category--', modelAddTransaction: model.ItemCategoryId" class="form-control"></select>
+                            <select required id="ItemCategoryId" data-bind="options: itemCategory, optionsValue: 'ItemCategoryId', optionsText: 'ItemCategoryName', optionsCaption: '--Select item category--', optionsSelected: modelAddTransaction.ItemCategoryId" class="form-control"></select>
                         </div>
                     </div>
                 </div>
@@ -273,7 +279,9 @@
         </div>
     </div>
 </div>
-
+<script type="text/javascript">
+    var PageTitle = '@ViewBag.Title';
+</script> 
 @section scripts{
     <script src="~/Areas/Administrator/Assets/Model/model.js"></script>
     <script src="~/Areas/Administrator/Assets/ViewModel/viewmodel.js"></script>
