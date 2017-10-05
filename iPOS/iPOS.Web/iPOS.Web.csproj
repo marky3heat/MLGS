@@ -221,9 +221,9 @@
     <Compile Include="Areas\Administrator\Controllers\BaseController.cs" />
     <Compile Include="Areas\Administrator\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Administrator\Controllers\DashboardController.cs" />
-    <Compile Include="Areas\Administrator\Controllers\PawningController.cs" />
     <Compile Include="Areas\Administrator\Controllers\ReferenceController.cs" />
     <Compile Include="Areas\Administrator\Controllers\TransactionsController.cs" />
+    <Compile Include="Areas\Administrator\Models\TransactionCounterModel.cs" />
     <Compile Include="Areas\Administrator\Models\TransactionsModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

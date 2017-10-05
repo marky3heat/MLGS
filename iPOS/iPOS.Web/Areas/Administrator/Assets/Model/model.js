@@ -162,3 +162,30 @@ app.AppraisedItem = function () {
     self.IsPawned = ko.observable();
     self.PawnshopTransactionId = ko.observable();
 };
+
+app.PawnedItem = function () {
+    "use strict";
+
+    var self = this;
+
+    self.PawnedItemId = ko.observable();
+    self.PawnedItemNo = ko.observable();
+    self.PawnedDate = ko.observable();
+    self.TransactionNo = ko.observable();
+    self.PawnedItemContractNo = ko.observable();
+    self.LoanableAmount = ko.observable();
+    self.InterestRate = ko.observable();
+    self.InterestAmount = ko.observable();
+    self.InitialPayment = ko.observable();
+    self.ServiceCharge = ko.observable();
+    self.Others = ko.observable();
+    self.IsInterestDeducted = ko.observable();
+    self.NetCashOut = ko.observable();
+    self.TermsId = ko.observable();
+    self.ScheduleOfPayment = ko.observable();
+    self.NoOfPayments = ko.observable();
+    self.DueDateStart = ko.observable();
+    self.DueDateEnd = ko.observable();
+    self.DueDateEnd = ko.observable();
+    self.DueDateEnd = ko.observable();
+};

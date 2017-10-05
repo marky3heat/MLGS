@@ -13,6 +13,7 @@
     var isListShowed = ko.observable(true);
     var isCreateModeShow = ko.observable(false);
     var isCreateModeShowAppraisal = ko.observable(false);
+    var isCreateModeShowPawning = ko.observable(false);
 
     var title = ko.observable("");
 
@@ -106,7 +107,7 @@
                             '<button type="button" class="btn btn-xs btn-info" onclick="app.vm.AppraiseItem(' + row.TransactionId + ')">Reappraise</button>';
                     }
                     else if (row.Status == "For pawning") {
-                        return '<a href="" class="btn btn-xs btn-info" role="button">Process</a>';
+                        return '<button type="button" class="btn btn-xs btn-warning" onclick="app.vm.PawnItem(' + row.TransactionId + ')">Process</button>';
                     }
                     else if (row.Status == "For approval") {
                         return '<a href="' + RootUrl + '/Administrator/Transactions/Approval" class="btn btn-xs btn-info" role="button">Go to Approval</a>';
@@ -188,14 +189,55 @@
             getTransactionDetails(TransactionId);
 
         }, 300);
+    }
 
+    function PawnItem(TransactionId) {
+        cardTogglesForPawning();
+        clearControlsCustomer();
+        clearControls();
+
+        setTimeout(function () {
+            isListShowed(false);
+            isCreateModeShowAppraisal(false);
+            isCreateModeShowPawning(true)
+
+            title("Pawning");
+
+
+            getCustomer();
+            getItemType();
+            getTransactionDetails(TransactionId);
+
+        }, 300);
     }
     
     function backToList() {
+        isListShowed(true);
+        isCreateModeShow(false);
+        isCreateModeShowAppraisal(false);
+        isCreateModeShowPawning(false)
+
+        clearControlsCustomer();
+        clearControls();
+    }
+
+    function backToListForAppraisal() {
         cardToggles();
         isListShowed(true);
         isCreateModeShow(false);
         isCreateModeShowAppraisal(false);
+        isCreateModeShowPawning(false)
+
+        clearControlsCustomer();
+        clearControls();
+    }
+
+    function backToListForPawning() {
+        cardTogglesForPawning();
+        isListShowed(true);
+        isCreateModeShow(false);
+        isCreateModeShowAppraisal(false);
+        isCreateModeShowPawning(false)
 
         clearControlsCustomer();
         clearControls();
@@ -205,6 +247,13 @@
         $('#card1').trigger('click');
         $('#card2').trigger('click');
         $('#card3').trigger('click');
+    }
+
+    function cardTogglesForPawning() {
+        $('#card1').trigger('click');
+        $('#card2').trigger('click');
+        $('#card3').trigger('click');
+        $('#card4').trigger('click');
     }
 
     function saveTransactionPawn() {
@@ -418,7 +467,7 @@
         /*VALIDATIONS -START*/
 
         /*VALIDATIONS -END*/
-        debugger;
+   
         AppraisedItem.AppraiseDate($('#AppraiseDate').val())
         AppraisedItem.PawnshopTransactionId(Transaction.TransactionNo);
 
@@ -485,14 +534,60 @@
 
     var newTransactionCounter = ko.observableArray();
     var hasNewTransaction = ko.observableArray(false);
+
+    var itemToBeAppraisedCounter = ko.observableArray();
+    var hasItemToBeAppraised = ko.observableArray(false);
+
+    var itemToBePawnedCounter = ko.observableArray();
+    var hasItemToBePawned = ko.observableArray(false);
+
+    var itemToBeApprovedCounter = ko.observableArray();
+    var hasItemToBeApproved = ko.observableArray(false);
+
+    var itemToBeReleasedCounter = ko.observableArray();
+    var hasItemToBeReleased = ko.observableArray(false);
+
     function update() {
         $.getJSON(RootUrl + "/Administrator/Base/GetNewTransactionsCounter", function (result) {
-            newTransactionCounter(result);
-            if (result > 0) {
+
+            newTransactionCounter(result[0].NewTransaction);
+            if (result[0].NewTransaction > 0) {
                 hasNewTransaction(true);
             }
             else {
                 hasNewTransaction(false);
+            }
+
+            itemToBeAppraisedCounter(result[0].ForAppraisal);
+            if (result[0].ForAppraisal > 0) {
+                hasItemToBeAppraised(true);
+            }
+            else {
+                hasItemToBeAppraised(false);
+            }
+
+            itemToBePawnedCounter(result[0].ForPawning);
+            if (result[0].ForPawning > 0) {
+                hasItemToBePawned(true);
+            }
+            else {
+                hasItemToBePawned(false);
+            }
+
+            itemToBeApprovedCounter(result[0].ForApproval);
+            if (result[0].ForApproval > 0) {
+                hasItemToBeApproved(true);
+            }
+            else {
+                hasItemToBeApproved(false);
+            }
+
+            itemToBeReleasedCounter(result[0].ForRelease);
+            if (result[0].ForRelease > 0) {
+                hasItemToBeReleased(true);
+            }
+            else {
+                hasItemToBeReleased(false);
             }
         });
     }
@@ -510,15 +605,31 @@
         newTransactionCounter: newTransactionCounter,
         hasNewTransaction: hasNewTransaction,
 
+        itemToBeAppraisedCounter: itemToBeAppraisedCounter,
+        hasItemToBeAppraised: hasItemToBeAppraised,
+
+        itemToBePawnedCounter: itemToBePawnedCounter,
+        hasItemToBePawned: hasItemToBePawned,
+
+        itemToBeApprovedCounter: itemToBeApprovedCounter,
+        hasItemToBeApproved: hasItemToBeApproved,
+
+        itemToBeReleasedCounter: itemToBeReleasedCounter,
+        hasItemToBeReleased: hasItemToBeReleased,
+
         isListShowed: isListShowed,
         isCreateModeShow: isCreateModeShow,
         isCreateModeShowAppraisal: isCreateModeShowAppraisal,
+        isCreateModeShowPawning: isCreateModeShowPawning,
 
         update: update,
 
         NewTransactionPawning: NewTransactionPawning,
         AppraiseItem: AppraiseItem,
+        PawnItem: PawnItem,
         backToList: backToList,
+        backToListForAppraisal: backToListForAppraisal,
+        backToListForPawning: backToListForPawning,
         title: title,
 
         createCustomer: createCustomer,

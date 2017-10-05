@@ -4,17 +4,6 @@
     ViewBag.Title = "New Transactions";
 }
 
-<style>
-    .odd {
-        background-color: white;
-    }
-
-    .even {
-        background-color: #f2dede;
-    }
-</style>
-
-
 <div data-bind="visible: isListShowed">
     <div class="row gutter-xs">
         <div class="col-xs-12">
@@ -61,6 +50,7 @@
     </div>
 </div>
 
+<!-- NEW TRANSACTION-->
 <div data-bind="visible: isCreateModeShow">
     <div class="title-bar">
         <h1 class="title-bar-title">
@@ -279,6 +269,246 @@
         </div>
     </div>
 </div>
+<!-- /NEW TRANSACTION -->
+
+<!-- FOR PAWNING -->
+<div data-bind="visible: isCreateModeShowPawning">
+    <div class="title-bar">
+        <h1 class="title-bar-title">
+            <span class="d-ib"><!--ko text: title--><!--/ko--></span>
+            <span class="d-ib icon icon-diamond">
+
+            </span>
+        </h1>
+    </div>
+
+    <div class="card">
+        <div class="card-header" style="background-color: #f2dede">
+            <div class="card-actions">
+                <button id="card1" type="button" class="card-action card-toggler" title="Collapse"></button>
+            </div>
+
+            <strong>Transaction</strong>
+        </div>
+        <div class="card-body">
+            <div class="form form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-6">
+
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="col-sm-6 control-label" for="form-control-1">Transaction no.</label>
+                        <div class="col-sm-6">
+                            <div class="input-with-icon">
+                                <input id="transaction_no" data-bind="textinput: Transaction.TransactionNo" placeholder="Transaction no." class="form-control" type="text">
+                                <span class="icon icon-hashtag input-icon"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="col-sm-3 control-label" for="form-control-1">Date</label>
+                        <div class="col-sm-9">
+                            <div class="input-with-icon">
+                                <input id="transaction_date" data-bind="textinput: moment(Transaction.TransactionDate()).format('L')" class="form-control" type="text" data-provide="datepicker" data-date-today-highlight="true">
+                                <span class="icon icon-calendar input-icon"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" style="background-color: #f2dede">
+            <div class="card-actions">
+                <button id="card2" type="button" class="card-action card-toggler" title="Collapse"></button>
+            </div>
+
+            <strong>Customer Profile</strong>
+        </div>
+        <div class="card-body">
+            <div class="form form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Last name</label>
+                        <div class="col-sm-9">
+                            <input id="last_name" data-bind="textinput: Customer.last_name" placeholder="Last name" class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">First name</label>
+                        <div class="col-sm-9">
+                            <input id="first_name" data-bind="textinput: Customer.first_name" placeholder="First name" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Middle name</label>
+                        <div class="col-sm-9">
+                            <input id="middle_name" data-bind="textinput: Customer.middle_name" placeholder="Middle name" class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Street address</label>
+                        <div class="col-sm-9">
+                            <input id="st_address" data-bind="textinput: Customer.st_address" placeholder="Street address" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">City</label>
+                        <div class="col-sm-9">
+                            <input id="city_address" data-bind="textinput: Customer.city_address" placeholder="City" class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Mobile no.</label>
+                        <div class="col-sm-9">
+                            <input id="mobile_no" data-bind="textinput: Customer.mobile_no" placeholder="Mobile no." class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" style="background-color: #f2dede">
+            <div class="card-actions">
+                <button id="card3" type="button" class="card-action card-toggler" title="Collapse"></button>
+            </div>
+
+            <strong>Item Description</strong>
+        </div>
+        <div class="card-body">
+            <div class="form form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Item type</label>
+                        <div class="col-sm-9">
+                            <select required id="ItemTypeId" data-bind="options: itemType, optionsValue: 'ItemTypeId', optionsText: 'ItemTypeName', optionsCaption: '--Select item type--', value: AppraisedItem.ItemTypeId, event:{ change: getItemCategory('')}" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Item category</label>
+                        <div class="col-sm-9">
+                            <select required id="ItemCategoryId" data-bind="options: itemCategory, optionsValue: 'ItemCategoryId', optionsText: 'ItemCategoryName', optionsCaption: '--Select item category--', value: AppraisedItem.ItemCategoryId" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Item name</label>
+                        <div class="col-sm-9">
+                            <input id="ItemName" data-bind="value: AppraisedItem.ItemName" class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Remarks</label>
+                        <div class="col-sm-9">
+                            <textarea id="Remarks" data-bind="value: AppraisedItem.Remarks" class="form-control" row="5" col="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" style="background-color: #f2dede">
+            <div class="card-actions">
+                <button id="card4" type="button" class="card-action card-toggler" title="Collapse"></button>
+            </div>
+
+            <strong>Appraisal Details</strong>
+        </div>
+        <div class="card-body">
+            <div class="form form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Appraise Date</label>
+                        <div class="col-sm-9">
+                            <input id="AppraiseDate" data-bind=" value moment(AppraisedItem.AppraiseDate()).format('L')" class="form-control" type="text" data-provide="datepicker" data-date-today-highlight="true">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Serial no.</label>
+                        <div class="col-sm-9">
+                            <input id="SerialNo" data-bind="value: AppraisedItem.SerialNo" placeholder="Serial no." class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Item feature</label>
+                        <div class="col-sm-9">
+                            <input id="ItemFeature" data-bind="value: AppraisedItem.ItemFeature" placeholder="Item feature" class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Item condition</label>
+                        <div class="col-sm-9">
+                            <input id="ItemCondition" data-bind="value: AppraisedItem.ItemCondition" placeholder="Item condition" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Karat</label>
+                        <div class="col-sm-9">
+                            <input id="Karat" data-bind="value: AppraisedItem.Karat" placeholder="Karat" class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Weight</label>
+                        <div class="col-sm-9">
+                            <input id="Weight" data-bind="value: AppraisedItem.Weight" placeholder="Weight" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Karat</label>
+                        <div class="col-sm-9">
+                            <textarea id="Remarks" data-bind="value: AppraisedItem.Remarks" class="form-control" row="5" col="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-3 control-label" for="form-control-1">Appraised value</label>
+                        <div class="col-sm-9">
+                            <input id="AppraisedValue" data-bind="value: AppraisedItem.AppraisedValue" placeholder="Appraised value" class="form-control" type="number">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" style="background-color: #f2dede">
+            <div class="card-actions">
+                <button id="card5" type="button" class="card-action card-toggler" title="Collapse"></button>
+            </div>
+
+            <strong>Payment terms & Schedule</strong>
+        </div>
+        <div class="card-body">
+            <div class="form form-horizontal">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="text-right">
+        <button data-bind="click: backToListForPawning" type="submit" class="btn btn-link"><i class="icon icon-arrow-left position-left"></i> Back to list</button>
+        <button type="submit" data-bind="" class="btn bg-success btn-labeled btn-labeled-right ml-10" id="reset"><b><i class="icon-plus3"></i></b>Save</button>
+    </div>
+</div>
+<!-- /FOR PAWNING -->
+
+
 <script type="text/javascript">
     var PageTitle = '@ViewBag.Title';
 </script> 

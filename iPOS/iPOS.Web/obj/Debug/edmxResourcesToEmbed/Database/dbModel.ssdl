@@ -117,7 +117,7 @@
     <Property Name="PawnedItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PawnedItemNo" Type="varchar" MaxLength="32" />
     <Property Name="PawnedDate" Type="date" />
-    <Property Name="CustomerId" Type="int" />
+    <Property Name="TransactionNo" Type="varchar" MaxLength="24" />
     <Property Name="PawnedItemContractNo" Type="varchar" MaxLength="32" />
     <Property Name="LoanableAmount" Type="decimal" Precision="15" Scale="2" />
     <Property Name="InterestRate" Type="decimal" Precision="15" Scale="2" />
@@ -137,6 +137,23 @@
     <Property Name="CreatedBy" Type="varchar" MaxLength="32" />
     <Property Name="CreatedAt" Type="datetime" Precision="0" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbpawnshop.tbl_ipos_pawneditem_amortization_schedule' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tbl_ipos_pawneditem_amortization_schedule">
+          <Property Name="autonum" Type="bigint" />
+          <Property Name="transaction_no" Type="varchar" MaxLength="32" />
+          <Property Name="pawned_item_id" Type="int" />
+          <Property Name="term" Type="int" />
+          <Property Name="due_date" Type="date" />
+          <Property Name="principal" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="interest" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="balance" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="or_reference" Type="varchar" MaxLength="24" />
+          <Property Name="payment_amount" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="remarks" Type="varchar" MaxLength="124" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="64" />
+          <Property Name="CreatedAt" Type="datetime" Precision="0" />
+        </EntityType>-->
   <EntityType Name="tbl_ipos_pawnshop_transactions">
     <Key>
       <PropertyRef Name="TransactionId" />

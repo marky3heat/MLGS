@@ -21,8 +21,9 @@
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_category_sub3" Width="1.5" PointX="5" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_product_type" Width="1.5" PointX="3.5" PointY="2.875" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_karat" Width="1.5" PointX="11.25" PointY="5" />
-        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_pawneditem" Width="1.5" PointX="8" PointY="0.5" />
-        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_appraiseditem" Width="1.5" PointX="7.375" PointY="8.75" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_appraiseditem" Width="1.5" PointX="5.125" PointY="9.25" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_pawneditem" Width="1.5" PointX="3.625" PointY="9.25" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_pawneditem_amortization_schedule" Width="1.5" PointX="6.75" PointY="9.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

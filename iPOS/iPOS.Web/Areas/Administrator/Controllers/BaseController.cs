@@ -209,15 +209,55 @@ namespace iPOS.Web.Areas.Administrator.Controllers
 
             var result =
             from a in listTransactions
-            where a.Status != "Canceled" || a.Status != "Pending"
+            where a.Status != "Canceled"
             select new
             {
                 a.TransactionId
             };
 
+            var result1 =
+            from a in listTransactions
+            where a.Status == "For appraisal"
+            select new
+            {
+                a.TransactionId
+            };
+
+            var result2 =
+            from a in listTransactions
+            where a.Status == "For pawning"
+            select new
+            {
+                a.TransactionId
+            };
+
+            var result3 =
+            from a in listTransactions
+            where a.Status == "For approval"
+            select new
+            {
+                a.TransactionId
+            };
+
+            var result4 =
+            from a in listTransactions
+            where a.Status == "For release"
+            select new
+            {
+                a.TransactionId
+            };
+
+            List<TransactionCounterModel> list = new List<TransactionCounterModel>();
+            list.Add(new TransactionCounterModel { NewTransaction = result.Count().ToString(),
+                                                   ForAppraisal = result1.Count().ToString(),
+                                                   ForPawning = result2.Count().ToString(),
+                                                   ForApproval = result3.Count().ToString(),
+                                                   ForRelease = result4.Count().ToString()
+            });
+
             var count = result.Count();
 
-            return Json(count, JsonRequestBehavior.AllowGet);
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
         #endregion
     }

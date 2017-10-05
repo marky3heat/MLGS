@@ -29,16 +29,34 @@
                 <!-- Pawnshop Transactions -->
                 <li class="sidenav-heading">Pawnshop Transactions</li>
                 <li class="sidenav-item">
+                    <!--ko if: hasItemToBePawned() === true-->
+                    <a href="~/Administrator/Transactions/NewTransaction">
+                        <span class="sidenav-badge badge badge-warning"><!--ko text: itemToBePawnedCounter--><!--/ko--></span>
+                        <span class="sidenav-icon icon icon-cart-plus"></span>
+                        <span class="sidenav-label">Transactions</span>
+                    </a>
+                    <!--/ko-->
+                    <!--ko if: hasItemToBePawned() === false-->
                     <a href="~/Administrator/Transactions/NewTransaction">
                         <span class="sidenav-icon icon icon-cart-plus"></span>
                         <span class="sidenav-label">Transactions</span>
                     </a>
+                    <!--/ko-->
                 </li>
                 <li class="sidenav-item">
+                    <!--ko if: hasItemToBeAppraised() === true-->
+                    <a href="~/Administrator/Transactions/Appraisal">
+                        <span class="sidenav-badge badge badge-info"><!--ko text: itemToBeAppraisedCounter--><!--/ko--></span>
+                        <span class="sidenav-icon icon icon-search"></span>
+                        <span class="sidenav-label">Appraisal</span>
+                    </a>
+                    <!--/ko-->
+                    <!--ko if: hasItemToBeAppraised() === false-->
                     <a href="~/Administrator/Transactions/Appraisal">
                         <span class="sidenav-icon icon icon-search"></span>
                         <span class="sidenav-label">Appraisal</span>
                     </a>
+                    <!--/ko-->
                 </li>
                 @*<li class="sidenav-item">
                     <a href="">
@@ -47,10 +65,19 @@
                     </a>
                 </li>*@
                 <li class="sidenav-item">
+                    <!--ko if: hasItemToBeApproved() === true-->
+                    <a href="~/Administrator/Transactions/Appraisal">
+                        <span class="sidenav-badge badge badge-primary"><!--ko text: itemToBeApprovedCounter--><!--/ko--></span>
+                        <span class="sidenav-icon icon icon-search"></span>
+                        <span class="sidenav-label">Appraisal</span>
+                    </a>
+                    <!--/ko-->
+                    <!--ko if: hasItemToBeApproved() === false-->
                     <a href="~/Administrator/Transactions/Approval">
                         <span class="sidenav-icon icon icon-check-square-o"></span>
                         <span class="sidenav-label">Approval</span>
                     </a>
+                    <!--/ko-->
                 </li>
                 @*<li class="sidenav-item">
                     <a href="">

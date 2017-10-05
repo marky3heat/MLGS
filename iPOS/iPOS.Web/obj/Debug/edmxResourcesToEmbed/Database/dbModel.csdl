@@ -17,8 +17,8 @@
     <EntitySet Name="tbl_product_category_sub3" EntityType="dbpawnshopModel.tbl_product_category_sub3" />
     <EntitySet Name="tbl_product_type" EntityType="dbpawnshopModel.tbl_product_type" />
     <EntitySet Name="tbl_ipos_karat" EntityType="dbpawnshopModel.tbl_ipos_karat" />
-    <EntitySet Name="tbl_ipos_pawneditem" EntityType="dbpawnshopModel.tbl_ipos_pawneditem" />
     <EntitySet Name="tbl_ipos_appraiseditem" EntityType="dbpawnshopModel.tbl_ipos_appraiseditem" />
+    <EntitySet Name="tbl_ipos_pawneditem" EntityType="dbpawnshopModel.tbl_ipos_pawneditem" />
   </EntityContainer>
   <EntityType Name="tbl_customer">
     <Key>
@@ -251,33 +251,6 @@
     <Property Name="karat_code" Type="Int32" />
     <Property Name="karat_desc" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="tbl_ipos_pawneditem">
-    <Key>
-      <PropertyRef Name="PawnedItemId" />
-    </Key>
-    <Property Name="PawnedItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PawnedItemNo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-    <Property Name="PawnedDate" Type="DateTime" />
-    <Property Name="CustomerId" Type="Int32" />
-    <Property Name="PawnedItemContractNo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-    <Property Name="LoanableAmount" Type="Decimal" />
-    <Property Name="InterestRate" Type="Decimal" />
-    <Property Name="InterestAmount" Type="Decimal" />
-    <Property Name="InitialPayment" Type="Decimal" />
-    <Property Name="ServiceCharge" Type="Decimal" />
-    <Property Name="Others" Type="Decimal" />
-    <Property Name="IsInterestDeducted" Type="Boolean" />
-    <Property Name="NetCashOut" Type="Decimal" />
-    <Property Name="TermsId" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-    <Property Name="ScheduleOfPayment" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-    <Property Name="NoOfPayments" Type="Int32" />
-    <Property Name="DueDateStart" Type="DateTime" />
-    <Property Name="DueDateEnd" Type="DateTime" />
-    <Property Name="Status" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-    <Property Name="IsReleased" Type="Boolean" />
-    <Property Name="CreatedBy" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-    <Property Name="CreatedAt" Type="DateTime" />
-  </EntityType>
   <EntityType Name="tbl_ipos_appraiseditem">
     <Key>
       <PropertyRef Name="AppraiseId" />
@@ -302,5 +275,32 @@
     <Property Name="CreatedBy" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
     <Property Name="CreatedAt" Type="DateTime" />
     <Property Name="PawnshopTransactionId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_ipos_pawneditem">
+    <Key>
+      <PropertyRef Name="PawnedItemId" />
+    </Key>
+    <Property Name="PawnedItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PawnedItemNo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="PawnedDate" Type="DateTime" />
+    <Property Name="TransactionNo" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+    <Property Name="PawnedItemContractNo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="LoanableAmount" Type="Decimal" />
+    <Property Name="InterestRate" Type="Decimal" />
+    <Property Name="InterestAmount" Type="Decimal" />
+    <Property Name="InitialPayment" Type="Decimal" />
+    <Property Name="ServiceCharge" Type="Decimal" />
+    <Property Name="Others" Type="Decimal" />
+    <Property Name="IsInterestDeducted" Type="Boolean" />
+    <Property Name="NetCashOut" Type="Decimal" />
+    <Property Name="TermsId" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ScheduleOfPayment" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="NoOfPayments" Type="Int32" />
+    <Property Name="DueDateStart" Type="DateTime" />
+    <Property Name="DueDateEnd" Type="DateTime" />
+    <Property Name="Status" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="IsReleased" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedAt" Type="DateTime" />
   </EntityType>
 </Schema>
