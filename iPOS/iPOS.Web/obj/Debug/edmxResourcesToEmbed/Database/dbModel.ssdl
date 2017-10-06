@@ -152,8 +152,22 @@
     <Property Name="or_reference" Type="varchar" MaxLength="24" />
     <Property Name="payment_amount" Type="decimal" Precision="15" Scale="2" />
     <Property Name="remarks" Type="varchar" MaxLength="124" />
+    <Property Name="isDisabled" Type="bool" />
     <Property Name="CreatedBy" Type="varchar" MaxLength="64" />
     <Property Name="CreatedAt" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tbl_ipos_pawneditem_terms">
+    <Key>
+      <PropertyRef Name="autonum" />
+    </Key>
+    <Property Name="autonum" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="term_desc" Type="varchar" MaxLength="32" />
+    <Property Name="days" Type="int" />
+    <Property Name="multiplier" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="created_by" Type="varchar" MaxLength="32" />
+    <Property Name="date_created" Type="datetime" Precision="0" />
+    <Property Name="updaed_by" Type="varchar" MaxLength="32" />
+    <Property Name="date_updated" Type="datetime" Precision="0" />
   </EntityType>
   <EntityType Name="tbl_ipos_pawnshop_transactions">
     <Key>
@@ -311,6 +325,7 @@
     <EntitySet Name="tbl_ipos_no_generator" EntityType="Self.tbl_ipos_no_generator" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_ipos_pawneditem" EntityType="Self.tbl_ipos_pawneditem" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_ipos_pawneditem_amortization_schedule" EntityType="Self.tbl_ipos_pawneditem_amortization_schedule" Schema="dbpawnshop" store:Type="Tables" />
+    <EntitySet Name="tbl_ipos_pawneditem_terms" EntityType="Self.tbl_ipos_pawneditem_terms" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_ipos_pawnshop_transactions" EntityType="Self.tbl_ipos_pawnshop_transactions" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_product" EntityType="Self.tbl_product" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_product_add_info" EntityType="Self.tbl_product_add_info" Schema="dbpawnshop" store:Type="Tables" />

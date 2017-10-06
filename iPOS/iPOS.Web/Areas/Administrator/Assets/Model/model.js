@@ -188,4 +188,23 @@ app.PawnedItem = function () {
     self.DueDateEnd = ko.observable();
     self.Status = ko.observable();
     self.IsReleased = ko.observable();
+    self.Scheme = ko.observable();
+};
+
+app.Amortization = function () {
+    "use strict";
+
+    var self = this;
+
+    self.autonum = ko.observable();
+    self.transaction_no = ko.observable();
+    self.pawned_item_id = ko.observable();
+    self.term = ko.observable();
+    self.due_date = ko.observable();
+    self.principal = ko.observable();
+    self.interest = ko.observable();
+    self.balance = ko.observable();
+    self.or_reference = ko.observable();
+    self.payment_amount = ko.observable();
+    self.remarks = ko.observable();
 };

@@ -19,6 +19,8 @@ namespace iPOS.Web.Repository.Interface
         IRepository<tbl_ipos_itemcategory> ItemCategoryRepository { get; }
         IRepository<tbl_ipos_itemtype> ItemTypeRepository { get; }
         IRepository<tbl_ipos_karat> KaratRepository { get; }
+        IRepository<tbl_ipos_pawneditem_terms> TermsRepository { get; }
+        IRepository<tbl_ipos_pawneditem_amortization_schedule> AmortizationRepository { get; }
         //
 
         //Inventory tables

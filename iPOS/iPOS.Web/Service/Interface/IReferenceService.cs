@@ -65,6 +65,22 @@ namespace iPOS.Web.Service.Interface
         Task<bool> DeleteKarat(string id);
         #endregion
 
+        #region Terms
+        long GetItemCodeTerms();
+        Task<tbl_ipos_pawneditem_terms> FindByIdTerms(long id);
+        Task<List<tbl_ipos_pawneditem_terms>> GetListTerms(int pageIndex = 0, int pageSize = 100);
+        Task<bool> SaveTerms(tbl_ipos_pawneditem_terms model);
+        Task<bool> UpdateTerms(tbl_ipos_pawneditem_terms model);
+        Task<bool> DeleteTerms(string id);
+        #endregion
 
+        #region Amortization
+        Task<tbl_ipos_pawneditem_amortization_schedule> FindByIdAmortization(long id);
+        Task<tbl_ipos_pawneditem_amortization_schedule> FindByTransactionNoAmortization(string transactionNo);
+        Task<List<tbl_ipos_pawneditem_amortization_schedule>> GetListAmortization(int pageIndex = 0, int pageSize = 100);
+        Task<bool> SaveAmortization(tbl_ipos_pawneditem_amortization_schedule model);
+        Task<bool> UpdateAmortization(tbl_ipos_pawneditem_amortization_schedule model);
+        Task<bool> DeleteAmortization(string id);
+        #endregion
     }
 }

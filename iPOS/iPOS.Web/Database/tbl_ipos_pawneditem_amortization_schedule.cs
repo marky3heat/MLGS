@@ -25,6 +25,7 @@ namespace iPOS.Web.Database
         public string or_reference { get; set; }
         public Nullable<decimal> payment_amount { get; set; }
         public string remarks { get; set; }
+        public Nullable<bool> isDisabled { get; set; }
         public string CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedAt { get; set; }
     }

@@ -302,11 +302,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ipos_pawneditem_terms">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_pawneditem_terms">
+        <MappingFragment StoreEntitySet="tbl_ipos_pawneditem_terms">
+          <ScalarProperty Name="date_updated" ColumnName="date_updated" />
+          <ScalarProperty Name="updaed_by" ColumnName="updaed_by" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="multiplier" ColumnName="multiplier" />
+          <ScalarProperty Name="days" ColumnName="days" />
+          <ScalarProperty Name="term_desc" ColumnName="term_desc" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbl_ipos_pawneditem_amortization_schedule">
       <EntityTypeMapping TypeName="dbpawnshopModel.tbl_ipos_pawneditem_amortization_schedule">
         <MappingFragment StoreEntitySet="tbl_ipos_pawneditem_amortization_schedule">
           <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="isDisabled" ColumnName="isDisabled" />
           <ScalarProperty Name="remarks" ColumnName="remarks" />
           <ScalarProperty Name="payment_amount" ColumnName="payment_amount" />
           <ScalarProperty Name="or_reference" ColumnName="or_reference" />

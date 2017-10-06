@@ -21,6 +21,7 @@
     var customer = ko.observableArray();
     var itemType = ko.observableArray();
     var itemCategory = ko.observableArray();
+    var terms = ko.observableArray();
 
     // #endregion
 
@@ -218,6 +219,7 @@
             title("Pawning");
 
             getItemType();
+            getTerms();
             getTransactionDetails(TransactionId);
 
         }, 300);
@@ -414,12 +416,19 @@
                 PawnedItem.IsInterestDeducted(result.IsInterestDeducted);
                 PawnedItem.NetCashOut(result.NetCashOut);
                 PawnedItem.TermsId(result.TermsId);
-                PawnedItem.ScheduleOfPayment(result.ScheduleOfPayment);
                 PawnedItem.NoOfPayments(result.NoOfPayments);
                 PawnedItem.DueDateStart(result.DueDateStart);
                 PawnedItem.DueDateEnd(result.DueDateEnd);
                 PawnedItem.Status(result.Status);
                 PawnedItem.IsReleased(result.IsReleased);
+
+                setTimeout(function () {
+                    PawnedItem.ScheduleOfPayment(result.ScheduleOfPayment);
+                }, 300);
+
+                setTimeout(function () {
+                    generateAmortization(result.NoOfPayments);
+                }, 500);
             });
         }, 300);   
     }
@@ -498,12 +507,23 @@
 
     function saveAppraisedItem() {
         /*VALIDATIONS -START*/
-
-        /*VALIDATIONS -END*/
-   
         AppraisedItem.AppraiseDate($('#AppraiseDate').val())
         AppraisedItem.PawnshopTransactionId(Transaction.TransactionNo);
 
+        if (AppraisedItem.ItemCondition() === "" || AppraisedItem.ItemCondition() === undefined) {
+            toastr.error("Enter item condition.");
+            AppraisedItem.ItemCondition("");
+            document.getElementById("ItemCondition").focus();
+            return false;
+        }
+        if (AppraisedItem.AppraisedValue() === "" || AppraisedItem.AppraisedValue() === undefined || AppraisedItem.AppraisedValue() === 0) {
+            toastr.error("Enter appraised value.");
+            AppraisedItem.AppraisedValue("");
+            document.getElementById("AppraisedValue").focus();
+            return false;
+        }
+        /*VALIDATIONS -END*/
+   
         loaderApp.showPleaseWait();
         var param = ko.toJS(AppraisedItem);
         var url = RootUrl + "/Administrator/Transactions/SaveAppraisal";
@@ -517,7 +537,7 @@
                     swal("Success", result.message, "success");
 
                     loadTransactionList();
-                    backToList();
+                    backToListForAppraisal();
 
                     loaderApp.hidePleaseWait();
                 } else {
@@ -531,17 +551,264 @@
         });
     }
 
+    function changeTermsOptions() {
+        var Terms = $('#TermsId :selected').val();
+
+        if (Terms == 0.25) {
+            $('#ScheduleOfPayment')
+                .find('option')
+                .remove()
+                .end()
+                .append('<option value="Weekly">Weekly</option>')
+                .val('Weekly')
+                .append('<option value="Daily">Daily</option>')
+                .val('Weekly')
+            ;
+        }
+        if (Terms == 0.5) {
+            $('#ScheduleOfPayment')
+                .find('option')
+                .remove()
+                .end()
+                .append('<option value="Semi-Monthly">Semi-Monthly</option>')
+                .val('Semi-Monthly')
+                .append('<option value="Weekly">Weekly</option>')
+                .val('Semi-Monthly')
+                .append('<option value="Daily">Daily</option>')
+                .val('Semi-Monthly')
+            ;
+        }
+        if (Terms >= 1.0) {
+            $('#ScheduleOfPayment')
+                .find('option')
+                .remove()
+                .end()
+                .append('<option value="Monthly">Monthly</option>')
+                .val('Monthly')
+                .append('<option value="Semi-Monthly">Semi-Monthly</option>')
+                .val('Monthly')
+                .append('<option value="Weekly">Weekly</option>')
+                .val('Monthly')
+                .append('<option value="Daily">Daily</option>')
+                .val('Monthly')
+            ;
+        }
+        changeScheduleOptions();
+        changeDueDateStart();
+        computeAmount();
+    }
+
+    function changeScheduleOptions() {
+        var Terms = $('#TermsId :selected').val();
+        var ScheduleOfPayment = $('#ScheduleOfPayment :selected').val();
+
+        if (Terms == 0.25) {
+            if (ScheduleOfPayment == "Weekly") {
+                $('#NoOfPayments').val(1)
+            }
+            else {
+                $('#NoOfPayments').val(7)
+            }
+        }
+        if (Terms == 0.5) {
+            if (ScheduleOfPayment == "Semi-Monthly") {
+                $('#NoOfPayments').val(1)
+            }
+            else if (ScheduleOfPayment == "Weekly") {
+                $('#NoOfPayments').val(2)
+            }
+            else {
+                $('#NoOfPayments').val(15)
+            }
+        }
+        if (Terms == 1.0) {
+            if (ScheduleOfPayment == "Monthly") {
+                $('#NoOfPayments').val(1)
+            }
+            else if (ScheduleOfPayment == "Semi-Monthly") {
+                $('#NoOfPayments').val(2)
+            }
+            else if (ScheduleOfPayment == "Weekly") {
+                $('#NoOfPayments').val(4)
+            }
+            else {
+                $('#NoOfPayments').val(30)
+            }
+        }
+        if (Terms > 1.0) {
+            if (ScheduleOfPayment == "Monthly") {
+                $('#NoOfPayments').val(Terms)
+            }
+            else if (ScheduleOfPayment == "Semi-Monthly") {
+                $('#NoOfPayments').val(Terms * 2)
+            }
+            else if (ScheduleOfPayment == "Weekly") {
+                $('#NoOfPayments').val(Terms * 4)
+            }
+            else {
+                $('#NoOfPayments').val(Terms * 30)
+            }
+        }
+        changeDueDateStart();
+    }
+
+    function changeDueDateStart() {
+        var Terms = $('#TermsId :selected').val();
+        var addDays = 30 * Terms
+
+        if (Terms != "" && Terms != 0) {
+            var startDate = $('#DueDateStart').datepicker('getDate', '+1d');
+            startDate.setDate(startDate.getDate() + addDays);
+            $('#DueDateEnd').datepicker('setDate', startDate);
+        }
+    }
+
+    function computeAmount() {
+        var LoanableAmount = parseFloat($('#LoanableAmount').val());
+        var Terms = parseFloat($('#TermsId :selected').val());
+        var InterestRate = parseFloat($('#InterestRate').val());
+
+        $('#InterestAmount').val(parseFloat((LoanableAmount * (InterestRate / 100)) * Terms).toFixed(2));
+
+        computeNetCashout();
+    }
+
+    function computeNetCashout() {
+        var LoanableAmount = parseFloat($('#LoanableAmount').val());
+        var InitialPayment = parseFloat($('#InitialPayment').val());
+        var ServiceCharge = parseFloat($('#InitialPayment').val());
+        var Others = parseFloat($('#Others').val());
+        var InterestAmount = parseFloat($('#InterestAmount').val());
+
+        var IsInterestDeducted = $('#IsInterestDeducted :selected').text();
+     
+        if (IsInterestDeducted == "Yes") {
+            $('#NetCashOut').val(parseFloat(LoanableAmount - (InitialPayment + ServiceCharge + Others + InterestAmount)).toFixed(2));
+        }
+        else {
+            $('#NetCashOut').val(parseFloat(LoanableAmount - (InitialPayment + ServiceCharge + Others)).toFixed(2));
+        }
+    }
+
+    function getTerms() {
+        $.getJSON(RootUrl + "/Administrator/Base/GetTerms", function (result) {
+            terms.removeAll();
+            terms(result);
+        });
+    }
+
+    function generateAmortization(arg) {
+        var Terms = $('#TermsId :selected').val();
+        var NoOfPayment = arg;
+        Terms = (Terms * 30) / NoOfPayment
+
+        var Principal = parseFloat($('#LoanableAmount').val()).toFixed(2) / NoOfPayment
+        var Interest = parseFloat($('#InterestAmount').val()).toFixed(2) / NoOfPayment
+
+        var Balance =  parseFloat($('#LoanableAmount').val()) + parseFloat($('#InterestAmount').val())
+
+        $('#Amortization tbody > tr').empty();
+
+        $('#Amortization').append('<tr><td>CO</td><td></td>' +
+            '<td style="text-align: right">' + parseFloat($('#LoanableAmount').val()).toFixed(2) + '</td>' +
+            '<td style="text-align: right">' + parseFloat($('#InterestAmount').val()).toFixed(2) + '</td>' +
+            '<td style="text-align: right">' + Balance.toFixed(2) + '</td>' +
+            '<td style="text-align: right"></td>' +
+            '<td style="text-align: right"></td>' +
+            '<td style="text-align: left"></td>' +
+            '</tr>');
+
+        var startDate = $('#DueDateStart').datepicker('getDate', '+1d');
+
+        for (i = 0; i < NoOfPayment; i++) {
+            startDate.setDate(startDate.getDate() + Terms);
+            var d = startDate.getDate();
+            var m = startDate.getMonth();
+            m += 1;
+            var y = startDate.getFullYear();
+            debugger
+            Balance = parseFloat(Balance) - (parseFloat(Principal) + parseFloat(Interest))
+
+            $('#Amortization').append('<tr><td>' + (i + 1) + '</td><td>' + m + "/" + d + "/" + y + '</td>' +
+                '<td style="text-align: right">' + Principal.toFixed(2) + '</td>' +
+                '<td style="text-align: right">' + Interest.toFixed(2) + '</td>' +
+                '<td style="text-align: right">' + Balance.toFixed(2) + '</td>' +
+                '<td style="text-align: right"></td>' +
+                '<td style="text-align: right"></td>' +
+                '<td style="text-align: left"></td>' +
+                '</tr>');
+        }
+    }
+
     function savePawnedItem() {
         /*VALIDATIONS -START*/
-
+        if (PawnedItem.PawnedDate() === "" || PawnedItem.PawnedDate() === undefined || PawnedItem.PawnedDate() === 0) {
+            toastr.error("Enter date.");
+            PawnedItem.PawnedDate("");
+            document.getElementById("PawnedDate").focus();
+            return false;
+        }
+        if (PawnedItem.LoanableAmount() === "" || PawnedItem.LoanableAmount() === undefined || PawnedItem.LoanableAmount() === 0) {
+            toastr.error("Enter loan amount");
+            PawnedItem.LoanableAmount("");
+            document.getElementById("LoanableAmount").focus();
+            return false;
+        }
+        if (PawnedItem.InterestRate() === "" || PawnedItem.InterestRate() === undefined || PawnedItem.InterestRate() === 0) {
+            toastr.error("Enter interest rate");
+            PawnedItem.InterestRate("");
+            document.getElementById("InterestRate").focus();
+            return false;
+        }
+        if (PawnedItem.InterestAmount() === "" || PawnedItem.InterestAmount() === undefined || PawnedItem.InterestAmount() === 0) {
+            toastr.error("Compute interest");
+            PawnedItem.InterestAmount("");
+            document.getElementById("LoanableAmount").focus();
+            return false;
+        }         
+        if (PawnedItem.NetCashOut() === "" || PawnedItem.NetCashOut() === undefined || PawnedItem.NetCashOut() === 0) {
+            toastr.error("Compute net cash out");
+            PawnedItem.NetCashOut("");
+            document.getElementById("LoanableAmount").focus();
+            return false;
+        }
         /*VALIDATIONS -END*/
-
+        debugger;
         PawnedItem.PawnedDate($('#PawnedDate').val());
         PawnedItem.DueDateStart($('#DueDateStart').val());
         PawnedItem.DueDateEnd($('#DueDateEnd').val());
         PawnedItem.TransactionNo(Transaction.TransactionNo);
+        PawnedItem.NoOfPayments($('#NoOfPayments').val())
+        PawnedItem.InterestAmount($('#InterestAmount').val())
 
         loaderApp.showPleaseWait();
+        var param = ko.toJS(PawnedItem);
+        var url = RootUrl + "/Administrator/Transactions/SavePawning";
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: ko.utils.stringifyJson(param),
+            contentType: 'application/json; charset=utf-8',
+            success: function (result) {
+                if (result.success) {
+                    swal("Success", result.message, "success");
+
+                    loadTransactionList();
+                    backToListForPawning();
+
+                    loaderApp.hidePleaseWait();
+                } else {
+                    loaderApp.hidePleaseWait();
+
+                    swal("Error", result.message, "error");
+
+                    clearControls();
+                }
+            }
+        });
+    }
+
+    function saveAmortization() {
         var param = ko.toJS(PawnedItem);
         var url = RootUrl + "/Administrator/Transactions/SavePawning";
         $.ajax({
@@ -704,6 +971,7 @@
 
         createCustomer: createCustomer,
         customer: customer,
+        terms: terms,
         modelAddCustomer: modelAddCustomer,
 
         modelTransactions: modelTransactions,
@@ -713,6 +981,11 @@
 
         getItemType: getItemType,
         getItemCategory: getItemCategory,
+        changeTermsOptions: changeTermsOptions,
+        changeScheduleOptions: changeScheduleOptions,
+        changeDueDateStart: changeDueDateStart,
+        computeAmount: computeAmount,
+        computeNetCashout: computeNetCashout,
 
         itemType: itemType,
         itemCategory: itemCategory,
@@ -742,5 +1015,12 @@ $(function () {
         app.vm.update();
     }, 1000);
 
+    $(".numbers").each(function () {
+        $(this).formatNumber({ format: "#,###.00", locale: "us" });
+    });
+
     ko.applyBindings(app.vm);
 });
+
+//$('#dropDownId').val();
+//$('#dropDownId :selected').text();

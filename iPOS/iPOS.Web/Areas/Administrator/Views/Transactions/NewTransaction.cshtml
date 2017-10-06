@@ -498,32 +498,37 @@
             <div class="form form-horizontal">
                 <div class="form-group">
                     <div class="col-sm-6">
-                        <label class="col-sm-4 control-label" for="form-control-1">Schedule of payment</label>
+                        <label class="col-sm-4 control-label" for="form-control-1">Contract no.</label>
                         <div class="col-sm-8">
-                            <select id="ScheduleOfPayment" class="form-control">
-                                <option value="opt1">Monthly</option>
-                                <option value="opt2">Semi-Monthly</option>
-                                <option value="opt3">Weekly</option>
-                                <option value="opt4">Daily</option>
-                            </select>
+                            <input id="PawnedItemContractNo" data-bind="textinput: PawnedItem.PawnedItemContractNo" placeholder="Contract no." class="form-control" type="text">
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <label class="col-sm-3 control-label" for="form-control-1">Terms</label>
-                        <div class="col-sm-9">
-                            <select id="TermsId" class="form-control">
-                                <option value="opt1">1 month</option>
-                                <option value="opt2">2 months</option>
-                                <option value="opt3">3 months</option>
-                                <option value="opt4">4 months</option>
-                                <option value="opt5">5 months</option>
-                                <option value="opt6">6 months</option>
-                                <option value="opt7">7 months</option>
-                                <option value="opt8">8 months</option>
-                                <option value="opt9">9 months</option>
-                                <option value="opt10">10 months</option>
-                                <option value="opt11">11 months</option>
-                                <option value="opt12">12 months</option>
+                        <label class="col-sm-4 control-label" for="form-control-1">Pawned date</label>
+                        <div class="col-sm-8">
+                            <div class="input-with-icon">
+                                <input id="PawnedDate" data-bind="textinput: moment(PawnedItem.PawnedDate()).format('L')" class="form-control" type="text" data-provide="datepicker" data-date-today-highlight="true">
+                                <span class="icon icon-calendar input-icon"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-4 control-label" for="form-control-1">Terms</label>
+                        <div class="col-sm-8">
+                            <select id="TermsId" data-bind="options: terms, optionsValue: 'multiplier', optionsText: 'term_desc', optionsCaption: '--Select term--', value: PawnedItem.TermsId, event:{ change: changeTermsOptions()}" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-4 control-label" for="form-control-1">Schedule of payment</label>
+                        <div class="col-sm-8">
+                            <select id="ScheduleOfPayment" data-bind="textinput: PawnedItem.ScheduleOfPayment, value: PawnedItem.ScheduleOfPayment" class="form-control" onchange="app.vm.changeScheduleOptions();">
+                                <option value="Monthly">Monthly</option>
+                                <option value="Semi-Monthly">Semi-Monthly</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Daily">Daily</option>
                             </select>
                         </div>
                     </div>
@@ -532,7 +537,7 @@
                     <div class="col-sm-6">
                         <label class="col-sm-4 control-label" for="form-control-1">No of payment</label>
                         <div class="col-sm-8">
-                            <input id="NoOfPayments" data-bind="textinput: PawnedItem.NoOfPayments" class="form-control" style="text-align:right" type="number">
+                            <input id="NoOfPayments" data-bind="textinput: PawnedItem.NoOfPayments, value: PawnedItem.NoOfPayments" class="form-control" style="text-align:right" type="number">
                         </div>
                     </div>
                 </div>
@@ -541,9 +546,9 @@
                         <label class="col-sm-2 control-label" for="form-control-1">Due date</label>
                         <div class="col-sm-10">
                             <div class="input-group input-daterange" data-provide="datepicker" data-date-autoclose="true" data-date-format="m/dd/yyyy">
-                                <input id="DueDateStart" data-bind="textinput: moment(PawnedItem.DueDateStart()).format('L')" class="form-control" type="text">
+                                <input id="DueDateStart" data-bind="textinput: moment(PawnedItem.DueDateStart()).format('L')" class="form-control" type="text" onchange="app.vm.changeDueDateStart()">
                                 <span class="input-group-addon">to</span>
-                                <input id="DueDateEnd" data-bind="textinput: moment(PawnedItem.DueDateEnd()).format('L')" class="form-control" type="text">
+                                <input id="DueDateEnd" data-bind="textinput: moment(PawnedItem.DueDateEnd()).format('L')" class="form-control" type="text" readonly>
                             </div>
                         </div>
                     </div>
@@ -551,79 +556,80 @@
                 <br><h6 class="card-title text-semibold">Loan Details</h6><br>
                 <div class="form-group">
                     <div class="col-sm-6">
-                        <label class="col-sm-3 control-label" for="form-control-1">Pawned date</label>
-                        <div class="col-sm-9">
-                            <input id="PawnedDate" data-bind="textinput: moment(PawnedItem.PawnedDate()).format('L')" class="form-control" type="text" data-provide="datepicker" data-date-today-highlight="true">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <label class="col-sm-3 control-label" for="form-control-1">Contract no.</label>
-                        <div class="col-sm-9">
-                            <input id="PawnedItemContractNo" data-bind="textinput: PawnedItem.PawnedItemContractNo" placeholder="Contract no." class="form-control" type="text">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-6">
                         <label class="col-sm-4 control-label" for="form-control-1">Loanable amount</label>
                         <div class="col-sm-8">
-                            <input id="LoanableAmount" data-bind="textinput: PawnedItem.LoanableAmount" class="form-control" style="text-align:right" type="number">
+                            <input id="LoanableAmount" data-bind="textinput: PawnedItem.LoanableAmount" class="form-control" style="text-align:right" type="number" onchange="app.vm.computeAmount()" onclick="app.vm.computeAmount()" min="0">
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <label class="col-sm-3 control-label" for="form-control-1">Interest rate</label>
-                        <div class="col-sm-9">
-                            <input id="InterestRate" data-bind="textinput: PawnedItem.InterestRate" class="form-control" style="text-align:right" type="number">
+                        <label class="col-sm-4 control-label" for="form-control-1">Interest rate</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <span class="input-group-addon">%</span>
+                                <input id="InterestRate" data-bind="textinput: PawnedItem.InterestRate" class="form-control" style="text-align:right" type="number" onchange="app.vm.computeAmount()" onclick="app.vm.computeAmount()" min="0">
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-6">
-                        <label class="col-sm-3 control-label" for="form-control-1">Interest amount</label>
-                        <div class="col-sm-9">
-                            <input id="InterestAmount" data-bind="textinput: PawnedItem.InterestAmount" class="form-control" style="text-align:right" type="number">
-                        </div>
-                    </div>
-                </div>
-                <br><h6 class="card-title text-semibold">Other deductions</h6><br>
-                <div class="form-group">
-                    <div class="col-sm-4">
-                        <label class="col-sm-5 control-label" for="form-control-1">Initial payment</label>
-                        <div class="col-sm-7">
-                            <input id="InitialPayment" data-bind="textinput: PawnedItem.InitialPayment" class="form-control" style="text-align:right" type="number">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <label class="col-sm-5 control-label" for="form-control-1">Service charge</label>
-                        <div class="col-sm-7">
-                            <input id="ServiceCharge" data-bind="textinput: PawnedItem.ServiceCharge" class="form-control" style="text-align:right" type="number">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <label class="col-sm-3 control-label" for="form-control-1">Others</label>
-                        <div class="col-sm-9">
-                            <input id="Others" data-bind="textinput: PawnedItem.Others" class="form-control" style="text-align:right" type="number">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-6">
-                        <label class="col-sm-3 control-label" for="form-control-1">Deduct interest?</label>
-                        <div class="col-sm-9">
-                            <select id="IsInterestDeducted" class="form-control">
-                                <option value="opt1">No</option>
-                                <option value="opt2">Yes</option>
+                        <label class="col-sm-4 control-label" for="form-control-1">Deduct interest?</label>
+                        <div class="col-sm-8">
+                            <select id="Scheme" data-bind="textinput: PawnedItem.Scheme, value: PawnedItem.Scheme" class="form-control"  onchange="app.vm.computeAmount()" onclick="app.vm.computeAmount()">
+                                <option value="false">No</option>
+                                <option value="true">Yes</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <label class="col-sm-3 control-label" for="form-control-1">Net Cashout</label>
-                        <div class="col-sm-9">
-                            <input id="NetCashOut" data-bind="textinput: PawnedItem.NetCashOut" class="form-control" style="text-align:right" type="number">
+                        <label class="col-sm-4 control-label" for="form-control-1">Interest amount</label>
+                        <div class="col-sm-8">
+                            <input id="InterestAmount" data-bind="textinput: PawnedItem.InterestAmount" class="form-control" style="text-align:right" type="number" tabindex="-1" readonly>
                         </div>
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-4 control-label" for="form-control-1">Initial payment</label>
+                        <div class="col-sm-8">
+                            <input id="InitialPayment" data-bind="textinput: PawnedItem.InitialPayment" class="form-control" style="text-align:right" type="number" onchange="app.vm.computeNetCashout()" onclick="app.vm.computeNetCashout()">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-4 control-label" for="form-control-1">Service charge</label>
+                        <div class="col-sm-8">
+                            <input id="ServiceCharge" data-bind="textinput: PawnedItem.ServiceCharge" class="form-control" style="text-align:right" type="number" onchange="app.vm.computeNetCashout()" onclick="app.vm.computeNetCashout()">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-4 control-label" for="form-control-1">Others</label>
+                        <div class="col-sm-8">
+                            <input id="Others" data-bind="textinput: PawnedItem.Others" class="form-control" style="text-align:right" type="number" onchange="app.vm.computeNetCashout()" onclick="app.vm.computeNetCashout()">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-4 control-label" for="form-control-1">Deduct interest?</label>
+                        <div class="col-sm-8">
+                            <select id="IsInterestDeducted" data-bind="textinput: PawnedItem.IsInterestDeducted, value: PawnedItem.IsInterestDeducted" class="form-control" onchange="app.vm.computeNetCashout()">
+                                <option value="false">No</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-4 control-label" for="form-control-1">Net Cashout</label>
+                        <div class="col-sm-8">
+                            <input id="NetCashOut" data-bind="textinput: PawnedItem.NetCashOut" class="form-control numbers" style="text-align:right" type="number" tabindex="-1" readonly>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -637,7 +643,20 @@
         </div>
         <div class="card-body">
             <div class="form form-horizontal">
- 
+                <table id="Amortization" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th style="background: #d1202d; color: #ffffff;">Term</th>
+                            <th style="background: #d1202d; color: #ffffff;">Due Date</th>
+                            <th style="background: #d1202d; color: #ffffff;">Principal</th>
+                            <th style="background: #d1202d; color: #ffffff;">Interest</th>
+                            <th style="background: #d1202d; color: #ffffff;">Balance</th>
+                            <th style="background: #d1202d; color: #ffffff;">Payment</th>
+                            <th style="background: #d1202d; color: #ffffff;">OR Ref.</th>
+                            <th style="background: #d1202d; color: #ffffff;">Remarks</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>
@@ -653,6 +672,7 @@
 <script type="text/javascript">
     var PageTitle = '@ViewBag.Title';
 </script> 
+
 @section scripts{
     <script src="~/Areas/Administrator/Assets/Model/model.js"></script>
     <script src="~/Areas/Administrator/Assets/ViewModel/viewmodel.js"></script>

@@ -369,6 +369,69 @@ namespace iPOS.Web.Areas.Administrator.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<JsonResult> SaveAmortization(tbl_ipos_pawneditem_amortization_schedule model)
+        {
+            try
+            {
+                bool success = false;
+                string message = "";
+
+                if (string.IsNullOrEmpty(model.autonum.ToString()) || model.autonum.ToString() == "0")
+                {
+                    tbl_ipos_pawneditem_amortization_schedule model1 = new tbl_ipos_pawneditem_amortization_schedule();
+                    model1.transaction_no = model.transaction_no;
+                    model1.pawned_item_id = model.pawned_item_id;
+                    model1.term = model.term;
+                    model1.due_date = model.due_date;
+                    model1.principal = model.principal;
+                    model1.interest = model.interest;
+                    model1.balance = model.balance;
+                    model1.or_reference = model.or_reference;
+                    model1.payment_amount = model.payment_amount;
+                    model1.remarks = model.remarks;
+                    model1.CreatedBy = "";
+                    model1.CreatedAt = DateTime.Now;
+
+                    var result = await _referenceService.SaveAmortization(model1);
+
+                    success = result;
+
+                    if (result)
+                    {
+                        message = "Successfully saved.";
+                    }
+                    else
+                    {
+                        message = "Error saving data. Duplicate entry.";
+                    }
+                }
+                else
+                {
+                    tbl_ipos_pawneditem_amortization_schedule model1 = new tbl_ipos_pawneditem_amortization_schedule();
+                    model1 = await _referenceService.FindByIdAmortization(model.autonum);
+                    model1.or_reference = model.or_reference;
+                    model1.payment_amount = model.payment_amount;
+                    model1.remarks = model.remarks;
+
+                    var result = await _referenceService.SaveAmortization(model1);
+                    success = result;
+                    if (result)
+                    {
+                        message = "Successfully updated.";
+                    }
+                    else
+                    {
+                        message = "Error saving data. Please contact administrator.";
+                    }
+                }
+
+                return Json(new { success = success, message = message });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         #endregion
     }
 }

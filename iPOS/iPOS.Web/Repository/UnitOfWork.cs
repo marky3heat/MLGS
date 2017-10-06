@@ -109,6 +109,27 @@ namespace iPOS.Web.Repository
             }
         }
 
+        private Repository<tbl_ipos_pawneditem_terms> _termsRepository;
+        public IRepository<tbl_ipos_pawneditem_terms> TermsRepository
+        {
+            get
+            {
+                if (_termsRepository == null)
+                    _termsRepository = new Repository<tbl_ipos_pawneditem_terms>(_dbContext);
+                return _termsRepository;
+            }
+        }
+
+        private Repository<tbl_ipos_pawneditem_amortization_schedule> _amortizationRepository;
+        public IRepository<tbl_ipos_pawneditem_amortization_schedule> AmortizationRepository
+        {
+            get
+            {
+                if (_amortizationRepository == null)
+                    _amortizationRepository = new Repository<tbl_ipos_pawneditem_amortization_schedule>(_dbContext);
+                return _amortizationRepository;
+            }
+        }
 
         public void Dispose()
         {

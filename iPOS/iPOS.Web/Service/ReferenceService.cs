@@ -658,7 +658,274 @@ namespace iPOS.Web.Service
                 {
                     if (!string.IsNullOrEmpty(id))
                     {
-                        uow.BrandRepository.Delete(id);
+                        uow.KaratRepository.Delete(id);
+                        await uow.SaveChangesAsync();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
+        #region PUBLIC MEMBER METHODS (TERMS)
+        public long GetItemCodeTerms()
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var result = uow.TermsRepository.All;
+                    if (result.Count() != 0)
+                    {
+                        return result.Max(a => a.autonum);
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<tbl_ipos_pawneditem_terms> FindByIdTerms(long id)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    return await uow.TermsRepository.FindAsync(id);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<List<tbl_ipos_pawneditem_terms>> GetListTerms(
+            int pageIndex = 0,
+            int pageSize = 100)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var list = await uow.TermsRepository.AllWithAsync(null);
+
+                    list = list
+                        .Skip(pageSize * pageIndex)
+                        .Take(pageSize).ToList();
+
+                    return list.ToList();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<bool> SaveTerms(tbl_ipos_pawneditem_terms model)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var result = await FindByIdTerms(model.autonum);
+                    if (result == null)
+                    {
+                        uow.TermsRepository.Insert(model);
+                        await uow.SaveChangesAsync();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<bool> UpdateTerms(tbl_ipos_pawneditem_terms model)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var result = await FindByIdTerms(model.autonum);
+                    if (result != null)
+                    {
+                        uow.TermsRepository.Update(model);
+                        await uow.SaveChangesAsync();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<bool> DeleteTerms(string id)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    if (!string.IsNullOrEmpty(id))
+                    {
+                        uow.TermsRepository.Delete(id);
+                        await uow.SaveChangesAsync();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
+        #region PUBLIC MEMBER METHODS (AMORTIZATION)
+        public async Task<tbl_ipos_pawneditem_amortization_schedule> FindByIdAmortization(long id)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    return await uow.AmortizationRepository.FindAsync(id);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<tbl_ipos_pawneditem_amortization_schedule> FindByTransactionNoAmortization(string transactionNo)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var result = await uow.AmortizationRepository.AllWithAsync(u => u.transaction_no == transactionNo);
+                    return result.FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<List<tbl_ipos_pawneditem_amortization_schedule>> GetListAmortization(
+            int pageIndex = 0,
+            int pageSize = 100)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var list = await uow.AmortizationRepository.AllWithAsync(null);
+
+                    list = list
+                        .Skip(pageSize * pageIndex)
+                        .Take(pageSize).ToList();
+
+                    return list.ToList();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<bool> SaveAmortization(tbl_ipos_pawneditem_amortization_schedule model)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var result = await FindByIdAmortization(model.autonum);
+                    if (result == null)
+                    {
+                        uow.AmortizationRepository.Insert(model);
+                        await uow.SaveChangesAsync();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<bool> UpdateAmortization(tbl_ipos_pawneditem_amortization_schedule model)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var result = await FindByIdAmortization(model.autonum);
+                    if (result != null)
+                    {
+                        uow.AmortizationRepository.Update(model);
+                        await uow.SaveChangesAsync();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<bool> DeleteAmortization(string id)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    if (!string.IsNullOrEmpty(id))
+                    {
+                        uow.AmortizationRepository.Delete(id);
                         await uow.SaveChangesAsync();
                         return true;
                     }

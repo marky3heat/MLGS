@@ -19,6 +19,7 @@
     <EntitySet Name="tbl_ipos_karat" EntityType="dbpawnshopModel.tbl_ipos_karat" />
     <EntitySet Name="tbl_ipos_appraiseditem" EntityType="dbpawnshopModel.tbl_ipos_appraiseditem" />
     <EntitySet Name="tbl_ipos_pawneditem" EntityType="dbpawnshopModel.tbl_ipos_pawneditem" />
+    <EntitySet Name="tbl_ipos_pawneditem_terms" EntityType="dbpawnshopModel.tbl_ipos_pawneditem_terms" />
     <EntitySet Name="tbl_ipos_pawneditem_amortization_schedule" EntityType="dbpawnshopModel.tbl_ipos_pawneditem_amortization_schedule" />
   </EntityContainer>
   <EntityType Name="tbl_customer">
@@ -304,6 +305,19 @@
     <Property Name="CreatedBy" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
     <Property Name="CreatedAt" Type="DateTime" />
   </EntityType>
+  <EntityType Name="tbl_ipos_pawneditem_terms">
+    <Key>
+      <PropertyRef Name="autonum" />
+    </Key>
+    <Property Name="autonum" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="term_desc" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="days" Type="Int32" />
+    <Property Name="multiplier" Type="Decimal" />
+    <Property Name="created_by" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="date_created" Type="DateTime" />
+    <Property Name="updaed_by" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="date_updated" Type="DateTime" />
+  </EntityType>
   <EntityType Name="tbl_ipos_pawneditem_amortization_schedule">
     <Key>
       <PropertyRef Name="autonum" />
@@ -319,6 +333,7 @@
     <Property Name="or_reference" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
     <Property Name="payment_amount" Type="Decimal" />
     <Property Name="remarks" Type="String" MaxLength="124" FixedLength="false" Unicode="false" />
+    <Property Name="isDisabled" Type="Boolean" />
     <Property Name="CreatedBy" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
     <Property Name="CreatedAt" Type="DateTime" />
   </EntityType>

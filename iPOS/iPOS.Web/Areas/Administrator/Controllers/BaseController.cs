@@ -259,6 +259,20 @@ namespace iPOS.Web.Areas.Administrator.Controllers
 
             return Json(list, JsonRequestBehavior.AllowGet);
         }
+
+        public async Task<JsonResult> GetTerms()
+        {
+            var list = await _referenceService.GetListTerms();
+            var result = list.Select(item => new tbl_ipos_pawneditem_terms()
+            {
+                autonum = item.autonum,
+                term_desc = item.term_desc,
+                days = item.days,
+                multiplier = item.multiplier
+            });
+
+            return Json(result.OrderBy(o => o.autonum), JsonRequestBehavior.AllowGet);
+        }
         #endregion
     }
 

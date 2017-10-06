@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e055333e879940bb93b171c9ac0fb58f" Name="Diagram1" ZoomLevel="57">
+      <Diagram DiagramId="e055333e879940bb93b171c9ac0fb58f" Name="Diagram1" ZoomLevel="85">
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_customer" Width="1.5" PointX="0.5" PointY="0.5" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_customer" Width="1.5" PointX="13.25" PointY="0.5" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_itemcategory" Width="1.5" PointX="13.25" PointY="3.75" />
@@ -23,6 +23,7 @@
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_karat" Width="1.5" PointX="11.25" PointY="5" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_appraiseditem" Width="1.5" PointX="5.125" PointY="9.25" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_pawneditem" Width="1.5" PointX="8.125" PointY="9.25" />
+        <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_pawneditem_terms" Width="1.5" PointX="9.75" PointY="9.25" />
         <EntityTypeShape EntityType="dbpawnshopModel.tbl_ipos_pawneditem_amortization_schedule" Width="1.5" PointX="6.625" PointY="9.25" />
       </Diagram>
     </edmx:Diagrams>
