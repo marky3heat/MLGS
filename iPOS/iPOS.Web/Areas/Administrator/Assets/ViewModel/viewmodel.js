@@ -73,62 +73,76 @@
                 data: "Status",
                 className: "text-center",
                 render: function (data, type, row) {
-                    if (row.Status == "For appraisal") {
-                        return '<td>' +
-                        '<span class="label label-outline-info">' + row.Status + '</span>'
-                        '<td>';
-                    }
-                    else if (row.Status == "For pawning") {
-                        return '<td>' +
-                        '<span class="label label-outline-warning">' + row.Status + '</span>'
-                        '<td>';
-                    }
-                    else if (row.Status == "Completed") {
-                        return '<td>' +
-                        '<span class="label label-outline-success">' + row.Status + '</span>'
-                        '<td>';
-                    }
-                    else {
-                        return '<td>' +
-                        '<span class="label label-outline-primary">' + row.Status + '</span>'
-                        '<td>';
-                    }
-                }
-            },
-            {
-                className: "text-center",
-                render: function (data, type, row) {
+                    //For appraisal
                     if (row.Status == "For appraisal" && PageTitle == "New Transactions") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/Appraisal" class="btn btn-xs btn-info" role="button">Go to Appraisal</a>';
-                    }
-                    else if (row.Status == "For appraisal" && PageTitle == "Appraisal") {
-                        return '<button type="button" class="btn btn-xs btn-info" onclick="app.vm.AppraiseItem('+ row.TransactionId +')">Appraise</button>';
-                    }
-                    else if (row.Status == "For appraisal" && PageTitle == "Approval") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/Appraisal" class="btn btn-xs btn-info" role="button">Go to Appraisal</a>';
-                    }
-                    else if (row.Status == "For pawning" && PageTitle == "Appraisal") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/NewTransaction" class="btn btn-xs btn-warning" role="button">Go to Transactions</a>' +
-                            '<button type="button" class="btn btn-xs btn-info" onclick="app.vm.AppraiseItem(' + row.TransactionId + ')">Reappraise</button>';
+                        return '<td>' +
+                        '<span class="label label-outline-warning">' + row.Status + '</span>' +
+                        '<td>';
                     }
                     else if (row.Status == "For pawning" && PageTitle == "New Transactions") {
-                        return '<button type="button" class="btn btn-xs btn-warning" onclick="app.vm.PawnItem(' + row.TransactionId + ')">Process</button>';
-                    }
-                    else if (row.Status == "For pawning" && PageTitle == "Approval") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/NewTransaction" class="btn btn-xs btn-warning" role="button">Go to Transactions</a>'
+                        return '<td>' +
+                        '<button type="button" class="btn btn-xs btn-danger" onclick="app.vm.PawnItem(' + row.TransactionId + ')">For pawning</button>' +
+                        '<td>';
                     }
                     else if (row.Status == "For approval" && PageTitle == "New Transactions") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/Approval" class="btn btn-xs btn-primary" role="button">Go to Approval</a>' +
-                            '<button type="button" class="btn btn-xs btn-warning" onclick="app.vm.PawnItem(' + row.TransactionId + ')">Reprocess</button>';
+                        return '<td>' +
+                        '<button type="button" class="btn btn-xs btn-danger" onclick="app.vm.PawnItem(' + row.TransactionId + ')">For approval</button>' +
+                        '<td>';
+                    }
+                    else if (row.Status == "Pending" && PageTitle == "New Transactions") {
+                        return '<td>' +
+                        '<span class="label label-outline-success">' + row.Status + '</span>' +
+                        '<td>';
+                    }
+                    //For appraisal
+                    //For pawning
+                    else if (row.Status == "For appraisal" && PageTitle == "Appraisal") {
+                        return '<td>' +
+                        '<button type="button" class="btn btn-xs btn-warning" onclick="app.vm.AppraiseItem(' + row.TransactionId + ')">Appraise</button>' +
+                        '<td>';
+                    }
+                    else if (row.Status == "For pawning" && PageTitle == "Appraisal") {
+                        return '<td>' +
+                        '<button type="button" class="btn btn-xs btn-warning" onclick="app.vm.AppraiseItem(' + row.TransactionId + ')">For pawning</button>' +
+                        '<td>';
                     }
                     else if (row.Status == "For approval" && PageTitle == "Appraisal") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/Approval" class="btn btn-xs btn-primary" role="button">Go to Approval</a>'
+                        return '<td>' +
+                        '<span class="label label-outline-success">' + row.Status + '</span>' +
+                        '<td>';
+                    }
+                    else if (row.Status == "Pending" && PageTitle == "Appraisal") {
+                        return '<td>' +
+                        '<span class="label label-outline-success">' + row.Status + '</span>' +
+                        '<td>';
+                    }
+                    //For pawning
+                    //For approval
+                    else if (row.Status == "For appraisal" && PageTitle == "Approval") {
+                        return '<td>' +
+                        '<span class="label label-outline-warning">' + row.Status + '</span>' +
+                        '<td>';
+                    }
+                    else if (row.Status == "For pawning" && PageTitle == "Approval") {
+                        return '<td>' +
+                        '<span class="label label-outline-danger">' + row.Status + '</span>' +
+                        '<td>';
                     }
                     else if (row.Status == "For approval" && PageTitle == "Approval") {
-                        return '<button type="button" class="btn btn-xs btn-primary" onclick="">Process</button>';
+                        return '<td>' +
+                        '<span class="label label-outline-success">' + row.Status + '</span>' +
+                        '<td>';
                     }
+                    else if (row.Status == "Pending" && PageTitle == "Approval") {
+                        return '<td>' +
+                        '<span class="label label-outline-success">' + row.Status + '</span>' +
+                        '<td>';
+                    }
+                    //For approval
                     else {
-
+                        return '<td>' +
+                        '<span class="label label-outline-success">' + row.Status + '</span>' +
+                        '<td>';
                     }
                 }
             }
@@ -207,6 +221,7 @@
     }
 
     function PawnItem(TransactionId) {
+        debugger
         cardTogglesForPawning();
         clearControlsCustomer();
         clearControls();
