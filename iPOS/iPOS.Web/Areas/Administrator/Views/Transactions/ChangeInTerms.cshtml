@@ -5,7 +5,7 @@
 }
 
 <div data-bind="visible: isListShowed">
-    <div class="row gutter-xs">
+    <div class="row gutter-xs" data-bind="visible: listBody">
         <div class="col-xs-12">
             <div class="card">
                 <div class="card-header">
@@ -35,16 +35,21 @@
                     <table id="transactionTable" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0">
                         <thead>
                         <tr>
-                            <th style="background: #d1202d; color: #ffffff;">Transaction no.</th>
-                            <th style="background: #d1202d; color: #ffffff;">Date</th>
-                            <th style="background: #d1202d; color: #ffffff;">Transaction type</th>
-                            <th style="background: #d1202d; color: #ffffff;">Customer name</th>
-                            <th style="background: #d1202d; color: #ffffff;">Status</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Transaction no.</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Date</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Transaction type</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="60%">Customer name</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Status</th>
                         </tr>
                         </thead>
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+    <div data-bind="visible: spinnerList">
+        <div class="text-center" data-toggle="match-height">
+            <div class="spinner spinner-primary spinner-lg pos-r sq-100"></div>
         </div>
     </div>
 </div>

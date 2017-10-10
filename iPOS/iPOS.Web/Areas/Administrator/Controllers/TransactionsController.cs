@@ -96,6 +96,76 @@ namespace iPOS.Web.Areas.Administrator.Controllers
 
             return Json(new { data = result.OrderByDescending(d => d.Status).ThenBy(s => s.TransactionType) }, JsonRequestBehavior.AllowGet);
         }
+
+        public async Task<JsonResult> GetTransactionsAppraisal()
+        {
+            var listPawnshopTransactions = await _pawnshopTransactionService.GetListPawnshopTransactions();
+            var listCustomer = await _customerService.GetCustomerList();
+
+            var result =
+                from a in listPawnshopTransactions
+                join b in listCustomer on a.CustomerId equals b.autonum.ToString()
+                where a.Status == "For appraisal"
+                select new
+                {
+                    a.TransactionId,
+                    a.TransactionNo,
+                    a.TransactionType,
+                    a.TransactionDate,
+                    a.Status,
+                    b.first_name,
+                    b.last_name
+                };
+
+            return Json(new { data = result.OrderByDescending(d => d.Status).ThenBy(s => s.TransactionType) }, JsonRequestBehavior.AllowGet);
+        }
+
+        public async Task<JsonResult> GetTransactionsApproval()
+        {
+            var listPawnshopTransactions = await _pawnshopTransactionService.GetListPawnshopTransactions();
+            var listCustomer = await _customerService.GetCustomerList();
+
+            var result =
+                from a in listPawnshopTransactions
+                join b in listCustomer on a.CustomerId equals b.autonum.ToString()
+                where a.Status == "For approval"
+                select new
+                {
+                    a.TransactionId,
+                    a.TransactionNo,
+                    a.TransactionType,
+                    a.TransactionDate,
+                    a.Status,
+                    b.first_name,
+                    b.last_name
+                };
+
+            return Json(new { data = result.OrderByDescending(d => d.Status).ThenBy(s => s.TransactionType) }, JsonRequestBehavior.AllowGet);
+        }
+
+        public async Task<JsonResult> GetTransactionsChangeInTerms()
+        {
+            var listPawnshopTransactions = await _pawnshopTransactionService.GetListPawnshopTransactions();
+            var listCustomer = await _customerService.GetCustomerList();
+
+            var result =
+                from a in listPawnshopTransactions
+                join b in listCustomer on a.CustomerId equals b.autonum.ToString()
+                where a.Status == "Outstanding"
+                select new
+                {
+                    a.TransactionId,
+                    a.TransactionNo,
+                    a.TransactionType,
+                    a.TransactionDate,
+                    a.Status,
+                    b.first_name,
+                    b.last_name
+                };
+
+            return Json(new { data = result.OrderByDescending(d => d.Status).ThenBy(s => s.TransactionType) }, JsonRequestBehavior.AllowGet);
+        }
+
         public async Task<JsonResult> GetTransactionsById(int TransactionId)
         {
             var listTransaction = await _pawnshopTransactionService.FindByIdPawnshopTransactions(TransactionId);

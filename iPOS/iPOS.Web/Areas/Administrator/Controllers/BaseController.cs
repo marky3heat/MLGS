@@ -71,7 +71,6 @@ namespace iPOS.Web.Areas.Administrator.Controllers
 
             return Json(result.OrderBy(o => o.last_name), JsonRequestBehavior.AllowGet);
         }
-
         public async Task<JsonResult> SaveCustomer(tbl_customer list)
         {
             try
@@ -131,7 +130,6 @@ namespace iPOS.Web.Areas.Administrator.Controllers
                 throw new Exception(ex.Message);
             }
         }
-
         public async Task<JsonResult> GetCustomerById(int CustomerId)
         {
             var listCustomer = await _customerService.FindByIdCustomer(CustomerId);
@@ -255,7 +253,11 @@ namespace iPOS.Web.Areas.Administrator.Controllers
                                                    ForRelease = result4.Count().ToString()
             });
 
-            var count = result.Count();
+            Session["NewTransaction"] = result.Count().ToString();
+            Session["ForAppraisal"] = result1.Count().ToString();
+            Session["ForPawning"] = result2.Count().ToString();
+            Session["ForApproval"] = result3.Count().ToString();
+            Session["ForRelease"] = result4.Count().ToString();
 
             return Json(list, JsonRequestBehavior.AllowGet);
         }

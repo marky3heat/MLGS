@@ -5,7 +5,7 @@
 }
 
 <div data-bind="visible: isListShowed">
-    <div class="row gutter-xs">
+    <div class="row gutter-xs" data-bind="visible: listBody">
         <div class="col-xs-12">
             <div class="card">
                 <div class="card-header">
@@ -18,16 +18,21 @@
                     <table id="transactionTable" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0">
                         <thead>
                         <tr>
-                            <th style="background: #d1202d; color: #ffffff;">Transaction no.</th>
-                            <th style="background: #d1202d; color: #ffffff;">Date</th>
-                            <th style="background: #d1202d; color: #ffffff;">Transaction type</th>
-                            <th style="background: #d1202d; color: #ffffff;">Customer name</th>
-                            <th style="background: #d1202d; color: #ffffff;">Status</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Transaction no.</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Date</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Transaction type</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="60%">Customer name</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Status</th>
                         </tr>
                         </thead>
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+    <div data-bind="visible: spinnerList">
+        <div class="text-center" data-toggle="match-height">
+            <div class="spinner spinner-primary spinner-lg pos-r sq-100"></div>
         </div>
     </div>
 </div>
@@ -148,13 +153,13 @@
                     <div class="col-sm-6">
                         <label class="col-sm-3 control-label" for="form-control-1">Item type</label>
                         <div class="col-sm-9">
-                            <select required id="ItemTypeId" data-bind="options: itemType, optionsValue: 'ItemTypeId', optionsText: 'ItemTypeName', optionsCaption: '--Select item type--', value: AppraisedItem.ItemTypeId, event:{ change: getItemCategory('')}" class="form-control"></select>
+                            <select required id="ItemTypeId" data-bind="options: itemType, optionsValue: 'ItemTypeId', optionsText: 'ItemTypeName', optionsCaption: '--Select item type--', textinput: AppraisedItem.ItemTypeId, event:{ change: getItemCategory('')}" class="form-control"></select>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <label class="col-sm-3 control-label" for="form-control-1">Item category</label>
                         <div class="col-sm-9">
-                            <select required id="ItemCategoryId" data-bind="options: itemCategory, optionsValue: 'ItemCategoryId', optionsText: 'ItemCategoryName', optionsCaption: '--Select item category--', value: AppraisedItem.ItemCategoryId" class="form-control"></select>
+                            <select required id="ItemCategoryId" data-bind="options: itemCategory, optionsValue: 'ItemCategoryId', optionsText: 'ItemCategoryName', optionsCaption: '--Select item category--', textinput: AppraisedItem.ItemCategoryId" class="form-control"></select>
                         </div>
                     </div>
                 </div>
@@ -247,7 +252,7 @@
     </div>
 
     <div class="text-right">
-        <button data-bind="click: backToListForAppraisal" type="submit" class="btn btn-link"><i class="icon icon-arrow-left position-left"></i> Back to list</button>
+        <button data-bind="click: backToList" type="submit" class="btn btn-link"><i class="icon icon-arrow-left position-left"></i> Back to list</button>
         <button type="submit" data-bind="click: saveAppraisedItem" class="btn bg-success btn-labeled btn-labeled-right ml-10" id="reset"><b><i class="icon-plus3"></i></b>Save</button>
     </div>
 </div>

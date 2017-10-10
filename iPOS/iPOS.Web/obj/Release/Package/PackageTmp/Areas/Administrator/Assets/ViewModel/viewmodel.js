@@ -10,11 +10,26 @@
     var AppraisedItem = new app.AppraisedItem();
     var PawnedItem = new app.PawnedItem();
 
+    var AppraisedItemTypeId = ko.observable();
+    var AppraisedItemCategoryId = ko.observable();
+
+    var PawnedItemScheduleOfPayment = ko.observable();
+    var PawnedItemScheme = ko.observable();
+    var PawnedItemTermsId = ko.observable();
+
+    var ServerDate = ko.observable();
+
     // #region CONTROLS                
     var isListShowed = ko.observable(true);
     var isCreateModeShow = ko.observable(false);
     var isCreateModeShowAppraisal = ko.observable(false);
     var isCreateModeShowPawning = ko.observable(false);
+    var isCreateModeShowApproval = ko.observable(false);
+
+    var spinnerList = ko.observable(false);
+    var listBody = ko.observable(true);
+    var spinnerAmortizationLedger = ko.observable(false);
+    var AmortizationLedgerBody = ko.observable(true);
 
     var title = ko.observable("");
 
@@ -23,6 +38,9 @@
     var itemCategory = ko.observableArray();
     var terms = ko.observableArray();
 
+    var module = ko.observable("List");
+    var action = ko.observable("");
+
     // #endregion
 
     // #region BEHAVIORS
@@ -30,9 +48,26 @@
     function activate() {
         hideSidebar();
         loadTransactionList();
+        getServerDate();
     }
 
-    function loadTransactionList() {   
+    function loadTransactionList() {
+        if (PageTitle == "New Transactions") {
+            var transaction = "GetTransactions"
+        }
+        if (PageTitle == "Appraisal") {
+            var transaction = "GetTransactionsAppraisal"
+        }
+        if (PageTitle == "Approval") {
+            var transaction = "GetTransactionsApproval"
+        }
+        if (PageTitle == "Change In Terms") {
+            var transaction = "GetTransactionsChangeInTerms"
+        }
+        if (PageTitle == "") {
+            var transaction = "GetTransactions"
+        }
+   
         $("#transactionTable").dataTable().fnDestroy();
         var $datatables = $('#transactionTable');
         $datatables.DataTable({
@@ -46,7 +81,7 @@
                 searchPlaceholder: "Search…"
             },
             ajax: {
-                url: RootUrl + "/Administrator/Transactions/GetTransactions",
+                url: RootUrl + "/Administrator/Transactions/"+ transaction,
                 type: "GET",
                 datatype: "json"
             },
@@ -73,62 +108,78 @@
                 data: "Status",
                 className: "text-center",
                 render: function (data, type, row) {
-                    if (row.Status == "For appraisal") {
-                        return '<td>' +
-                        '<span class="label label-outline-info">' + row.Status + '</span>'
-                        '<td>';
-                    }
-                    else if (row.Status == "For pawning") {
-                        return '<td>' +
-                        '<span class="label label-outline-warning">' + row.Status + '</span>'
-                        '<td>';
-                    }
-                    else if (row.Status == "Completed") {
-                        return '<td>' +
-                        '<span class="label label-outline-success">' + row.Status + '</span>'
-                        '<td>';
-                    }
-                    else {
-                        return '<td>' +
-                        '<span class="label label-outline-primary">' + row.Status + '</span>'
-                        '<td>';
-                    }
-                }
-            },
-            {
-                className: "text-center",
-                render: function (data, type, row) {
+                    //For appraisal
                     if (row.Status == "For appraisal" && PageTitle == "New Transactions") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/Appraisal" class="btn btn-xs btn-info" role="button">Go to Appraisal</a>';
-                    }
-                    else if (row.Status == "For appraisal" && PageTitle == "Appraisal") {
-                        return '<button type="button" class="btn btn-xs btn-info" onclick="app.vm.AppraiseItem('+ row.TransactionId +')">Appraise</button>';
-                    }
-                    else if (row.Status == "For appraisal" && PageTitle == "Approval") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/Appraisal" class="btn btn-xs btn-info" role="button">Go to Appraisal</a>';
-                    }
-                    else if (row.Status == "For pawning" && PageTitle == "Appraisal") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/NewTransaction" class="btn btn-xs btn-warning" role="button">Go to Transactions</a>' +
-                            '<button type="button" class="btn btn-xs btn-info" onclick="app.vm.AppraiseItem(' + row.TransactionId + ')">Reappraise</button>';
+                        return '<td>' +
+                        '<span class="label label-outline-primary">' + row.Status + '</span>' +
+                        '<td>';
                     }
                     else if (row.Status == "For pawning" && PageTitle == "New Transactions") {
-                        return '<button type="button" class="btn btn-xs btn-warning" onclick="app.vm.PawnItem(' + row.TransactionId + ')">Process</button>';
-                    }
-                    else if (row.Status == "For pawning" && PageTitle == "Approval") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/NewTransaction" class="btn btn-xs btn-warning" role="button">Go to Transactions</a>'
+                        return '<td>' +
+                        '<button type="button" class="btn btn-xs btn-outline-danger" onclick="app.vm.addPawnItem(' + row.TransactionId + ')">For pawning</button>' +
+                        '<td>';
                     }
                     else if (row.Status == "For approval" && PageTitle == "New Transactions") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/Approval" class="btn btn-xs btn-primary" role="button">Go to Approval</a>' +
-                            '<button type="button" class="btn btn-xs btn-warning" onclick="app.vm.PawnItem(' + row.TransactionId + ')">Reprocess</button>';
+                        return '<td>' +
+                        '<button type="button" class="btn btn-xs btn-outline-success" onclick="app.vm.editPawnItem(' + row.TransactionId + ')">For approval</button>' +
+                        '<td>';
+                    }
+                    else if (row.Status == "Pending" && PageTitle == "New Transactions") {
+                        return '<td>' +
+                        '<span class="label label-outline-success">' + row.Status + '</span>' +
+                        '<td>';
+                    }
+                        //For appraisal
+
+                        //For pawning
+                    else if (row.Status == "For appraisal" && PageTitle == "Appraisal") {
+                        return '<td>' +
+                        '<button type="button" class="btn btn-xs btn-outline-primary" onclick="app.vm.addAppraisedItem(' + row.TransactionId + ')">For appraisal</button>' +
+                        '<td>';
+                    }
+                    else if (row.Status == "For pawning" && PageTitle == "Appraisal") {
+                        return '<td>' +
+                        '<button type="button" class="btn btn-xs btn-outline-warning" onclick="app.vm.editAppraisedItem(' + row.TransactionId + ')">For pawning</button>' +
+                        '<td>';
                     }
                     else if (row.Status == "For approval" && PageTitle == "Appraisal") {
-                        return '<a href="' + RootUrl + '/Administrator/Transactions/Approval" class="btn btn-xs btn-primary" role="button">Go to Approval</a>'
+                        return '<td>' +
+                        '<span class="label label-outline-success">' + row.Status + '</span>' +
+                        '<td>';
+                    }
+                    else if (row.Status == "Pending" && PageTitle == "Appraisal") {
+                        return '<td>' +
+                        '<span class="label label-outline-success">' + row.Status + '</span>' +
+                        '<td>';
+                    }
+                        //For pawning
+                    //approveTransaction
+                        //For approval
+                    else if (row.Status == "For appraisal" && PageTitle == "Approval") {
+                        return '<td>' +
+                        '<span class="label label-outline-primary">' + row.Status + '</span>' +
+                        '<td>';
+                    }
+                    else if (row.Status == "For pawning" && PageTitle == "Approval") {
+                        return '<td>' +
+                        '<span class="label label-outline-danger">' + row.Status + '</span>' +
+                        '<td>';
                     }
                     else if (row.Status == "For approval" && PageTitle == "Approval") {
-                        return '<button type="button" class="btn btn-xs btn-primary" onclick="">Process</button>';
+                        return '<td>' +
+                        '<button type="button" class="btn btn-xs btn-outline-success" onclick="app.vm.approveTransaction(' + row.TransactionId + ')">For approval</button>' +
+                        '<td>';
                     }
+                    else if (row.Status == "Pending" && PageTitle == "Approval") {
+                        return '<td>' +
+                        '<span class="label label-outline-success">' + row.Status + '</span>' +
+                        '<td>';
+                    }
+                        //For approval
                     else {
-
+                        return '<td>' +
+                        '<span class="label label-outline-info">' + row.Status + '</span>' +
+                        '<td>';
                     }
                 }
             }
@@ -137,10 +188,174 @@
         });
     }
 
+    /* Actions - START */
+
+    function addTransaction() {
+        title("Pawning");
+        module("addTransaction");
+        action("Add");
+        
+        $.wait(function () {
+            listBody(false);
+            spinnerList(true);
+        }, 0.1);
+
+        $.wait(function () {         
+            clearControls();
+            clearControlsCustomer();
+        
+            getTransactionNo();
+            getCustomer();
+            getItemType();
+
+        }, 0.2);
+
+        $.wait(function () {
+            isListShowed(false);
+            listBody(true);
+            spinnerList(false);
+            isCreateModeShow(true);
+        }, 0.3);
+    }
+
+    function addAppraisedItem(TransactionId) {
+        title("Appraise Item");
+        module("addAppraisedItem");
+        action("Add");
+
+        cardToggles();
+
+        $.wait(function () {
+            listBody(false);
+            spinnerList(true);
+        }, 0.1);
+
+        $.wait(function () {
+            clearControls();
+            clearControlsCustomer();
+            clearControlsAppraisedItem();
+
+            getCustomer();
+            getItemType();
+
+            loadTransaction(TransactionId);
+        }, 0.2);
+    }
+
+    function addPawnItem(TransactionId) {
+        title("Pawn Item");
+        module("addPawnItem");
+        action("Add");
+
+        cardTogglesForPawning();
+
+        $.wait(function () {
+            listBody(false);
+            spinnerList(true);
+        }, 0.1);
+
+        $.wait(function () {
+            clearControls();
+            clearControlsCustomer();
+            clearControlsAppraisedItem();
+            clearControlsPawnedItem();
+
+            getCustomer();
+            getItemType();
+            getTerms();
+
+            loadTransaction(TransactionId);
+        }, 0.2);
+    }
+
+    function editTransaction(TransactionId) { }
+    function editAppraisedItem(TransactionId) {
+        title("Appraise Item");
+        module("editAppraisedItem");
+        action("Edit");
+
+        cardToggles();
+
+        $.wait(function () {
+            listBody(false);
+            spinnerList(true);
+        }, 0.1);
+
+        $.wait(function () {
+            clearControls();
+            clearControlsCustomer();
+            clearControlsAppraisedItem();
+
+            getCustomer();
+            getItemType();
+
+            loadTransaction(TransactionId);
+        }, 0.2);
+    }
+    function editPawnItem(TransactionId) {
+        title("Pawn Item");
+        module("editPawnItem");
+        action("Edit");
+
+        cardTogglesForPawning();
+
+        $.wait(function () {
+            listBody(false);
+            spinnerList(true);
+        }, 0.1);
+
+        $.wait(function () {
+            clearControls();
+            clearControlsCustomer();
+            clearControlsAppraisedItem();
+            clearControlsPawnedItem();
+
+            getCustomer();
+            getItemType();
+            getTerms();
+
+            loadTransaction(TransactionId);
+        }, 0.2);
+    }
+
+    function viewTransaction(TransactionId) { }
+    function viewAppraisedItem(TransactionId) { }
+    function viewPawnItem(TransactionId) { }
+
+    function approveTransaction(TransactionId) {
+        title("Approve Transaction");
+        module("approveTransaction");
+        action("Edit");
+
+        cardTogglesForPawning();
+
+        $.wait(function () {
+            listBody(false);
+            spinnerList(true);
+        }, 0.1);
+
+        $.wait(function () {
+            clearControls()
+            clearControlsCustomer()
+            clearControlsAppraisedItem()
+            clearControlsPawnedItem()
+
+            getCustomer();
+            getItemType();
+            getTerms();
+
+            loadTransaction(TransactionId);
+        }, 0.2);
+    }
+
+    /* Actions - END */
+
+    /* Clear Controls - START */
+
     function clearControls() {
         modelAddTransaction.TransactionId("");
         modelAddTransaction.TransactionNo("");
-        modelAddTransaction.TransactionDate("");
+        modelAddTransaction.TransactionDate(ServerDate());
         modelAddTransaction.TransactionType("");
         modelAddTransaction.CustomerId("");
         modelAddTransaction.Terminal("");
@@ -173,40 +388,77 @@
         modelAddCustomer.zip_code("");
     }
 
+    function clearControlsAppraisedItem() {
+        AppraisedItem.AppraiseId("");
+        AppraisedItem.AppraiseDate(ServerDate());
+        AppraisedItem.AppraiseNo("");
+        AppraisedItem.ItemTypeId("");
+        AppraisedItem.ItemCategoryId("");
+        AppraisedItem.ItemName("");
+        AppraisedItem.ItemFeature("");
+        AppraisedItem.SerialNo("");
+        AppraisedItem.ItemCondition("");
+        AppraisedItem.Brand("");
+        AppraisedItem.Karat("");
+        AppraisedItem.Weight("");
+        AppraisedItem.AppraisedValue(0);
+        AppraisedItem.Remarks("");
+        AppraisedItem.CustomerFirstName("");
+        AppraisedItem.CustomerLastName("");
+        AppraisedItem.IsPawned("");
+    }
+
+    function clearControlsPawnedItem() {
+        PawnedItem.PawnedItemId("");
+        PawnedItem.PawnedItemNo("");
+        PawnedItem.PawnedDate(ServerDate());
+        PawnedItem.TransactionNo("");
+        PawnedItem.PawnedItemContractNo("");
+        PawnedItem.LoanableAmount(0);
+        PawnedItem.InterestRate(0);
+        PawnedItem.InterestAmount(0);
+        PawnedItem.InitialPayment(0);
+        PawnedItem.ServiceCharge(0);
+        PawnedItem.Others(0);
+        PawnedItem.IsInterestDeducted("");
+        PawnedItem.NetCashOut(0);
+        PawnedItem.TermsId("");
+        PawnedItem.NoOfPayments("");
+        PawnedItem.DueDateStart(ServerDate());
+        PawnedItem.DueDateEnd(ServerDate());
+        PawnedItem.Status("");
+        PawnedItem.IsReleased("");
+        PawnedItem.ScheduleOfPayment("");
+        PawnedItem.Scheme("");
+    }
+
+    /* Clear Controls - END */
+
+    /* Card Toggles - START */
+    function cardToggles() {
+        $('#card1').trigger('click');
+        $('#card2').trigger('click');
+        $('#card3').trigger('click');
+    }
+
+    function cardTogglesForPawning() {
+        $('#card1').trigger('click');
+        $('#card2').trigger('click');
+        $('#card3').trigger('click');
+        $('#card4').trigger('click');
+    }
+    /* Card Toggles - END */
+
     function NewTransactionPawning() {
-        isListShowed(false);
-        isCreateModeShow(true);
-        title("Pawning");
 
-        clearControlsCustomer();
-        clearControls();
-
-        getServerDate();
-        getTransactionNo();
-        getCustomer();
-        getItemType();
     }
 
     function AppraiseItem(TransactionId) {
-        cardToggles();
-        clearControlsCustomer();
-        clearControls();
 
-        setTimeout(function () {
-            isListShowed(false);
-            isCreateModeShowAppraisal(true);
-
-            title("Appraisal");
-
-  
-            getCustomer();
-            getItemType();
-            getTransactionDetails(TransactionId);
-
-        }, 300);
     }
 
     function PawnItem(TransactionId) {
+        mode("PawnItem");
         cardTogglesForPawning();
         clearControlsCustomer();
         clearControls();
@@ -220,22 +472,35 @@
 
             getItemType();
             getTerms();
-            getTransactionDetails(TransactionId);
+            loadTransaction(TransactionId);
 
         }, 300);
     }
     
-    function backToList() {
+    function backToList() {     
         isListShowed(true);
         isCreateModeShow(false);
         isCreateModeShowAppraisal(false);
-        isCreateModeShowPawning(false)
+        isCreateModeShowPawning(false);
+        isCreateModeShowApproval(false);
 
         clearControlsCustomer();
         clearControls();
+        $('#Amortization tbody > tr').empty();
+        
+        if (title() == "Pawn Item" || module() == "addPawnedItem" || module() == "editPawnedItem" || module() == "viewPawnedItem") {
+            cardTogglesForPawning();
+        }
+        if (title() == "Appraise Item" || module() == "addAppraisedItem" || module() == "editAppraisedItem" || module() == "viewAppraisedItem") {
+            cardToggles();
+        }
+        if (title() == "Approve Transaction" || module() == "" || module() == "" || module() == "") {
+            cardTogglesForPawning();
+        }
     }
 
     function backToListForAppraisal() {
+        mode("ListView");
         cardToggles();
         isListShowed(true);
         isCreateModeShow(false);
@@ -247,6 +512,7 @@
     }
 
     function backToListForPawning() {
+        mode("ListView");
         cardTogglesForPawning();
         isListShowed(true);
         isCreateModeShow(false);
@@ -257,18 +523,7 @@
         clearControls();
     }
 
-    function cardToggles() {
-        $('#card1').trigger('click');
-        $('#card2').trigger('click');
-        $('#card3').trigger('click');
-    }
 
-    function cardTogglesForPawning() {
-        $('#card1').trigger('click');
-        $('#card2').trigger('click');
-        $('#card3').trigger('click');
-        $('#card4').trigger('click');
-    }
 
     function saveTransactionPawn() {
 
@@ -294,6 +549,13 @@
             return false;
         }
 
+        if (modelAddTransaction.ItemName() === "" || modelAddTransaction.ItemName() === undefined) {
+            toastr.error("Enter item name.");
+            modelAddTransaction.ItemName("");
+            document.getElementById("ItemName").focus();
+            return false;
+        }
+
         modelAddTransaction.ItemTypeId($('#ItemTypeId').val());
 
         modelAddTransaction.ItemCategoryId($('#ItemCategoryId').val());
@@ -312,6 +574,7 @@
                     swal("Success", result.message, "success");
                     loadTransactionList();
                     backToList();
+                    update();
 
                     loaderApp.hidePleaseWait();
                 } else {
@@ -342,21 +605,176 @@
     }
     function getCustomerById() {
         var CustomerId = $('#CustomerId').val();
-        $.getJSON(RootUrl + "/Administrator/Base/GetCustomerById?CustomerId=" + CustomerId, function (result) {
-            modelAddTransaction.first_name(result.first_name);
-            modelAddTransaction.last_name(result.last_name);
-            modelAddTransaction.middle_name(result.middle_name);
-            modelAddTransaction.st_address(result.st_address);
-            modelAddTransaction.city_address(result.city_address);
-            modelAddTransaction.mobile_no(result.mobile_no);
-        });
+        
+        modelAddTransaction.first_name("");
+        modelAddTransaction.last_name("");
+        modelAddTransaction.middle_name("");
+        modelAddTransaction.st_address("");
+        modelAddTransaction.city_address("");
+        modelAddTransaction.mobile_no("");
+
+        if (action() == "Add" && (CustomerId != "" && CustomerId != undefined)) {          
+            $.getJSON(RootUrl + "/Administrator/Base/GetCustomerById?CustomerId=" + CustomerId, function (result) {
+                modelAddTransaction.first_name(result.first_name);
+                modelAddTransaction.last_name(result.last_name);
+                modelAddTransaction.middle_name(result.middle_name);
+                modelAddTransaction.st_address(result.st_address);
+                modelAddTransaction.city_address(result.city_address);
+                modelAddTransaction.mobile_no(result.mobile_no);
+            });
+        }
     }
 
-    function getTransactionDetails(TransactionId) {
-        var CustomerId = "";
-        var TransactionNo = "";
+    function loadTransaction(TransactionId) {
+        // Start        
+        if ((module() == "addAppraisedItem" || module() == "editAppraisedItem" || module() == "viewAppraisedItem") && (action() == "Add" || action() == "Edit" || action() == "View")) {
+            $.when(loadTransactionDetails(TransactionId)).then(
+                         function (status) {
 
-        $.getJSON(RootUrl + "/Administrator/Transactions/GetTransactionsById?TransactionId=" + TransactionId, function (result) {
+                             $.when(loadCustomerDetails(Transaction.CustomerId())).then(
+                                 function (status) {
+
+                                     $.when(loadAppraisedItemDetails(Transaction.TransactionNo())).then(
+                                       function (status) {
+
+                                           var a = AppraisedItemTypeId();
+                                           var b = AppraisedItemCategoryId();
+                                           $('#ItemTypeId option[value="' + AppraisedItemTypeId() + '"]').attr("selected", "selected");
+                                           $('#ItemCategoryId option[value="' + AppraisedItemCategoryId() + '"]').attr("selected", "selected");
+
+                                           $.wait(function () {
+                                               listBody(true);
+                                               spinnerList(false);
+                                               isListShowed(false);
+                                               isCreateModeShowAppraisal(true);
+                                           }, .5);
+                                       }
+                                     );
+                                 }
+                               );
+                         }
+                       );
+        }
+
+        if ((module() == "addPawnItem" || module() == "editPawnItem" || module() == "viewPawnItem") && (action() == "Edit" || action() == "View")) {
+            $.when(loadTransactionDetails(TransactionId)).then(
+              function (status) {
+
+                  $.when(loadCustomerDetails(Transaction.CustomerId())).then(
+                      function (status) {
+
+                          $.when(loadAppraisedItemDetails(Transaction.TransactionNo())).then(
+                            function (status) {
+
+                                var a = AppraisedItemTypeId();
+                                var b = AppraisedItemCategoryId();
+                                $('#ItemTypeId option[value="' + AppraisedItemTypeId() + '"]').attr("selected", "selected");
+
+                                $.when(loadPawnedItemDetails(Transaction.TransactionNo())).then(
+                                    function (status) {
+                                        $('#ItemCategoryId option[value="' + AppraisedItemCategoryId() + '"]').attr("selected", "selected");
+
+                                        $('#TermsId option[value="' + PawnedItemTermsId() + '"]').attr("selected", "selected");
+                                        $('#ScheduleOfPayment option[value="' + PawnedItemScheduleOfPayment() + '"]').attr("selected", "selected");
+                                        $('#Scheme option[value="' + PawnedItemScheme() + '"]').attr("selected", "selected");
+
+                                        $.wait(function () {
+                                            generateAmortization();
+                                        }, 0.5);
+                                        $.wait(function () {
+                                            listBody(true);
+                                            spinnerList(false);
+                                            isListShowed(false);
+                                            isCreateModeShowPawning(true);
+                                        }, .6);
+                                    }
+                                  );
+                            }
+                          );
+                      }
+                    );
+              }
+            );
+        }
+        else if ((module() == "addPawnItem" || module() == "editPawnItem" || module() == "viewPawnItem") && (action() == "Add")) {
+            $.when(loadTransactionDetails(TransactionId)).then(
+                         function (status) {
+
+                             $.when(loadCustomerDetails(Transaction.CustomerId())).then(
+                                 function (status) {
+
+                                     $.when(loadAppraisedItemDetails(Transaction.TransactionNo())).then(
+                                       function (status) {
+
+                                           var a = AppraisedItemTypeId();
+                                           var b = AppraisedItemCategoryId();
+                                           $('#ItemTypeId option[value="' + AppraisedItemTypeId() + '"]').attr("selected", "selected");
+                                           $('#ItemCategoryId option[value="' + AppraisedItemCategoryId() + '"]').attr("selected", "selected");
+
+                                           $.wait(function () {
+                                               listBody(true);
+                                               spinnerList(false);
+                                               isListShowed(false);
+                                               isCreateModeShowPawning(true);
+                                           }, .5);
+                                       }
+                                     );
+                                 }
+                               );
+                         }
+                       );
+        }
+
+        /* APPROVAL */
+        if ((module() == "approveTransaction") && (action() == "Edit" || action() == "View")) {
+            $.when(loadTransactionDetails(TransactionId)).then(
+              function (status) {
+
+                  $.when(loadCustomerDetails(Transaction.CustomerId())).then(
+                      function (status) {
+
+                          $.when(loadAppraisedItemDetails(Transaction.TransactionNo())).then(
+                            function (status) {
+
+                                var a = AppraisedItemTypeId();
+                                var b = AppraisedItemCategoryId();
+                                $('#ItemTypeId option[value="' + AppraisedItemTypeId() + '"]').attr("selected", "selected");
+
+                                $.when(loadPawnedItemDetails(Transaction.TransactionNo())).then(
+                                    function (status) {
+                                        $('#ItemCategoryId option[value="' + AppraisedItemCategoryId() + '"]').attr("selected", "selected");
+
+                                        $('#TermsId option[value="' + PawnedItemTermsId() + '"]').attr("selected", "selected");
+                                        $('#ScheduleOfPayment option[value="' + PawnedItemScheduleOfPayment() + '"]').attr("selected", "selected");
+                                        $('#Scheme option[value="' + PawnedItemScheme() + '"]').attr("selected", "selected");
+
+                                        $.wait(function () {
+                                            generateAmortization();
+                                        }, 0.5);
+                                        $.wait(function () {
+                                            listBody(true);
+                                            spinnerList(false);
+                                            isListShowed(false);
+                                            isCreateModeShowApproval(true);
+                                        }, .6);
+                                    }
+                                  );
+                            }
+                          );
+                      }
+                    );           
+              }
+            );
+        }
+        /* APPROVAL */
+
+        // End
+    }
+    /*Functions for transaction detail - START*/
+    function loadTransactionDetails(arg) {
+        var dfd = $.Deferred();
+
+        $.getJSON(RootUrl + "/Administrator/Transactions/GetTransactionsById?TransactionId=" + arg, function (result) {
             Transaction.TransactionId(result.TransactionId);
             Transaction.TransactionNo(result.TransactionNo);
             Transaction.TransactionDate(result.TransactionDate);
@@ -364,74 +782,108 @@
             Transaction.CustomerId(result.CustomerId);
             Transaction.Terminal(result.Terminal);
             Transaction.Status(result.Status);
-            CustomerId = result.CustomerId;
-            TransactionNo = result.TransactionNo;
+        }).done(function() {      
+            setTimeout(function () {
+                dfd.resolve("done");
+            }, 500);
         });
-        setTimeout(function () {
-            $.getJSON(RootUrl + "/Administrator/Transactions/GetCustomerById?CustomerId=" + CustomerId, function (result) {
-                Customer.first_name(result.first_name);
-                Customer.last_name(result.last_name);
-                Customer.middle_name(result.middle_name);
-                Customer.st_address(result.st_address);
-                Customer.city_address(result.city_address);
-                Customer.mobile_no(result.mobile_no);
-            });
-            $.getJSON(RootUrl + "/Administrator/Transactions/GetItemByTransactionNo?TransactionNo=" + TransactionNo, function (result) {
-                AppraisedItem.AppraiseId(result.AppraiseId);
-                AppraisedItem.AppraiseDate(result.AppraiseDate);
-                AppraisedItem.AppraiseNo(result.AppraiseNo);
-                AppraisedItem.ItemTypeId(result.ItemTypeId);
 
-                AppraisedItem.ItemName(result.ItemName);
-                AppraisedItem.ItemFeature(result.ItemFeature);
-                AppraisedItem.SerialNo(result.SerialNo);
-                AppraisedItem.ItemCondition(result.ItemCondition);
-                AppraisedItem.Brand(result.Brand);
-                AppraisedItem.Karat(result.Karat);
-                AppraisedItem.Weight(result.Weight);
-                AppraisedItem.AppraisedValue(result.AppraisedValue);
-                AppraisedItem.Remarks(result.Remarks);
-                AppraisedItem.CustomerFirstName(result.CustomerFirstName);
-                AppraisedItem.CustomerLastName(result.CustomerLastName);
-                AppraisedItem.IsPawned(result.IsPawned);
-
-                getItemCategory(result.ItemTypeId);
-
-                setTimeout(function () {
-                    AppraisedItem.ItemCategoryId(result.ItemCategoryId);
-                }, 300);
-            });
-            $.getJSON(RootUrl + "/Administrator/Transactions/GetPawnedItemByTransactionNo?TransactionNo=" + TransactionNo, function (result) {
-                PawnedItem.PawnedItemId(result.PawnedItemId);
-                PawnedItem.PawnedItemNo(result.PawnedItemNo);
-                PawnedItem.PawnedDate(result.PawnedDate);
-                PawnedItem.TransactionNo(result.TransactionNo);
-                PawnedItem.PawnedItemContractNo(result.PawnedItemContractNo);
-                PawnedItem.LoanableAmount(result.LoanableAmount);
-                PawnedItem.InterestRate(result.InterestRate);
-                PawnedItem.InterestAmount(result.InterestAmount);
-                PawnedItem.InitialPayment(result.InitialPayment);
-                PawnedItem.ServiceCharge(result.ServiceCharge);
-                PawnedItem.Others(result.Others);
-                PawnedItem.IsInterestDeducted(result.IsInterestDeducted);
-                PawnedItem.NetCashOut(result.NetCashOut);
-                PawnedItem.TermsId(result.TermsId);
-                PawnedItem.NoOfPayments(result.NoOfPayments);
-                PawnedItem.DueDateStart(result.DueDateStart);
-                PawnedItem.DueDateEnd(result.DueDateEnd);
-                PawnedItem.Status(result.Status);
-                PawnedItem.IsReleased(result.IsReleased);
-
-                setTimeout(function () {
-                    PawnedItem.ScheduleOfPayment(result.ScheduleOfPayment);
-                }, 300);
-
-                setTimeout(function () {
-                    generateAmortization(result.NoOfPayments);
-                }, 500);
-            });
-        }, 300);   
+        return dfd.promise();
     }
+
+    function loadCustomerDetails(arg) {
+        var dfd = $.Deferred();
+
+        $.getJSON(RootUrl + "/Administrator/Transactions/GetCustomerById?CustomerId=" + arg, function (result) {
+            Customer.first_name(result.first_name);
+            Customer.last_name(result.last_name);
+            Customer.middle_name(result.middle_name);
+            Customer.st_address(result.st_address);
+            Customer.city_address(result.city_address);
+            Customer.mobile_no(result.mobile_no);
+        }).done(function () {
+            setTimeout(function () {
+                dfd.resolve("done");
+            }, 500);
+        });
+
+        return dfd.promise();
+    }
+
+    function loadAppraisedItemDetails(arg) {
+        var dfd = $.Deferred();
+
+        $.getJSON(RootUrl + "/Administrator/Transactions/GetItemByTransactionNo?TransactionNo=" + arg, function (result) {
+            AppraisedItem.AppraiseId(result.AppraiseId);
+            AppraisedItem.AppraiseDate(result.AppraiseDate);
+            AppraisedItem.AppraiseNo(result.AppraiseNo);
+            AppraisedItem.ItemTypeId(result.ItemTypeId);
+            AppraisedItem.ItemCategoryId(result.ItemCategoryId);
+            AppraisedItem.ItemName(result.ItemName);
+            AppraisedItem.ItemFeature(result.ItemFeature);
+            AppraisedItem.SerialNo(result.SerialNo);
+            AppraisedItem.ItemCondition(result.ItemCondition);
+            AppraisedItem.Brand(result.Brand);
+            AppraisedItem.Karat(result.Karat);
+            AppraisedItem.Weight(result.Weight);
+            AppraisedItem.AppraisedValue(result.AppraisedValue);
+            AppraisedItem.Remarks(result.Remarks);
+            AppraisedItem.CustomerFirstName(result.CustomerFirstName);
+            AppraisedItem.CustomerLastName(result.CustomerLastName);
+            AppraisedItem.IsPawned(result.IsPawned);
+
+            getItemCategory(result.ItemTypeId);
+            AppraisedItemTypeId(result.ItemTypeId);
+            AppraisedItemCategoryId(result.ItemCategoryId)
+        }).done(function () {
+            setTimeout(function () {
+                dfd.resolve("done");
+            }, 500);
+        });
+
+        return dfd.promise();
+    }
+
+    function loadPawnedItemDetails(arg) {
+        var dfd = $.Deferred();
+
+        $.getJSON(RootUrl + "/Administrator/Transactions/GetPawnedItemByTransactionNo?TransactionNo=" + arg, function (result) {
+            PawnedItem.PawnedItemId(result.PawnedItemId);
+            PawnedItem.PawnedItemNo(result.PawnedItemNo);
+            PawnedItem.PawnedDate(result.PawnedDate);
+            PawnedItem.TransactionNo(result.TransactionNo);
+            PawnedItem.PawnedItemContractNo(result.PawnedItemContractNo);
+            PawnedItem.LoanableAmount(result.LoanableAmount);
+            PawnedItem.InterestRate(result.InterestRate);
+            PawnedItem.InterestAmount(result.InterestAmount);
+            PawnedItem.InitialPayment(result.InitialPayment);
+            PawnedItem.ServiceCharge(result.ServiceCharge);
+            PawnedItem.Others(result.Others);
+            PawnedItem.IsInterestDeducted(result.IsInterestDeducted);
+            PawnedItem.NetCashOut(result.NetCashOut);
+            PawnedItem.TermsId(result.TermsId);
+            PawnedItem.NoOfPayments(result.NoOfPayments);
+            PawnedItem.DueDateStart(result.DueDateStart);
+            PawnedItem.DueDateEnd(result.DueDateEnd);
+            PawnedItem.Status(result.Status);
+            PawnedItem.IsReleased(result.IsReleased);
+            PawnedItem.ScheduleOfPayment(result.ScheduleOfPayment);
+            PawnedItem.Scheme(result.Scheme);
+
+            PawnedItemScheduleOfPayment(result.ScheduleOfPayment);
+            PawnedItemScheme(result.Scheme);
+            PawnedItemTermsId(result.TermsId);
+        }).done(function () {
+            setTimeout(function () {
+                dfd.resolve("done");
+            }, 500);
+        });
+
+        return dfd.promise();
+    }
+
+    /*Functions for transaction detail - END*/
+
 
     function saveCustomer() {
         /*VALIDATIONS -START*/
@@ -537,7 +989,8 @@
                     swal("Success", result.message, "success");
 
                     loadTransactionList();
-                    backToListForAppraisal();
+                    backToList();
+                    update();
 
                     loaderApp.hidePleaseWait();
                 } else {
@@ -661,6 +1114,7 @@
             startDate.setDate(startDate.getDate() + addDays);
             $('#DueDateEnd').datepicker('setDate', startDate);
         }
+        generateAmortization();
     }
 
     function computeAmount() {
@@ -674,6 +1128,7 @@
     }
 
     function computeNetCashout() {
+        
         var LoanableAmount = parseFloat($('#LoanableAmount').val());
         var InitialPayment = parseFloat($('#InitialPayment').val());
         var ServiceCharge = parseFloat($('#InitialPayment').val());
@@ -688,6 +1143,8 @@
         else {
             $('#NetCashOut').val(parseFloat(LoanableAmount - (InitialPayment + ServiceCharge + Others)).toFixed(2));
         }
+
+        generateAmortization();
     }
 
     function getTerms() {
@@ -697,48 +1154,195 @@
         });
     }
 
-    function generateAmortization(arg) {
-        var Terms = $('#TermsId :selected').val();
-        var NoOfPayment = arg;
-        Terms = (Terms * 30) / NoOfPayment
+    /* For Amortization - START */
 
-        var Principal = parseFloat($('#LoanableAmount').val()).toFixed(2) / NoOfPayment
-        var Interest = parseFloat($('#InterestAmount').val()).toFixed(2) / NoOfPayment
-
-        var Balance =  parseFloat($('#LoanableAmount').val()) + parseFloat($('#InterestAmount').val())
-
-        $('#Amortization tbody > tr').empty();
-
-        $('#Amortization').append('<tr><td>CO</td><td></td>' +
-            '<td style="text-align: right">' + parseFloat($('#LoanableAmount').val()).toFixed(2) + '</td>' +
-            '<td style="text-align: right">' + parseFloat($('#InterestAmount').val()).toFixed(2) + '</td>' +
-            '<td style="text-align: right">' + Balance.toFixed(2) + '</td>' +
-            '<td style="text-align: right"></td>' +
-            '<td style="text-align: right"></td>' +
-            '<td style="text-align: left"></td>' +
-            '</tr>');
-
-        var startDate = $('#DueDateStart').datepicker('getDate', '+1d');
-
-        for (i = 0; i < NoOfPayment; i++) {
-            startDate.setDate(startDate.getDate() + Terms);
-            var d = startDate.getDate();
-            var m = startDate.getMonth();
-            m += 1;
-            var y = startDate.getFullYear();
-            debugger
-            Balance = parseFloat(Balance) - (parseFloat(Principal) + parseFloat(Interest))
-
-            $('#Amortization').append('<tr><td>' + (i + 1) + '</td><td>' + m + "/" + d + "/" + y + '</td>' +
-                '<td style="text-align: right">' + Principal.toFixed(2) + '</td>' +
-                '<td style="text-align: right">' + Interest.toFixed(2) + '</td>' +
-                '<td style="text-align: right">' + Balance.toFixed(2) + '</td>' +
-                '<td style="text-align: right"></td>' +
-                '<td style="text-align: right"></td>' +
-                '<td style="text-align: left"></td>' +
-                '</tr>');
+    function generateAmortization() {      
+        var NetCashOut = $('#NetCashOut').val();
+        
+        if (NetCashOut !== "" && NetCashOut !== "undefined" && NetCashOut !== 0 && NetCashOut !== "0.00" && NetCashOut !== "0" && NetCashOut !== "0.0") {
+            spinnerAmortizationLedger(true);
+            AmortizationLedgerBody(false);
+            
+            if (PawnedItemScheme() === "Straight") {
+                generateAmortizationStraight();
+            }
+            else {
+                generateAmortizationDiminishing();
+            }
         }
     }
+
+    function generateAmortizationStraight() {
+        var StartDate = $('#DueDateStart').datepicker('getDate', '+1d');
+        var Terms = $('#TermsId :selected').val();
+        var NoOfPayment = parseFloat($('#NoOfPayments').val());
+        Terms = (Terms * 30) / NoOfPayment
+
+        var TotalPrincipal = parseFloat($('#LoanableAmount').val()).toFixed(2);
+        var TotalInterest = parseFloat($('#InterestAmount').val()).toFixed(2);
+
+        var PerTermPrincipal = parseFloat($('#LoanableAmount').val()) / NoOfPayment
+        var PerTermInterest = parseFloat($('#InterestAmount').val()) / NoOfPayment
+
+        var LastPaymentPrincipal = parseFloat(TotalPrincipal).toFixed(2);;
+        var LastPaymentInterest = parseFloat(TotalInterest).toFixed(2);;
+
+        var Balance = 0.00;
+       
+        var IsInterestDeducted = PawnedItem.IsInterestDeducted();
+        if (IsInterestDeducted == "true") {
+            Balance =  parseFloat(TotalPrincipal).toFixed(2);
+            TotalInterest = 0.00;
+            PerTermInterest = 0.00;
+            LastPaymentInterest = 0.00;
+        }
+        else {
+            Balance = parseFloat(TotalPrincipal) + parseFloat(TotalInterest);
+        }
+          
+        $('#Amortization tbody > tr').empty();
+        $('#Amortization').append('<tr><td>CO</td><td></td>' +
+            '<td style="text-align: right">' + parseFloat(TotalPrincipal).toFixed(2) + '</td>' +
+            '<td style="text-align: right">' + parseFloat(TotalInterest).toFixed(2) + '</td>' +
+            '<td style="text-align: right"></td>' +
+            '<td style="text-align: right">' + parseFloat(Balance).toFixed(2) + '</td>' +
+            '<td style="text-align: right"></td>' +
+            '</tr>');
+       
+        for (i = 0; i < NoOfPayment; i++) {
+            StartDate.setDate(StartDate.getDate() + Terms);
+            var d = StartDate.getDate();
+            var m = StartDate.getMonth();
+            m += 1;
+            var y = StartDate.getFullYear();
+                     
+            if (i < NoOfPayment-1) {
+
+                Balance = parseFloat(Balance) - (parseFloat(PerTermPrincipal.toFixed(2)) + parseFloat(PerTermInterest.toFixed(2)));
+                LastPaymentPrincipal = parseFloat(LastPaymentPrincipal) - parseFloat(PerTermPrincipal.toFixed(2));
+                LastPaymentInterest = parseFloat(LastPaymentInterest) - parseFloat(PerTermInterest.toFixed(2));
+
+                $('#Amortization').append('<tr><td>' + (i + 1) + '</td><td>' + m + "/" + d + "/" + y + '</td>' +
+                    '<td style="text-align: right">' + PerTermPrincipal.toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + PerTermInterest.toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + parseFloat(parseFloat(PerTermPrincipal) + parseFloat(PerTermInterest)).toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + Balance.toFixed(2) + '</td>' +
+                    '<td style="text-align: right"></td>' +
+                    '</tr>');
+            }
+            else if (i == NoOfPayment-1) {
+                Balance = parseFloat(Balance) - (parseFloat(LastPaymentPrincipal) + parseFloat(LastPaymentInterest))
+
+                $('#Amortization').append('<tr><td>' + (i + 1) + '</td><td>' + m + "/" + d + "/" + y + '</td>' +
+                    '<td style="text-align: right">' + parseFloat(LastPaymentPrincipal).toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + parseFloat(LastPaymentInterest).toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + parseFloat(parseFloat(LastPaymentPrincipal) + parseFloat(LastPaymentInterest)).toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + parseFloat(Balance).toFixed(2) + '</td>' +
+                    '<td style="text-align: right"></td>' +
+                    '</tr>');
+            }
+
+        }
+        $.wait(function () {
+            spinnerAmortizationLedger(false);
+            AmortizationLedgerBody(true);
+        }, .5);
+    }
+
+    function generateAmortizationDiminishing() {
+        var StartDate = $('#DueDateStart').datepicker('getDate', '+1d');
+        var Terms = $('#TermsId :selected').val();
+        var NoOfPayment = parseFloat($('#NoOfPayments').val());
+        Terms = (Terms * 30) / NoOfPayment
+        var InterestNoOfPayment = parseFloat($('#NoOfPayments').val());
+
+        var InterestRate = parseFloat($('#InterestRate').val()).toFixed(2) / 100;
+
+        var TotalPrincipal = parseFloat($('#LoanableAmount').val()).toFixed(2);
+        var TotalInterest = parseFloat($('#InterestAmount').val()).toFixed(2);
+
+        var PerTermPrincipal = parseFloat($('#LoanableAmount').val()) / NoOfPayment
+        var PerTermInterest = 0.00;
+
+        var LastPaymentPrincipal = parseFloat(TotalPrincipal).toFixed(2);;
+        var LastPaymentInterest = parseFloat(TotalInterest).toFixed(2);;
+
+        var Balance = 0.00;
+        var BalanceForInterest = 0.00;
+
+        var IsInterestDeducted = PawnedItem.IsInterestDeducted();
+        if (IsInterestDeducted == "true") {
+            Balance = parseFloat(TotalPrincipal).toFixed(2);
+            TotalInterest = 0.00;
+            PerTermInterest = 0.00;
+            LastPaymentInterest = 0.00;
+        }
+        else {
+            Balance = parseFloat(TotalPrincipal) + parseFloat(TotalInterest);
+            BalanceForInterest = parseFloat(TotalPrincipal);
+        }
+
+        $('#Amortization tbody > tr').empty();
+        $('#Amortization').append('<tr><td>CO</td><td></td>' +
+            '<td style="text-align: right">' + parseFloat(TotalPrincipal).toFixed(2) + '</td>' +
+            '<td style="text-align: right"></td>' +
+            '<td style="text-align: left"></td>' +
+            '<td style="text-align: right">' + parseFloat(BalanceForInterest).toFixed(2) + '</td>' +
+            '<td style="text-align: right"></td>' +
+            '</tr>');
+
+        for (i = 0; i < NoOfPayment; i++) {
+            StartDate.setDate(StartDate.getDate() + Terms);
+            var d = StartDate.getDate();
+            var m = StartDate.getMonth();
+            m += 1;
+            var y = StartDate.getFullYear();
+
+            if (i < NoOfPayment - 1) {
+                if (InterestNoOfPayment == 3) {
+                    PerTermInterest = parseFloat(BalanceForInterest) * parseFloat(InterestRate);
+                }
+                else {
+                    PerTermInterest = parseFloat(BalanceForInterest) * parseFloat(InterestRate);
+                }
+                InterestNoOfPayment = InterestNoOfPayment - 1;
+
+                Balance = parseFloat(Balance) - (parseFloat(PerTermPrincipal.toFixed(2)) + parseFloat(PerTermInterest.toFixed(2)));
+                BalanceForInterest = parseFloat(BalanceForInterest) - (parseFloat(PerTermPrincipal.toFixed(2)));
+
+                LastPaymentPrincipal = parseFloat(BalanceForInterest);
+                LastPaymentInterest = 0.00;
+
+                $('#Amortization').append('<tr><td>' + (i + 1) + '</td><td>' + m + "/" + d + "/" + y + '</td>' +
+                    '<td style="text-align: right">' + PerTermPrincipal.toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + PerTermInterest.toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + parseFloat(parseFloat(PerTermPrincipal) + parseFloat(PerTermInterest)).toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + BalanceForInterest.toFixed(2) + '</td>' +
+                    '<td style="text-align: right"></td>' +
+                    '</tr>');
+            }
+            else if (i == NoOfPayment - 1) {
+                
+                LastPaymentInterest = parseFloat(BalanceForInterest).toFixed() * parseFloat(InterestRate);
+                BalanceForInterest = parseFloat(BalanceForInterest) - (parseFloat(LastPaymentPrincipal))
+
+                $('#Amortization').append('<tr><td>' + (i + 1) + '</td><td>' + m + "/" + d + "/" + y + '</td>' +
+                    '<td style="text-align: right">' + parseFloat(LastPaymentPrincipal).toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + parseFloat(LastPaymentInterest).toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + parseFloat(parseFloat(LastPaymentPrincipal) + parseFloat(LastPaymentInterest)).toFixed(2) + '</td>' +
+                    '<td style="text-align: right">' + parseFloat(BalanceForInterest).toFixed(2) + '</td>' +
+                    '<td style="text-align: right"></td>' +
+                    '</tr>');
+            }
+
+        }
+        $.wait(function () {
+            spinnerAmortizationLedger(false);
+            AmortizationLedgerBody(true);
+        }, .5);
+    }
+
+    /* For Amortization - END */
 
     function savePawnedItem() {
         /*VALIDATIONS -START*/
@@ -773,7 +1377,7 @@
             return false;
         }
         /*VALIDATIONS -END*/
-        debugger;
+
         PawnedItem.PawnedDate($('#PawnedDate').val());
         PawnedItem.DueDateStart($('#DueDateStart').val());
         PawnedItem.DueDateEnd($('#DueDateEnd').val());
@@ -794,7 +1398,8 @@
                     swal("Success", result.message, "success");
 
                     loadTransactionList();
-                    backToListForPawning();
+                    backToList();
+                    update();
 
                     loaderApp.hidePleaseWait();
                 } else {
@@ -857,9 +1462,10 @@
         }
     }
 
-    function getServerDate() {
+    function getServerDate() {    
         $.getJSON(RootUrl + "/Administrator/Base/GetServerDate", function (result) {
             modelAddTransaction.TransactionDate(result);
+            ServerDate(result);
         });
     }
 
@@ -929,6 +1535,13 @@
         });
     }
 
+    $.wait = function (callback, seconds) {
+        return window.setTimeout(callback, seconds * 1000);
+    }
+    function wait (callback, seconds) {
+        return window.setTimeout(callback, seconds * 1000);
+    }
+
     function hideSidebar() {
         $('#hide-sidebar').trigger('click');
     };
@@ -936,7 +1549,11 @@
     // #endregion
 
     var vm = {
+        module: module,
+        action: action,
         activate: activate,
+        wait: wait,
+
         modelTransactions: modelTransactions,
 
         newTransactionCounter: newTransactionCounter,
@@ -958,15 +1575,31 @@
         isCreateModeShow: isCreateModeShow,
         isCreateModeShowAppraisal: isCreateModeShowAppraisal,
         isCreateModeShowPawning: isCreateModeShowPawning,
+        isCreateModeShowApproval: isCreateModeShowApproval,
+
+        spinnerList: spinnerList,
+        listBody: listBody,
+        spinnerAmortizationLedger: spinnerAmortizationLedger,
+        AmortizationLedgerBody: AmortizationLedgerBody,
 
         update: update,
 
-        NewTransactionPawning: NewTransactionPawning,
-        AppraiseItem: AppraiseItem,
-        PawnItem: PawnItem,
+        addTransaction: addTransaction,
+        addAppraisedItem: addAppraisedItem,
+        addPawnItem: addPawnItem,
+
+        editTransaction: editTransaction,
+        editAppraisedItem: editAppraisedItem,
+        editPawnItem: editPawnItem,
+
+        viewTransaction: viewTransaction,
+        viewAppraisedItem: viewAppraisedItem,
+        viewPawnItem: viewPawnItem,
+
+        approveTransaction : approveTransaction,
+
         backToList: backToList,
-        backToListForAppraisal: backToListForAppraisal,
-        backToListForPawning: backToListForPawning,
+
         title: title,
 
         createCustomer: createCustomer,
@@ -1010,17 +1643,38 @@ $(function () {
     "use strict";
 
     app.vm.activate();
+    $.wait = function (callback, seconds) {
+        return window.setTimeout(callback, seconds * 1000);
+    }
 
-    setInterval(function () {
+    if (NewTransaction != "" && ForAppraisal != "" && ForPawning != "" && ForApproval != "" && ForRelease != "") {
+        app.vm.newTransactionCounter(NewTransaction);
+        app.vm.hasNewTransaction(true);
+
+        app.vm.itemToBeAppraisedCounter(ForAppraisal)
+        app.vm.hasItemToBeAppraised(true)
+
+        app.vm.itemToBePawnedCounter(ForPawning)
+        app.vm.hasItemToBePawned(true)
+
+        app.vm.itemToBeApprovedCounter(ForApproval)
+        app.vm.hasItemToBeApproved(true)
+
+        app.vm.itemToBeReleasedCounter(ForRelease)
+        app.vm.hasItemToBeReleased(true)
+
+        $.wait(function () { app.vm.update() }, 30);
+    }
+    else {
         app.vm.update();
-    }, 1000);
-
-    $(".numbers").each(function () {
-        $(this).formatNumber({ format: "#,###.00", locale: "us" });
-    });
+    }
 
     ko.applyBindings(app.vm);
 });
 
 //$('#dropDownId').val();
 //$('#dropDownId :selected').text();
+
+//$(".numbers").each(function () {
+//    $(this).formatNumber({ format: "#,###.00", locale: "us" });
+//});

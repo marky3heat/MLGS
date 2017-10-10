@@ -5,12 +5,12 @@
 }
 
 <div data-bind="visible: isListShowed">
-    <div class="row gutter-xs">
+    <div class="row gutter-xs" data-bind="visible: listBody">
         <div class="col-xs-12">
             <div class="card">
                 <div class="card-header">
                     <div class="card-actions">
-                        <button data-bind="click: NewTransactionPawning" class="btn btn-danger btn-xs btn-labeled" type="submit" id="">
+                        <button data-bind="click: addTransaction" class="btn btn-danger btn-xs btn-labeled" type="submit" id="">
                             <span class="btn-label">
                                 <span class="icon icon-plus-circle icon-lg icon-fw"></span>
                             </span>
@@ -35,16 +35,21 @@
                     <table id="transactionTable" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th style="background: #d1202d; color: #ffffff;">Transaction no.</th>
-                            <th style="background: #d1202d; color: #ffffff;">Date</th>
-                            <th style="background: #d1202d; color: #ffffff;">Transaction type</th>
-                            <th style="background: #d1202d; color: #ffffff;">Customer name</th>
-                            <th style="background: #d1202d; color: #ffffff;">Status</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Transaction no.</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Date</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Transaction type</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="60%">Customer name</th>
+                            <th style="background: #d1202d; color: #ffffff;" width="10%">Status</th>
                         </tr>
                         </thead>
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+    <div data-bind="visible: spinnerList">
+        <div class="text-center" data-toggle="match-height">
+            <div class="spinner spinner-primary spinner-lg pos-r sq-100"></div>
         </div>
     </div>
 </div>
@@ -111,7 +116,7 @@
                     <div class="col-sm-6">
                         <label class="col-sm-3 control-label" for="form-control-1">Search customer</label>
                         <div class="col-sm-9">
-                            <select id="CustomerId" data-bind="options: customer, optionsValue: 'autonum', optionsText: 'first_name', optionsCaption: '--Select customer--', value: modelAddTransaction.CustomerId, event:{ change: getCustomerById}" data-placeholder="Select customer" class="form-control"></select>
+                            <select id="CustomerId" data-bind="options: customer, optionsValue: 'autonum', optionsText: 'first_name', optionsCaption: '--Select customer--', value: modelAddTransaction.CustomerId" data-placeholder="Select customer" class="form-control" onchange="app.vm.getCustomerById()"></select>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -280,7 +285,7 @@
             </span>
         </h1>
     </div>
-
+    <!-- Transaction no. -->
     <div class="card">
         <div class="card-header" style="background-color: #f2dede">
             <div class="card-actions">
@@ -317,7 +322,9 @@
             </div>
         </div>
     </div>
+    <!-- Transaction no. -->
 
+    <!-- Customer details -->
     <div class="card">
         <div class="card-header" style="background-color: #f2dede">
             <div class="card-actions">
@@ -373,6 +380,9 @@
             </div>
         </div>
     </div>
+    <!-- Customer details -->
+
+    <!-- Item Description -->
     <div class="card">
         <div class="card-header" style="background-color: #f2dede">
             <div class="card-actions">
@@ -387,13 +397,13 @@
                     <div class="col-sm-6">
                         <label class="col-sm-3 control-label" for="form-control-1">Item type</label>
                         <div class="col-sm-9">
-                            <select id="ItemTypeId" data-bind="options: itemType, optionsValue: 'ItemTypeId', optionsText: 'ItemTypeName', optionsCaption: '--Select item type--', value: AppraisedItem.ItemTypeId, event:{ change: getItemCategory('')}" class="form-control"></select>
+                            <select id="ItemTypeId" data-bind="options: itemType, optionsValue: 'ItemTypeId', optionsText: 'ItemTypeName', optionsCaption: '--Select item type--', textinput: AppraisedItem.ItemTypeId, event:{ change: getItemCategory('')}" class="form-control"></select>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <label class="col-sm-3 control-label" for="form-control-1">Item category</label>
                         <div class="col-sm-9">
-                            <select id="ItemCategoryId" data-bind="options: itemCategory, optionsValue: 'ItemCategoryId', optionsText: 'ItemCategoryName', optionsCaption: '--Select item category--', value: AppraisedItem.ItemCategoryId" class="form-control"></select>
+                            <select id="ItemCategoryId" data-bind="options: itemCategory, optionsValue: 'ItemCategoryId', optionsText: 'ItemCategoryName', optionsCaption: '--Select item category--', textinput: AppraisedItem.ItemCategoryId" class="form-control"></select>
                         </div>
                     </div>
                 </div>
@@ -414,7 +424,9 @@
             </div>
         </div>
     </div>
+    <!-- Item Description -->
 
+    <!-- Appraisal Details -->
     <div class="card">
         <div class="card-header" style="background-color: #f2dede">
             <div class="card-actions">
@@ -484,7 +496,9 @@
             </div>
         </div>
     </div>
+    <!-- Appraisal Details -->
 
+    <!-- Payment terms & Schedule -->
     <div class="card">
         <div class="card-header" style="background-color: #f2dede">
             <div class="card-actions">
@@ -517,7 +531,7 @@
                     <div class="col-sm-6">
                         <label class="col-sm-4 control-label" for="form-control-1">Terms</label>
                         <div class="col-sm-8">
-                            <select id="TermsId" data-bind="options: terms, optionsValue: 'multiplier', optionsText: 'term_desc', optionsCaption: '--Select term--', value: PawnedItem.TermsId, event:{ change: changeTermsOptions()}" class="form-control"></select>
+                            <select id="TermsId" data-bind="options: terms, optionsValue: 'multiplier', optionsText: 'term_desc', optionsCaption: '--Select term--', textinput: PawnedItem.TermsId, event:{ change: changeTermsOptions()}" class="form-control"></select>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -557,7 +571,7 @@
                     <div class="col-sm-6">
                         <label class="col-sm-4 control-label" for="form-control-1">Loanable amount</label>
                         <div class="col-sm-8">
-                            <input id="LoanableAmount" data-bind="textinput: PawnedItem.LoanableAmount" class="form-control" style="text-align:right" type="number" onchange="app.vm.computeAmount()" onclick="app.vm.computeAmount()" min="0">
+                            <input id="LoanableAmount" data-bind="textinput: PawnedItem.LoanableAmount" class="form-control" style="text-align:right" type="number" value="0" min="0" onchange="app.vm.computeAmount()" onclick="app.vm.computeAmount()" min="0">
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -565,25 +579,25 @@
                         <div class="col-sm-8">
                             <div class="input-group">
                                 <span class="input-group-addon">%</span>
-                                <input id="InterestRate" data-bind="textinput: PawnedItem.InterestRate" class="form-control" style="text-align:right" type="number" onchange="app.vm.computeAmount()" onclick="app.vm.computeAmount()" min="0">
+                                <input id="InterestRate" data-bind="textinput: PawnedItem.InterestRate" class="form-control" style="text-align:right" type="number" value="0" min="0" onchange="app.vm.computeAmount()" onclick="app.vm.computeAmount()" min="0">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-6">
-                        <label class="col-sm-4 control-label" for="form-control-1">Deduct interest?</label>
+                        <label class="col-sm-4 control-label" for="form-control-1">Interest Scheme</label>
                         <div class="col-sm-8">
                             <select id="Scheme" data-bind="textinput: PawnedItem.Scheme, value: PawnedItem.Scheme" class="form-control"  onchange="app.vm.computeAmount()" onclick="app.vm.computeAmount()">
-                                <option value="false">No</option>
-                                <option value="true">Yes</option>
+                                <option value="Straight">Straight</option>
+                                <option value="Diminishing">Diminishing</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <label class="col-sm-4 control-label" for="form-control-1">Interest amount</label>
                         <div class="col-sm-8">
-                            <input id="InterestAmount" data-bind="textinput: PawnedItem.InterestAmount" class="form-control" style="text-align:right" type="number" tabindex="-1" readonly>
+                            <input id="InterestAmount" data-bind="textinput: PawnedItem.InterestAmount" class="form-control" style="text-align:right" type="number" value="0" min="0" tabindex="-1" readonly>
                         </div>
                     </div>
                 </div>
@@ -592,13 +606,13 @@
                     <div class="col-sm-6">
                         <label class="col-sm-4 control-label" for="form-control-1">Initial payment</label>
                         <div class="col-sm-8">
-                            <input id="InitialPayment" data-bind="textinput: PawnedItem.InitialPayment" class="form-control" style="text-align:right" type="number" onchange="app.vm.computeNetCashout()" onclick="app.vm.computeNetCashout()">
+                            <input id="InitialPayment" data-bind="textinput: PawnedItem.InitialPayment" class="form-control" style="text-align:right" type="number" value="0" min="0" onchange="app.vm.computeNetCashout()" onclick="app.vm.computeNetCashout()">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <label class="col-sm-4 control-label" for="form-control-1">Service charge</label>
                         <div class="col-sm-8">
-                            <input id="ServiceCharge" data-bind="textinput: PawnedItem.ServiceCharge" class="form-control" style="text-align:right" type="number" onchange="app.vm.computeNetCashout()" onclick="app.vm.computeNetCashout()">
+                            <input id="ServiceCharge" data-bind="textinput: PawnedItem.ServiceCharge" class="form-control" style="text-align:right" type="number" value="0" min="0" onchange="app.vm.computeNetCashout()" onclick="app.vm.computeNetCashout()">
                         </div>
                     </div>
                 </div>
@@ -607,7 +621,7 @@
                     <div class="col-sm-6">
                         <label class="col-sm-4 control-label" for="form-control-1">Others</label>
                         <div class="col-sm-8">
-                            <input id="Others" data-bind="textinput: PawnedItem.Others" class="form-control" style="text-align:right" type="number" onchange="app.vm.computeNetCashout()" onclick="app.vm.computeNetCashout()">
+                            <input id="Others" data-bind="textinput: PawnedItem.Others" class="form-control" style="text-align:right" type="number" value="0" min="0" onchange="app.vm.computeNetCashout()" onclick="app.vm.computeNetCashout()">
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -625,13 +639,16 @@
                     <div class="col-sm-6">
                         <label class="col-sm-4 control-label" for="form-control-1">Net Cashout</label>
                         <div class="col-sm-8">
-                            <input id="NetCashOut" data-bind="textinput: PawnedItem.NetCashOut" class="form-control numbers" style="text-align:right" type="number" tabindex="-1" readonly>
+                            <input id="NetCashOut" data-bind="textinput: PawnedItem.NetCashOut" class="form-control numbers" style="text-align:right" type="number" value="0" min="0" tabindex="-1" readonly>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Payment terms & Schedule -->
+
+    <!-- Amortization Ledger -->
     <div class="card">
         <div class="card-header" style="background-color: #f2dede">
             <div class="card-actions">
@@ -641,7 +658,7 @@
             <strong>Amortization Ledger</strong>
         </div>
         <div class="card-body">
-            <div class="form form-horizontal">
+            <div class="form form-horizontal" data-bind="visible: AmortizationLedgerBody">
                 <table id="Amortization" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
                     <thead>
                         <tr>
@@ -649,19 +666,24 @@
                             <th style="background: #d1202d; color: #ffffff;">Due Date</th>
                             <th style="background: #d1202d; color: #ffffff;">Principal</th>
                             <th style="background: #d1202d; color: #ffffff;">Interest</th>
+                            <th style="background: #d1202d; color: #ffffff;">Due</th>
                             <th style="background: #d1202d; color: #ffffff;">Balance</th>
-                            <th style="background: #d1202d; color: #ffffff;">Payment</th>
-                            <th style="background: #d1202d; color: #ffffff;">OR Ref.</th>
                             <th style="background: #d1202d; color: #ffffff;">Remarks</th>
                         </tr>
                     </thead>
                 </table>
             </div>
+            <div data-bind="visible: spinnerAmortizationLedger">
+                <div class="panel panel-body text-center" data-toggle="match-height">
+                    <div class="spinner spinner-primary spinner-lg pos-r sq-100"></div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Amortization Ledger -->
     <div class="text-right">
-        <button data-bind="click: backToListForPawning" type="submit" class="btn btn-link"><i class="icon icon-arrow-left position-left"></i> Back to list</button>
+        <button data-bind="click: backToList" type="submit" class="btn btn-link"><i class="icon icon-arrow-left position-left"></i> Back to list</button>
         <button type="submit" data-bind="click: savePawnedItem" class="btn bg-success btn-labeled btn-labeled-right ml-10" id="reset"><b><i class="icon-plus3"></i></b>Save</button>
     </div>
 </div>

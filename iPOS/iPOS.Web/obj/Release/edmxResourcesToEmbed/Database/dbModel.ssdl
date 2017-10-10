@@ -134,6 +134,7 @@
     <Property Name="DueDateEnd" Type="date" />
     <Property Name="Status" Type="varchar" MaxLength="32" />
     <Property Name="IsReleased" Type="bool" />
+    <Property Name="Scheme" Type="varchar" MaxLength="32" />
     <Property Name="CreatedBy" Type="varchar" MaxLength="32" />
     <Property Name="CreatedAt" Type="datetime" Precision="0" />
   </EntityType>

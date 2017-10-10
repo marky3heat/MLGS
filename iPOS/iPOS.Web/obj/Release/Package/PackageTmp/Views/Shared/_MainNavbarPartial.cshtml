@@ -114,33 +114,67 @@
                                     Notifications
                                 </span>
                         </a>
-                        @*<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
                             <div class="dropdown-header">
-                                <a class="dropdown-link" href="#">Mark all as read</a>
+                                @*<a class="dropdown-link" href="#">Mark all as read</a>*@
                                 <h5 class="dropdown-heading">Recent Notifications</h5>
                             </div>
                             <div class="dropdown-body">
                                 <div class="list-group list-group-divided custom-scrollbar">
+                                    <!--ko if: hasItemToBeApproved() === true-->
                                     <a class="list-group-item" href="#">
                                         <div class="notification">
                                             <div class="notification-media">
-                                                <span class="icon icon-exclamation-triangle bg-warning rounded sq-40"></span>
+                                                <span class="icon icon-exclamation-triangle bg-success rounded sq-40"></span>
                                             </div>
                                             <div class="notification-content">
-                                                <small class="notification-timestamp">35 min</small>
+                                                <small class="notification-timestamp">Today</small>
                                                 <h5 class="notification-heading">Update Status</h5>
                                                 <p class="notification-text">
-                                                    <small class="truncate">Failed to get available update data. To ensure the proper functioning of your application, update now.</small>
+                                                    <small class="truncate">Has <!--ko text: itemToBeApprovedCounter--><!--/ko--> transaction to be approved.</small>
                                                 </p>
                                             </div>
                                         </div>
                                     </a>
+                                    <!--/ko-->
+                                    <!--ko if: hasItemToBeAppraised() === true-->
+                                    <a class="list-group-item" href="#">
+                                        <div class="notification">
+                                            <div class="notification-media">
+                                                <span class="icon icon-exclamation-triangle bg-primary rounded sq-40"></span>
+                                            </div>
+                                            <div class="notification-content">
+                                                <small class="notification-timestamp">Today</small>
+                                                <h5 class="notification-heading">Update Status</h5>
+                                                <p class="notification-text">
+                                                    <small class="truncate">Has <!--ko text: itemToBeAppraisedCounter--><!--/ko--> item/s to be appraised.</small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!--/ko-->
+                                    <!--ko if: hasItemToBePawned() === true-->
+                                    <a class="list-group-item" href="#">
+                                        <div class="notification">
+                                            <div class="notification-media">
+                                                <span class="icon icon-exclamation-triangle bg-danger rounded sq-40"></span>
+                                            </div>
+                                            <div class="notification-content">
+                                                <small class="notification-timestamp">Today</small>
+                                                <h5 class="notification-heading">Update Status</h5>
+                                                <p class="notification-text">
+                                                    <small class="truncate">Has <!--ko text: itemToBePawnedCounter--><!--/ko--> transaction/s to be pawned.</small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!--/ko-->
                                 </div>
                             </div>
                             <div class="dropdown-footer">
                                 <a class="dropdown-btn" href="#">See All</a>
                             </div>
-                        </div>*@
+                        </div>
                     </li>
                 <li class="dropdown hidden-xs">
                     <button class="navbar-account-btn" data-toggle="dropdown" aria-haspopup="true">

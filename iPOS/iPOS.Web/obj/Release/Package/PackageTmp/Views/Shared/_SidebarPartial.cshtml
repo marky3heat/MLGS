@@ -30,8 +30,14 @@
                 <li class="sidenav-heading">Pawnshop Transactions</li>
                 <li class="sidenav-item">                 
                     <a href="~/Administrator/Transactions/NewTransaction">
+                        <!--ko if: hasItemToBeApproved() === true-->
+                        <span class="sidenav-badge badge badge-success"><!--ko text: itemToBeApprovedCounter--><!--/ko--></span>
+                        <!--/ko-->
+                        <!--ko if: hasItemToBeAppraised() === true-->
+                        <span class="sidenav-badge badge badge-primary"><!--ko text: itemToBeAppraisedCounter--><!--/ko--></span>
+                        <!--/ko-->
                         <!--ko if: hasItemToBePawned() === true-->
-                        <span class="sidenav-badge badge badge-warning"><!--ko text: itemToBePawnedCounter--><!--/ko--></span>
+                        <span class="sidenav-badge badge badge-danger"><!--ko text: itemToBePawnedCounter--><!--/ko--></span>
                         <!--/ko-->
                         <span class="sidenav-icon icon icon-cart-plus"></span>
                         <span class="sidenav-label">Transactions</span>
@@ -46,7 +52,7 @@
                 <li class="sidenav-item">               
                     <a href="~/Administrator/Transactions/Appraisal">
                         <!--ko if: hasItemToBeAppraised() === true-->
-                        <span class="sidenav-badge badge badge-info"><!--ko text: itemToBeAppraisedCounter--><!--/ko--></span>
+                        <span class="sidenav-badge badge badge-primary"><!--ko text: itemToBeAppraisedCounter--><!--/ko--></span>
                         <!--/ko-->
                         <span class="sidenav-icon icon icon-search"></span>
                         <span class="sidenav-label">Appraisal</span>
@@ -68,7 +74,7 @@
                 <li class="sidenav-item">         
                     <a href="~/Administrator/Transactions/Approval">
                         <!--ko if: hasItemToBeApproved() === true-->
-                        <span class="sidenav-badge badge badge-primary"><!--ko text: itemToBeApprovedCounter--><!--/ko--></span>
+                        <span class="sidenav-badge badge badge-success"><!--ko text: itemToBeApprovedCounter--><!--/ko--></span>
                         <!--/ko-->
                         <span class="sidenav-icon icon icon-search"></span>
                         <span class="sidenav-label">Approval</span>

@@ -57,6 +57,10 @@ namespace iPOS.Web.Controllers
             ViewBag.UserId = "9999";
             ViewBag.Username = "Administrator";
 
+            //Session[""] = String.Format("{0:n}", 1);
+            //Session[""] = String.Format("{0:n}", 2);
+            //Session[""] = String.Format("{0:n}", 3);
+            GetNewTransactionsCounter();
             //return View();
             return RedirectToAction("NewTransaction", "Transactions", new { area = "Administrator" });
         }
@@ -64,5 +68,69 @@ namespace iPOS.Web.Controllers
         {
             return View();
         }
+        public async Task<JsonResult> GetNewTransactionsCounter()
+        {
+            try
+            {
+                var listTransactions = await _pawnshopTransactionService.GetListPawnshopTransactions();
+
+                var result =
+                from a in listTransactions
+                where a.Status != "Canceled"
+                select new
+                {
+                    a.TransactionId
+                };
+
+                var result1 =
+                from a in listTransactions
+                where a.Status == "For appraisal"
+                select new
+                {
+                    a.TransactionId
+                };
+
+                var result2 =
+                from a in listTransactions
+                where a.Status == "For pawning"
+                select new
+                {
+                    a.TransactionId
+                };
+
+                var result3 =
+                from a in listTransactions
+                where a.Status == "For approval"
+                select new
+                {
+                    a.TransactionId
+                };
+
+                var result4 =
+                from a in listTransactions
+                where a.Status == "For release"
+                select new
+                {
+                    a.TransactionId
+                };
+
+                Session["NewTransaction"] = result.Count().ToString();
+                Session["ForAppraisal"] = result1.Count().ToString();
+                Session["ForPawning"] = result2.Count().ToString();
+                Session["ForApproval"] = result3.Count().ToString();
+                Session["ForRelease"] = result4.Count().ToString();
+
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+
+            
+
+        }
+
     }
 }

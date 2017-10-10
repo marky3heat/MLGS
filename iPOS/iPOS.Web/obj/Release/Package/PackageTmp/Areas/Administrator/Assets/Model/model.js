@@ -188,6 +188,7 @@ app.PawnedItem = function () {
     self.DueDateEnd = ko.observable();
     self.Status = ko.observable();
     self.IsReleased = ko.observable();
+    self.Scheme = ko.observable();
 };
 
 app.Amortization = function () {

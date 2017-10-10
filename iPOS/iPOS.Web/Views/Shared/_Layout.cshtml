@@ -112,6 +112,14 @@
     <script src="~/Scripts/jquery.numberformatter-1.2.4.js"></script>
     <!-- Number Format -->
 
+    <script type="text/javascript">
+        var NewTransaction = '@Session["NewTransaction"]';
+        var ForAppraisal = '@Session["ForAppraisal"]';
+        var ForPawning = '@Session["ForPawning"]';
+        var ForApproval = '@Session["ForApproval"]';
+        var ForRelease = '@Session["ForRelease"]';
+    </script> 
+
     @RenderSection("scripts", required: false)
 
 </body>
