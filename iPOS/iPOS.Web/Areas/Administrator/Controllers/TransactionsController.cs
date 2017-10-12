@@ -509,10 +509,45 @@ namespace iPOS.Web.Areas.Administrator.Controllers
             }
         }
 
-        //public async Task<JsonResult> SaveApproval()
-        //{
+        public async Task<JsonResult> SaveApproval(ApproveTransactionModel model)
+        {
+            try
+            {
+                bool success = false;
+                string message = "";
 
-        //}
+
+                if (string.IsNullOrEmpty(model.TransactionId.ToString()) || model.TransactionId.ToString() == "0")
+                {
+                    message = "Error saving data. no transaction";
+                }
+                else
+                {
+                    tbl_ipos_pawnshop_transactions model1 = await _pawnshopTransactionService.FindByTransactionNo(model.TransactionNo);
+                    model1.Status = "For approval";
+                    model1.ReviewedBy = "";
+                    model1.ApprovedBy = "";
+
+                    var result = await _pawnshopTransactionService.UpdatePawnshopTransactions(model1);
+
+                    if (result)
+                    {
+                        message = "Successful!";
+                    }
+                    else
+                    {
+                        message = "Error saving data. no transaction";
+                    }
+                }
+
+                return Json(new { success = success, message = message });
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         #endregion
     }
 }

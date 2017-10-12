@@ -1184,15 +1184,35 @@
 
     function generateAmortizationStraight() {
         var StartDate = $('#DueDateStart').datepicker('getDate', '+1d');
-        var Terms = $('#TermsId :selected').val();
-        var NoOfPayment = parseFloat($('#NoOfPayments').val());
+                 
+        var Terms = 0;
+        Terms = $('#TermsId :selected').val();
         Terms = (Terms * 30) / NoOfPayment
 
-        var TotalPrincipal = parseFloat($('#LoanableAmount').val()).toFixed(2);
-        var TotalInterest = parseFloat($('#InterestAmount').val()).toFixed(2);
+        var NoOfPayment = "";
+        if ($('#NoOfPayments').val() !== "" && $('#NoOfPayments').val() !== undefined){
+            NoOfPayment = parseFloat($('#NoOfPayments').val());
+        }
+ 
+        var TotalPrincipal = 0;
+        if ($('#LoanableAmount').val() !== "" && $('#LoanableAmount').val() !== undefined) {
+            TotalPrincipal = parseFloat($('#LoanableAmount').val()).toFixed(2);
+        }
+ 
+        var TotalInterest = 0;
+        if ($('#InterestAmount').val() !== "" && $('#InterestAmount').val() !== undefined) {
+            TotalInterest = parseFloat($('#InterestAmount').val()).toFixed(2);
+        }
 
-        var PerTermPrincipal = parseFloat($('#LoanableAmount').val()) / NoOfPayment
-        var PerTermInterest = parseFloat($('#InterestAmount').val()) / NoOfPayment
+        var PerTermPrincipal = 0;
+        if ($('#LoanableAmount').val() !== "" && $('#LoanableAmount').val() !== undefined) {
+            PerTermPrincipal = parseFloat($('#LoanableAmount').val()) / NoOfPayment;
+        }  
+
+        var PerTermInterest = 0;
+        if ($('#InterestAmount').val() !== "" && $('#InterestAmount').val() !== undefined) {
+            PerTermInterest = parseFloat($('#InterestAmount').val()) / NoOfPayment;
+        }
 
         var LastPaymentPrincipal = parseFloat(TotalPrincipal).toFixed(2);;
         var LastPaymentInterest = parseFloat(TotalInterest).toFixed(2);;
@@ -1450,6 +1470,52 @@
         });
     }
 
+    function saveApproval() {
+        /* Validation */
+        debugger
+        var a = Transaction.ReviewedBy();
+        var b = Transaction.ApprovedBy();
+
+        if (Transaction.ReviewedBy() === "" || Transaction.ReviewedBy() === undefined) {
+            toastr.error("Select a signatory for reviewed by.");
+            modelAddTransaction.ReviewedBy("");
+            document.getElementById("ReviewedBy").focus();
+            return false;
+        }
+        if (Transaction.ApprovedBy() === "" || Transaction.ApprovedBy() === undefined) {
+            toastr.error("Select a signatory for approved by.");
+            modelAddTransaction.ApprovedBy("");
+            document.getElementById("ApprovedBy").focus();
+            return false;
+        }
+        /* Validation */
+
+        var param = ko.toJS(modelTransactions);
+        var url = RootUrl + "/Administrator/Transactions/SaveApproval";
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: ko.utils.stringifyJson(param),
+            contentType: 'application/json; charset=utf-8',
+            success: function (result) {
+                if (result.success) {
+                    swal("Success", result.message, "success");
+
+                    loadTransactionList();
+                    backToList();
+
+                    loaderApp.hidePleaseWait();
+                } else {
+                    loaderApp.hidePleaseWait();
+
+                    swal("Error", result.message, "error");
+
+                    clearControls();
+                }
+            }
+        });
+    }
+
     function getItemType() {
         $.getJSON(RootUrl + "/Administrator/Base/GetItemType", function (result) {
             itemType.removeAll();
@@ -1638,6 +1704,8 @@
         saveCustomer: saveCustomer,
         saveAppraisedItem, saveAppraisedItem,
         savePawnedItem: savePawnedItem,
+        saveApproval: saveApproval,
+        saveAmortization: saveAmortization,
 
         Transaction: Transaction,
         Customer: Customer,

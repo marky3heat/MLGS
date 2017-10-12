@@ -454,13 +454,13 @@
                     <div class="col-sm-6">
                         <label class="col-sm-4 control-label" for="form-control">Reviewed by</label>
                         <div class="col-sm-8">
-                            <select id="" data-bind="options: employee, optionsValue: 'autonum', optionsText: 'first_name', optionsCaption: '--Select signatory--', textinput: modelTransactions.ReviewedBy" class="form-control"></select>
+                            <select id="ReviewedBy" data-bind="options: employee, optionsValue: 'autonum', optionsText: 'first_name', optionsCaption: '--Select signatory--', textinput: Transaction.ReviewedBy" class="form-control"></select>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <label class="col-sm-4 control-label" for="form-control">Approved by</label>
                         <div class="col-sm-8">
-                            <select id="" data-bind="options: employee, optionsValue: 'autonum', optionsText: 'first_name', optionsCaption: '--Select signatory--', textinput: modelTransactions.ApprovedBy" class="form-control"></select>
+                            <select id="ApprovedBy" data-bind="options: employee, optionsValue: 'autonum', optionsText: 'first_name', optionsCaption: '--Select signatory--', textinput: Transaction.ApprovedBy" class="form-control"></select>
                         </div>
                     </div>
                 </div>
@@ -471,7 +471,7 @@
 
     <div class="text-right">
         <button data-bind="click: backToList" type="submit" class="btn btn-link"><i class="icon icon-arrow-left position-left"></i> Back to list</button>
-        <button type="submit" data-bind="click: savePawnedItem" class="btn bg-success btn-labeled btn-labeled-right ml-10" id="reset"><b><i class="icon-plus3"></i></b>Save</button>
+        <button type="submit" data-bind="click: saveApproval" class="btn bg-success btn-labeled btn-labeled-right ml-10" id="reset"><b><i class="icon-plus3"></i></b>Save</button>
     </div>
 </div>
 <!-- /FOR APPROVAL -->

@@ -119,6 +119,8 @@ app.Transaction = function () {
     self.CustomerId = ko.observable();
     self.Terminal = ko.observable();
     self.Status = ko.observable();
+    self.ReviewedBy = ko.observable();
+    self.ApprovedBy = ko.observable();
 
 };
 
