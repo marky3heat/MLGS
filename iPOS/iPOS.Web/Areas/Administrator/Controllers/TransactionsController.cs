@@ -455,9 +455,13 @@ namespace iPOS.Web.Areas.Administrator.Controllers
                     model1.due_date = model.due_date;
                     model1.principal = model.principal;
                     model1.interest = model.interest;
+                    model1.penalty = model.penalty;
+                    model1.amount_due = model.amount_due;
                     model1.balance = model.balance;
-                    model1.or_reference = model.or_reference;
-                    model1.payment_amount = model.payment_amount;
+                    model1.or_no = model.or_no;
+                    model1.principal_payment = model.principal_payment;
+                    model1.interest_payment = model.interest_payment;
+                    model1.penalty_payment = model.penalty_payment;
                     model1.remarks = model.remarks;
                     model1.CreatedBy = "";
                     model1.CreatedAt = DateTime.Now;
@@ -479,8 +483,10 @@ namespace iPOS.Web.Areas.Administrator.Controllers
                 {
                     tbl_ipos_pawneditem_amortization_schedule model1 = new tbl_ipos_pawneditem_amortization_schedule();
                     model1 = await _referenceService.FindByIdAmortization(model.autonum);
-                    model1.or_reference = model.or_reference;
-                    model1.payment_amount = model.payment_amount;
+                    model1.or_no = model.or_no;
+                    model1.principal_payment = model.principal_payment;
+                    model1.interest_payment = model.interest_payment;
+                    model1.penalty_payment = model.penalty_payment;
                     model1.remarks = model.remarks;
 
                     var result = await _referenceService.SaveAmortization(model1);
@@ -502,6 +508,11 @@ namespace iPOS.Web.Areas.Administrator.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
+        //public async Task<JsonResult> SaveApproval()
+        //{
+
+        //}
         #endregion
     }
 }

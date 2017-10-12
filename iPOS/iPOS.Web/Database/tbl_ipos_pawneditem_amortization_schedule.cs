@@ -21,9 +21,13 @@ namespace iPOS.Web.Database
         public Nullable<System.DateTime> due_date { get; set; }
         public Nullable<decimal> principal { get; set; }
         public Nullable<decimal> interest { get; set; }
+        public Nullable<decimal> penalty { get; set; }
+        public Nullable<decimal> amount_due { get; set; }
         public Nullable<decimal> balance { get; set; }
-        public string or_reference { get; set; }
-        public Nullable<decimal> payment_amount { get; set; }
+        public string or_no { get; set; }
+        public Nullable<decimal> principal_payment { get; set; }
+        public Nullable<decimal> interest_payment { get; set; }
+        public Nullable<decimal> penalty_payment { get; set; }
         public string remarks { get; set; }
         public Nullable<bool> isDisabled { get; set; }
         public string CreatedBy { get; set; }

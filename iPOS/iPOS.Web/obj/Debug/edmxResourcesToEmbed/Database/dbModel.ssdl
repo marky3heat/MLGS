@@ -176,11 +176,15 @@
     <Property Name="pawned_item_id" Type="int" />
     <Property Name="term" Type="int" />
     <Property Name="due_date" Type="date" />
-    <Property Name="principal" Type="decimal" Precision="15" Scale="2" />
-    <Property Name="interest" Type="decimal" Precision="15" Scale="2" />
-    <Property Name="balance" Type="decimal" Precision="15" Scale="2" />
-    <Property Name="or_reference" Type="varchar" MaxLength="24" />
-    <Property Name="payment_amount" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="principal" Type="decimal" Precision="15" Scale="3" />
+    <Property Name="interest" Type="decimal" Precision="15" Scale="3" />
+    <Property Name="penalty" Type="decimal" Precision="15" Scale="3" />
+    <Property Name="amount_due" Type="decimal" Precision="15" Scale="3" />
+    <Property Name="balance" Type="decimal" Precision="15" Scale="3" />
+    <Property Name="or_no" Type="varchar" MaxLength="24" />
+    <Property Name="principal_payment" Type="decimal" Precision="15" Scale="3" />
+    <Property Name="interest_payment" Type="decimal" Precision="15" Scale="3" />
+    <Property Name="penalty_payment" Type="decimal" Precision="15" Scale="3" />
     <Property Name="remarks" Type="varchar" MaxLength="124" />
     <Property Name="isDisabled" Type="bool" />
     <Property Name="CreatedBy" Type="varchar" MaxLength="64" />

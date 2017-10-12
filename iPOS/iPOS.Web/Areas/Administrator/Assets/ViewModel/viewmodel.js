@@ -53,19 +53,19 @@
     }
 
     function loadTransactionList() {
-        if (PageTitle == "New Transactions") {
+        if (PageTitle === "New Transactions") {
             var transaction = "GetTransactions"
         }
-        if (PageTitle == "Appraisal") {
+        if (PageTitle === "Appraisal") {
             var transaction = "GetTransactionsAppraisal"
         }
-        if (PageTitle == "Approval") {
+        if (PageTitle === "Approval") {
             var transaction = "GetTransactionsApproval"
         }
-        if (PageTitle == "Change In Terms") {
+        if (PageTitle === "Change In Terms") {
             var transaction = "GetTransactionsChangeInTerms"
         }
-        if (PageTitle == "") {
+        if (PageTitle === "") {
             var transaction = "GetTransactions"
         }
    
