@@ -82,5 +82,13 @@ namespace iPOS.Web.Service.Interface
         Task<bool> UpdateAmortization(tbl_ipos_pawneditem_amortization_schedule model);
         Task<bool> DeleteAmortization(string id);
         #endregion
+
+        #region Employee
+        Task<tbl_employee> FindByIdEmployee(long id);
+        Task<List<tbl_employee>> GetListEmployee(int pageIndex = 0, int pageSize = 100);
+        Task<bool> SaveEmployee(tbl_employee model);
+        Task<bool> UpdateEmployee(tbl_employee model);
+        Task<bool> DeleteEmployee(string id);
+        #endregion
     }
 }

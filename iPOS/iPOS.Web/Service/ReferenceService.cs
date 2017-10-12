@@ -941,5 +941,120 @@ namespace iPOS.Web.Service
             }
         }
         #endregion
+
+        #region PUBLIC MEMBER METHODS (EMPLOYEE)
+        public async Task<tbl_employee> FindByIdEmployee(long id)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    return await uow.EmployeeRepository.FindAsync(id);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<List<tbl_employee>> GetListEmployee(
+            int pageIndex = 0,
+            int pageSize = 100)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var list = await uow.EmployeeRepository.AllWithAsync(null);
+
+                    list = list
+                        .Skip(pageSize * pageIndex)
+                        .Take(pageSize).ToList();
+
+                    return list.ToList();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<bool> SaveEmployee(tbl_employee model)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var result = await FindByIdAmortization(model.autonum);
+                    if (result == null)
+                    {
+                        uow.EmployeeRepository.Insert(model);
+                        await uow.SaveChangesAsync();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<bool> UpdateEmployee(tbl_employee model)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    var result = await FindByIdAmortization(model.autonum);
+                    if (result != null)
+                    {
+                        uow.EmployeeRepository.Update(model);
+                        await uow.SaveChangesAsync();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<bool> DeleteEmployee(string id)
+        {
+            try
+            {
+                using (var uow = _unitOfWorkFactory.Create())
+                {
+                    if (!string.IsNullOrEmpty(id))
+                    {
+                        uow.AmortizationRepository.Delete(id);
+                        await uow.SaveChangesAsync();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
     }
 }

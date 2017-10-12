@@ -9,6 +9,7 @@ namespace iPOS.Web.Repository.Interface
     {
         //General tables
         IRepository<tbl_customer> CustomerRepository { get; }
+        IRepository<tbl_employee> EmployeeRepository { get; }
         //
 
         //Pawnshop tables

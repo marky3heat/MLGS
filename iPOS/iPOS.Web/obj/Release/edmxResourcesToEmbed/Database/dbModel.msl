@@ -337,5 +337,35 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employee">
+      <EntityTypeMapping TypeName="dbpawnshopModel.tbl_employee">
+        <MappingFragment StoreEntitySet="tbl_employee">
+          <ScalarProperty Name="Manual_YN" ColumnName="Manual_YN" />
+          <ScalarProperty Name="ul_code" ColumnName="ul_code" />
+          <ScalarProperty Name="date_entered" ColumnName="date_entered" />
+          <ScalarProperty Name="employee_image" ColumnName="employee_image" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="date_as_of" ColumnName="date_as_of" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="place_of_birth" ColumnName="place_of_birth" />
+          <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+          <ScalarProperty Name="zip_code" ColumnName="zip_code" />
+          <ScalarProperty Name="city_address" ColumnName="city_address" />
+          <ScalarProperty Name="st_address" ColumnName="st_address" />
+          <ScalarProperty Name="fax_no" ColumnName="fax_no" />
+          <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+          <ScalarProperty Name="home_phone_no" ColumnName="home_phone_no" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="id_code" ColumnName="id_code" />
+          <ScalarProperty Name="autonum" ColumnName="autonum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

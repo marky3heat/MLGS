@@ -37,7 +37,6 @@
     </div>
 </div>
 
-
 <!-- FOR APPROVAL -->
 <div data-bind="visible: isCreateModeShowApproval">
     <div class="title-bar">
@@ -438,8 +437,38 @@
             </div>
         </div>
     </div>
-
     <!-- Amortization Ledger -->
+
+    <!-- Signatories -->
+    <div class="card">
+        <div class="card-header" style="background-color: #f2dede">
+            <div class="card-actions">
+                <button id="card5" type="button" class="card-action card-toggler" title="Collapse"></button>
+            </div>
+
+            <strong>Signatories</strong>
+        </div>
+        <div class="card-body">
+            <div class="form form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label class="col-sm-4 control-label" for="form-control">Reviewed by</label>
+                        <div class="col-sm-8">
+                            <select id="" data-bind="options: employee, optionsValue: 'autonum', optionsText: 'first_name', optionsCaption: '--Select signatory--', textinput: modelTransactions.ReviewedBy" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-4 control-label" for="form-control">Approved by</label>
+                        <div class="col-sm-8">
+                            <select id="" data-bind="options: employee, optionsValue: 'autonum', optionsText: 'first_name', optionsCaption: '--Select signatory--', textinput: modelTransactions.ApprovedBy" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Signatories -->
+
     <div class="text-right">
         <button data-bind="click: backToList" type="submit" class="btn btn-link"><i class="icon icon-arrow-left position-left"></i> Back to list</button>
         <button type="submit" data-bind="click: savePawnedItem" class="btn bg-success btn-labeled btn-labeled-right ml-10" id="reset"><b><i class="icon-plus3"></i></b>Save</button>

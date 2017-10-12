@@ -58,7 +58,18 @@ namespace iPOS.Web.Areas.Administrator.Controllers
         #endregion
 
         #region JSON REQUEST METHODS
+        public async Task<JsonResult> GetEmployee()
+        {
+            var lisEmployee = await _referenceService.GetListEmployee();
+            var result = lisEmployee.Select(item => new tbl_employee()
+            {
+                autonum = item.autonum,
+                first_name = item.first_name + " " + item.last_name,
+                last_name = item.last_name
+            });
 
+            return Json(result.OrderBy(o => o.last_name), JsonRequestBehavior.AllowGet);
+        }
         public async Task<JsonResult> GetCustomer()
         {
             var listCustomer = await _customerService.GetCustomerList();

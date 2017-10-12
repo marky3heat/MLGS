@@ -26,6 +26,18 @@ namespace iPOS.Web.Repository
                 return _customerRepository;
             }
         }
+
+        private Repository<tbl_employee> _employeeRepository;
+        public IRepository<tbl_employee> EmployeeRepository
+        {
+            get
+            {
+                if (_employeeRepository == null)
+                    _employeeRepository = new Repository<tbl_employee>(_dbContext);
+                return _employeeRepository;
+            }
+        }
+
         private Repository<tbl_product_brand_setup> _brandRepository;
         public IRepository<tbl_product_brand_setup> BrandRepository
         {

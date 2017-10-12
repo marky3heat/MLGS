@@ -37,6 +37,7 @@
     var itemType = ko.observableArray();
     var itemCategory = ko.observableArray();
     var terms = ko.observableArray();
+    var employee = ko.observableArray();
 
     var module = ko.observable("List");
     var action = ko.observable("");
@@ -340,6 +341,7 @@
             clearControlsAppraisedItem()
             clearControlsPawnedItem()
 
+            getEmployee();
             getCustomer();
             getItemType();
             getTerms();
@@ -603,6 +605,14 @@
             customer(result);
         });
     }
+
+    function getEmployee() {
+        $.getJSON(RootUrl + "/Administrator/Base/GetEmployee", function (result) {
+            employee.removeAll();
+            employee(result);
+        });
+    }
+
     function getCustomerById() {
         var CustomerId = $('#CustomerId').val();
         
@@ -1602,6 +1612,7 @@
 
         title: title,
 
+        employee: employee,
         createCustomer: createCustomer,
         customer: customer,
         terms: terms,

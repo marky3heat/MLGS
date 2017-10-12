@@ -45,5 +45,6 @@ namespace iPOS.Web.Database
         public virtual DbSet<tbl_ipos_pawneditem_terms> tbl_ipos_pawneditem_terms { get; set; }
         public virtual DbSet<tbl_ipos_pawneditem_amortization_schedule> tbl_ipos_pawneditem_amortization_schedule { get; set; }
         public virtual DbSet<tbl_ipos_pawneditem> tbl_ipos_pawneditem { get; set; }
+        public virtual DbSet<tbl_employee> tbl_employee { get; set; }
     }
 }

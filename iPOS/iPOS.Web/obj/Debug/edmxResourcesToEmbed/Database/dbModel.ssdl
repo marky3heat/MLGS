@@ -36,6 +36,35 @@
     <Property Name="update_by" Type="varchar" MaxLength="50" />
     <Property Name="date_update" Type="datetime" Precision="0" />
   </EntityType>
+  <EntityType Name="tbl_employee">
+    <Key>
+      <PropertyRef Name="autonum" />
+    </Key>
+    <Property Name="autonum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_code" Type="int" Nullable="false" />
+    <Property Name="Emp_ID" Type="int" />
+    <Property Name="last_name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="middle_name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="department" Type="varchar" MaxLength="50" />
+    <Property Name="designation" Type="varchar" MaxLength="30" />
+    <Property Name="home_phone_no" Type="varchar" MaxLength="15" />
+    <Property Name="mobile_no" Type="varchar" MaxLength="15" />
+    <Property Name="fax_no" Type="varchar" MaxLength="15" />
+    <Property Name="st_address" Type="varchar" MaxLength="60" />
+    <Property Name="city_address" Type="varchar" MaxLength="30" />
+    <Property Name="zip_code" Type="int" />
+    <Property Name="date_of_birth" Type="date" />
+    <Property Name="place_of_birth" Type="varchar" MaxLength="100" />
+    <Property Name="balance" Type="double" />
+    <Property Name="date_as_of" Type="date" />
+    <Property Name="active" Type="char" MaxLength="1" />
+    <Property Name="remarks" Type="varchar" MaxLength="100" />
+    <Property Name="employee_image" Type="longblob" />
+    <Property Name="date_entered" Type="date" />
+    <Property Name="ul_code" Type="int" />
+    <Property Name="Manual_YN" Type="char" MaxLength="1" />
+  </EntityType>
   <EntityType Name="tbl_ipos_appraiseditem">
     <Key>
       <PropertyRef Name="AppraiseId" />
@@ -318,6 +347,7 @@
   </EntityType>
   <EntityContainer Name="dbpawnshopModelStoreContainer">
     <EntitySet Name="tbl_customer" EntityType="Self.tbl_customer" Schema="dbpawnshop" store:Type="Tables" />
+    <EntitySet Name="tbl_employee" EntityType="Self.tbl_employee" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_ipos_appraiseditem" EntityType="Self.tbl_ipos_appraiseditem" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_ipos_customer" EntityType="Self.tbl_ipos_customer" Schema="dbpawnshop" store:Type="Tables" />
     <EntitySet Name="tbl_ipos_itemcategory" EntityType="Self.tbl_ipos_itemcategory" Schema="dbpawnshop" store:Type="Tables" />

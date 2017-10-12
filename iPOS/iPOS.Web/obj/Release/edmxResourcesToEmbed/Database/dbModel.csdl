@@ -21,6 +21,7 @@
     <EntitySet Name="tbl_ipos_pawneditem_terms" EntityType="dbpawnshopModel.tbl_ipos_pawneditem_terms" />
     <EntitySet Name="tbl_ipos_pawneditem_amortization_schedule" EntityType="dbpawnshopModel.tbl_ipos_pawneditem_amortization_schedule" />
     <EntitySet Name="tbl_ipos_pawneditem" EntityType="dbpawnshopModel.tbl_ipos_pawneditem" />
+    <EntitySet Name="tbl_employee" EntityType="dbpawnshopModel.tbl_employee" />
   </EntityContainer>
   <EntityType Name="tbl_customer">
     <Key>
@@ -337,5 +338,34 @@
     <Property Name="Scheme" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
     <Property Name="CreatedBy" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
     <Property Name="CreatedAt" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="tbl_employee">
+    <Key>
+      <PropertyRef Name="autonum" />
+    </Key>
+    <Property Name="autonum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_code" Type="Int32" Nullable="false" />
+    <Property Name="Emp_ID" Type="Int32" />
+    <Property Name="last_name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="middle_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="designation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="home_phone_no" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="mobile_no" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="fax_no" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="st_address" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="city_address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="zip_code" Type="Int32" />
+    <Property Name="date_of_birth" Type="DateTime" />
+    <Property Name="place_of_birth" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="balance" Type="Double" />
+    <Property Name="date_as_of" Type="DateTime" />
+    <Property Name="active" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="employee_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="date_entered" Type="DateTime" />
+    <Property Name="ul_code" Type="Int32" />
+    <Property Name="Manual_YN" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

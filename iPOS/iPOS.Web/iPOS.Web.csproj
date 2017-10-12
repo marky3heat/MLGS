@@ -246,6 +246,9 @@
     <Compile Include="Database\tbl_customer.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\tbl_employee.cs">
+      <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\tbl_ipos_appraiseditem.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
